@@ -1,0 +1,15 @@
+[package]
+name = "usv"
+version = "0.3.3"
+edition = "2021"
+authors = ["Joel Parker Henderson <joel@joelparkerhenderson.com>"]
+description = "USV: Unicode Separated Values for data markup, including for spreadsheets, databases, text files, and more. Improves on CSV, TSV, ASV."
+readme = "README.md"
+repository = "https://github.com/sixarm/usv/"
+license = "MIT OR Apache-2.0 OR GPL-2.0 OR GPL-3.0"
+keywords = ["usv", "unicode", "data", "spreadsheet", "markup"]
+categories = []
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
