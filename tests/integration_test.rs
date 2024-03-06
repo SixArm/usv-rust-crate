@@ -1,4 +1,5 @@
 use usv::*;
+mod common;
 
 #[test]
 fn base_iterator_with_units_records_groups_files() {
@@ -59,24 +60,7 @@ fn unit_iterator_with_units_records_groups_files() {
     let actual: Units = iter.collect();
     assert_eq!(
         actual,
-        [
-            Unit::from("a"),
-            Unit::from("b"),
-            Unit::from("c"),
-            Unit::from("d"),
-            Unit::from("e"),
-            Unit::from("f"),
-            Unit::from("g"),
-            Unit::from("h"),
-            Unit::from("i"),
-            Unit::from("j"),
-            Unit::from("k"),
-            Unit::from("l"),
-            Unit::from("m"),
-            Unit::from("n"),
-            Unit::from("o"),
-            Unit::from("p"),
-        ]
+        svec!["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"]
     );
 }
 
@@ -93,38 +77,14 @@ fn record_iterator_with_units_records_groups_files() {
     assert_eq!(
         actual,
         [
-            vec![
-                Unit::from("a"),
-                Unit::from("b"),
-            ],
-            vec![
-                Unit::from("c"),
-                Unit::from("d"),
-            ],
-            vec![
-                Unit::from("e"),
-                Unit::from("f"),
-            ],
-            vec![
-                Unit::from("g"),
-                Unit::from("h"),
-            ],
-            vec![
-                Unit::from("i"),
-                Unit::from("j"),
-            ],
-            vec![
-                Unit::from("k"),
-                Unit::from("l"),
-            ],
-            vec![
-                Unit::from("m"),
-                Unit::from("n"),
-            ],
-            vec![
-                Unit::from("o"),
-                Unit::from("p"),
-            ],
+            svec!["a", "b"],
+            svec!["c", "d"],
+            svec!["e", "f"],
+            svec!["g", "h"],
+            svec!["i", "j"],
+            svec!["k", "l"],
+            svec!["m", "n"],
+            svec!["o", "p"],
         ]
     );
 }
@@ -143,44 +103,20 @@ fn group_iterator_with_units_records_groups_files() {
         actual,
         [
             vec![
-                vec![
-                    Unit::from("a"),
-                    Unit::from("b"),
-                ],
-                vec![
-                    Unit::from("c"),
-                    Unit::from("d"),
-                ],
+                svec!["a", "b"],
+                svec!["c", "d"],
             ],
             vec![
-                vec![
-                    Unit::from("e"),
-                    Unit::from("f"),
-                ],
-                vec![
-                    Unit::from("g"),
-                    Unit::from("h"),
-                ],
+                svec!["e", "f"],
+                svec!["g", "h"],
             ],
             vec![
-                vec![
-                    Unit::from("i"),
-                    Unit::from("j"),
-                ],
-                vec![
-                    Unit::from("k"),
-                    Unit::from("l"),
-                ]
+                svec!["i", "j"],
+                svec!["k", "l"]
             ],
             vec![
-                vec![
-                    Unit::from("m"),
-                    Unit::from("n"),
-                ],
-                vec![
-                    Unit::from("o"),
-                    Unit::from("p"),
-                ],
+                svec!["m", "n"],
+                svec!["o", "p"],
             ],
         ],
     );
@@ -201,46 +137,22 @@ fn file_iterator_with_units_records_groups_files() {
         [
             vec![
                 vec![
-                    vec![
-                        Unit::from("a"),
-                        Unit::from("b"),
-                    ],
-                    vec![
-                        Unit::from("c"),
-                        Unit::from("d"),
-                    ],
+                    svec!["a", "b"],
+                    svec!["c", "d"],
                 ],
                 vec![
-                    vec![
-                        Unit::from("e"),
-                        Unit::from("f"),
-                    ],
-                    vec![
-                        Unit::from("g"),
-                        Unit::from("h"),
-                    ],
+                    svec!["e", "f"],
+                    svec!["g", "h"],
                 ],
             ],
             vec![
                 vec![
-                    vec![
-                        Unit::from("i"),
-                        Unit::from("j"),
-                    ],
-                    vec![
-                        Unit::from("k"),
-                        Unit::from("l"),
-                    ]
+                    svec!["i", "j"],
+                    svec!["k", "l"],
                 ],
                 vec![
-                    vec![
-                        Unit::from("m"),
-                        Unit::from("n"),
-                    ],
-                    vec![
-                        Unit::from("o"),
-                        Unit::from("p"),
-                    ],
+                    svec!["m", "n"],
+                    svec!["o", "p"],
                 ],
             ],
         ]

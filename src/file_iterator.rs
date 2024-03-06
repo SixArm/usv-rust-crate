@@ -102,46 +102,22 @@ mod tests {
             [
                 vec![
                     vec![
-                        vec![
-                            Unit::from("a"),
-                            Unit::from("b"),
-                        ],
-                        vec![
-                            Unit::from("c"),
-                            Unit::from("d"),
-                        ],
+                        svec!["a", "b"],
+                        svec!["c", "d"],
                     ],
                     vec![
-                        vec![
-                            Unit::from("e"),
-                            Unit::from("f"),
-                        ],
-                        vec![
-                            Unit::from("g"),
-                            Unit::from("h"),
-                        ],
+                        svec!["e", "f"],
+                        svec!["g", "h"],
                     ],
                 ],
                 vec![
                     vec![
-                        vec![
-                            Unit::from("i"),
-                            Unit::from("j"),
-                        ],
-                        vec![
-                            Unit::from("k"),
-                            Unit::from("l"),
-                        ]
+                        svec!["i", "j"],
+                        svec!["k", "l"]
                     ],
                     vec![
-                        vec![
-                            Unit::from("m"),
-                            Unit::from("n"),
-                        ],
-                        vec![
-                            Unit::from("o"),
-                            Unit::from("p"),
-                        ],
+                        svec!["m", "n"],
+                        svec!["o", "p"],
                     ],
                 ],
             ]

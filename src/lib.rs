@@ -358,3 +358,13 @@ pub mod file_iterator; pub use file_iterator::FileIterator;
 // Iterator extensions for tokens, units, records, groups, files.
 pub mod str_ext; pub use str_ext::StrExt;
 pub mod string_ext; pub use string_ext::StringExt;
+
+#[macro_export]
+macro_rules! svec[
+    ($($x:expr),*) => (
+        vec![$($x),*].into_iter()
+                     .map(|s: &'static str| s.to_string())
+                     .collect::<Vec<String>>()
+    );
+    ($($x:expr,)*) => (svec![$($x),*]);
+];

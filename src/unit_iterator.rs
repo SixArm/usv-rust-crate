@@ -44,24 +44,7 @@ mod tests {
         let actual: Units = iter.collect();
         assert_eq!(
             actual,
-            [
-                Unit::from("a"),
-                Unit::from("b"),
-                Unit::from("c"),
-                Unit::from("d"),
-                Unit::from("e"),
-                Unit::from("f"),
-                Unit::from("g"),
-                Unit::from("h"),
-                Unit::from("i"),
-                Unit::from("j"),
-                Unit::from("k"),
-                Unit::from("l"),
-                Unit::from("m"),
-                Unit::from("n"),
-                Unit::from("o"),
-                Unit::from("p"),
-            ]
+            svec!["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"]
         );
     }
 

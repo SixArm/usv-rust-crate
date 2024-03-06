@@ -61,38 +61,14 @@ mod tests {
         assert_eq!(
             actual,
             [
-                vec![
-                    Unit::from("a"),
-                    Unit::from("b"),
-                ],
-                vec![
-                    Unit::from("c"),
-                    Unit::from("d"),
-                ],
-                vec![
-                    Unit::from("e"),
-                    Unit::from("f"),
-                ],
-                vec![
-                    Unit::from("g"),
-                    Unit::from("h"),
-                ],
-                vec![
-                    Unit::from("i"),
-                    Unit::from("j"),
-                ],
-                vec![
-                    Unit::from("k"),
-                    Unit::from("l"),
-                ],
-                vec![
-                    Unit::from("m"),
-                    Unit::from("n"),
-                ],
-                vec![
-                    Unit::from("o"),
-                    Unit::from("p"),
-                ],
+                svec!["a", "b"],
+                svec!["c", "d"],
+                svec!["e", "f"],
+                svec!["g", "h"],
+                svec!["i", "j"],
+                svec!["k", "l"],
+                svec!["m", "n"],
+                svec!["o", "p"],
             ]
         );
     }
