@@ -43,11 +43,14 @@ impl<'a> std::iter::Iterator for TokenIterator<'a> {
                     match c {
                         '␟' | '␞' | '␝' | '␜' => {
                             self.next = next;
-                            return Some(Token::UnitString(content))
+                            return Some(Token::Unit(content))
                         },
                         '␗' => {
                             return Some(Token::EndOfTransmissionBlock)
                         },
+                        // '␖' => {
+                        //     return Some(Token::SynchronousIdle)
+                        // },
                         '␛' => {
                             match self.chars.next() {
                                 Some(c) => {
@@ -79,6 +82,7 @@ impl<'a> std::iter::Iterator for TokenIterator<'a> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::Unit;
     use crate::token_iterator::TokenIterator;
 
     /// An empty string returns an empty list,
@@ -147,7 +151,7 @@ mod tests {
         assert_eq!(
             actual,
             [
-                Token::UnitString("".into()),
+                Token::Unit(Unit::from("")),
                 Token::UnitSeparator,
             ]
         );
@@ -175,7 +179,7 @@ mod tests {
         assert_eq!(
             actual,
             [
-                Token::UnitString("".into()),
+                Token::Unit(Unit::from("")),
                 Token::RecordSeparator,
             ]
         );
@@ -203,7 +207,7 @@ mod tests {
         assert_eq!(
             actual,
             [
-                Token::UnitString("".into()),
+                Token::Unit(Unit::from("")),
                 Token::GroupSeparator,
             ]
         );
@@ -231,19 +235,20 @@ mod tests {
         assert_eq!(
             actual,
             [
-                Token::UnitString("".into()),
+                Token::Unit(Unit::from("")),
                 Token::FileSeparator,
             ]
         );
     }
 
-    /// A string of one end of transmission returns an empty list.
+    /// A string of one end of transmission block returns an empty list.
     ///
     /// This is a fundamental test.
     ///
     /// Input: a string of one unit separator.
     ///
-    /// Expect: a unit that contains an empty string, then a file separator.
+    /// Expect: a unit that contains an empty string, then an end of
+    /// transmission block.
     ///
     #[test]
     fn end_of_transmission_block() {
@@ -260,6 +265,30 @@ mod tests {
             ]
         );
     }
+
+    /// A string of one synchronous idle returns itself.
+    ///
+    /// This is a fundamental test.
+    ///
+    /// Input: a string of one synchronous idle.
+    ///
+    /// Expect: a string of one synchronous idle.
+    ///
+    // #[test]
+    // fn synchronous_idle() {
+    //     let input = "␖";
+    //     let iter = TokenIterator {
+    //         chars: input.chars(),
+    //         ..Default::default()
+    //     };
+    //     let actual: Vec<Token> = iter.collect();
+    //     assert_eq!(
+    //         actual,
+    //         [
+    //             Token::SynchronousIdle,
+    //         ]
+    //     );
+    // }
 
     /// A string of typical characters of any length then a unit separator
     /// will return a unit of the typical characters and a unit separator.
@@ -281,7 +310,7 @@ mod tests {
         assert_eq!(
             actual,
             [
-                Token::UnitString("a".into()),
+                Token::Unit(Unit::from("a")),
                 Token::UnitSeparator,
             ]
         );
@@ -306,9 +335,9 @@ mod tests {
         assert_eq!(
             actual,
             [
-                Token::UnitString("a".into()),
+                Token::Unit(Unit::from("a")),
                 Token::UnitSeparator,
-                Token::UnitString("b".into()),
+                Token::Unit(Unit::from("b")),
                 Token::UnitSeparator,
             ]
         );
@@ -334,37 +363,37 @@ mod tests {
         assert_eq!(
             actual,
             [
-                Token::UnitString("a".into()),
+                Token::Unit(Unit::from("a")),
                 Token::UnitSeparator,
-                Token::UnitString("b".into()),
+                Token::Unit(Unit::from("b")),
                 Token::RecordSeparator,
-                Token::UnitString("c".into()),
+                Token::Unit(Unit::from("c")),
                 Token::UnitSeparator,
-                Token::UnitString("d".into()),
+                Token::Unit(Unit::from("d")),
                 Token::GroupSeparator,
-                Token::UnitString("e".into()),
+                Token::Unit(Unit::from("e")),
                 Token::UnitSeparator,
-                Token::UnitString("f".into()),
+                Token::Unit(Unit::from("f")),
                 Token::RecordSeparator,
-                Token::UnitString("g".into()),
+                Token::Unit(Unit::from("g")),
                 Token::UnitSeparator,
-                Token::UnitString("h".into()),
+                Token::Unit(Unit::from("h")),
                 Token::FileSeparator,
-                Token::UnitString("i".into()),
+                Token::Unit(Unit::from("i")),
                 Token::UnitSeparator,
-                Token::UnitString("j".into()),
+                Token::Unit(Unit::from("j")),
                 Token::RecordSeparator,
-                Token::UnitString("k".into()),
+                Token::Unit(Unit::from("k")),
                 Token::UnitSeparator,
-                Token::UnitString("l".into()),
+                Token::Unit(Unit::from("l")),
                 Token::GroupSeparator,
-                Token::UnitString("m".into()),
+                Token::Unit(Unit::from("m")),
                 Token::UnitSeparator,
-                Token::UnitString("n".into()),
+                Token::Unit(Unit::from("n")),
                 Token::RecordSeparator,
-                Token::UnitString("o".into()),
+                Token::Unit(Unit::from("o")),
                 Token::UnitSeparator,
-                Token::UnitString("p".into()),
+                Token::Unit(Unit::from("p")),
                 Token::FileSeparator,
             ]
         );
@@ -381,7 +410,7 @@ mod tests {
         assert_eq!(
             actual,
             [
-                Token::UnitString("abc".into()),
+                Token::Unit(Unit::from("abc")),
                 Token::UnitSeparator,
             ]
         );
@@ -398,7 +427,7 @@ mod tests {
         assert_eq!(
             actual,
             [
-                Token::UnitString("ab␟cd".into()),
+                Token::Unit(Unit::from("ab␟cd")),
                 Token::UnitSeparator,
             ]
         );
@@ -415,7 +444,7 @@ mod tests {
         assert_eq!(
             actual,
             [
-                Token::UnitString("ab␛cd".into()),
+                Token::Unit(Unit::from("ab␛cd")),
                 Token::UnitSeparator,
             ]
         );
@@ -432,13 +461,13 @@ mod tests {
         assert_eq!(
             actual,
             [
-                Token::UnitString("a".into()),
+                Token::Unit(Unit::from("a")),
                 Token::UnitSeparator,
-                Token::UnitString("b".into()),
+                Token::Unit(Unit::from("b")),
                 Token::RecordSeparator,
-                Token::UnitString("c".into()),
+                Token::Unit(Unit::from("c")),
                 Token::UnitSeparator,
-                Token::UnitString("d".into()),
+                Token::Unit(Unit::from("d")),
                 Token::RecordSeparator,
             ]
         );
@@ -455,13 +484,13 @@ mod tests {
         assert_eq!(
             actual,
             [
-                Token::UnitString("a".into()),
+                Token::Unit(Unit::from("a")),
                 Token::UnitSeparator,
-                Token::UnitString("b".into()),
+                Token::Unit(Unit::from("b")),
                 Token::RecordSeparator,
-                Token::UnitString("c".into()),
+                Token::Unit(Unit::from("c")),
                 Token::UnitSeparator,
-                Token::UnitString("d".into()),
+                Token::Unit(Unit::from("d")),
                 Token::RecordSeparator,
             ]
         );

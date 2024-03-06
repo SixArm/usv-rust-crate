@@ -58,8 +58,8 @@
 //! assert_eq!(
 //!     output,
 //!     [
-//!         Token::UnitString("hello".into()),
-//!         Token::UnitString("world".into()),
+//!         Unit::from("hello"),
+//!         Unit::from("world"),
 //!     ]
 //! );
 //! ```
@@ -95,12 +95,12 @@
 //!     output,
 //!     [
 //!         vec![
-//!             Token::UnitString("hello".into()),
-//!             Token::UnitString("world".into()),
+//!             Unit::from("hello"),
+//!             Unit::from("world"),
 //!         ],
 //!         vec![
-//!             Token::UnitString("goodnight".into()),
-//!             Token::UnitString("moon".into()),
+//!             Unit::from("goodnight"),
+//!             Unit::from("moon"),
 //!         ],
 //!     ]
 //! );
@@ -169,44 +169,44 @@
 //!         vec![
 //!             vec![
 //!                 vec![
-//!                     Token::UnitString("a".into()),
-//!                     Token::UnitString("b".into()),
+//!                     Unit::from("a"),
+//!                     Unit::from("b"),
 //!                 ],
 //!                 vec![
-//!                     Token::UnitString("c".into()),
-//!                     Token::UnitString("d".into()),
+//!                     Unit::from("c"),
+//!                     Unit::from("d"),
 //!                 ],
 //!             ],
 //!             vec![
 //!                 vec![
-//!                     Token::UnitString("e".into()),
-//!                     Token::UnitString("f".into()),
+//!                     Unit::from("e"),
+//!                     Unit::from("f"),
 //!                 ],
 //!                 vec![
-//!                     Token::UnitString("g".into()),
-//!                     Token::UnitString("h".into()),
+//!                     Unit::from("g"),
+//!                     Unit::from("h"),
 //!                 ],
 //!              ],
 //!         ],
 //!         vec![
 //!             vec![
 //!                 vec![
-//!                     Token::UnitString("i".into()),
-//!                     Token::UnitString("j".into()),
+//!                     Unit::from("i"),
+//!                     Unit::from("j"),
 //!                 ],
 //!                 vec![
-//!                     Token::UnitString("k".into()),
-//!                     Token::UnitString("l".into()),
+//!                     Unit::from("k"),
+//!                     Unit::from("l"),
 //!                 ],
 //!             ],
 //!             vec![
 //!                 vec![
-//!                     Token::UnitString("m".into()),
-//!                     Token::UnitString("n".into()),
+//!                     Unit::from("m"),
+//!                     Unit::from("n"),
 //!                 ],
 //!                 vec![
-//!                     Token::UnitString("o".into()),
-//!                     Token::UnitString("p".into()),
+//!                     Unit::from("o"),
+//!                     Unit::from("p"),
 //!                 ],
 //!             ],
 //!         ],
@@ -300,7 +300,9 @@
 
 // Type aliases
 #[allow(dead_code)] pub type Tokens = Vec<Token>;
-#[allow(dead_code)] pub type Unit = Token;
+
+// Type aliases for USV naming
+#[allow(dead_code)] pub type Unit = String;
 #[allow(dead_code)] pub type Units = Vec<Unit>;
 #[allow(dead_code)] pub type Record = Units;
 #[allow(dead_code)] pub type Records = Vec<Record>;
@@ -308,6 +310,26 @@
 #[allow(dead_code)] pub type Groups = Vec<Records>;
 #[allow(dead_code)] pub type File = Groups;
 #[allow(dead_code)] pub type Files = Vec<File>;
+
+// Type aliases for spreadsheet naming
+#[allow(dead_code)] pub type SpreadsheetCell = String;
+#[allow(dead_code)] pub type SpreadsheetCells = Vec<SpreadsheetCell>;
+#[allow(dead_code)] pub type SpreadsheetRow = SpreadsheetCells;
+#[allow(dead_code)] pub type SpreadsheetRows = Vec<SpreadsheetRow>;
+#[allow(dead_code)] pub type SpreadsheetSheet = SpreadsheetRows;
+#[allow(dead_code)] pub type SpreadsheetSheets = Vec<SpreadsheetSheet>;
+#[allow(dead_code)] pub type SpreadsheetFolio = SpreadsheetSheets;
+#[allow(dead_code)] pub type SpreadsheetFolios = Vec<SpreadsheetFolio>;
+
+// Type aliases for database naming
+#[allow(dead_code)] pub type DatabaseField = String;
+#[allow(dead_code)] pub type DatabaseFields = Vec<DatabaseField>;
+#[allow(dead_code)] pub type DatabaseRow = DatabaseFields;
+#[allow(dead_code)] pub type DatabaseRows = Vec<DatabaseRow>;
+#[allow(dead_code)] pub type DatabaseTable = DatabaseRows;
+#[allow(dead_code)] pub type DatabaseTables = Vec<DatabaseTable>;
+#[allow(dead_code)] pub type DatabaseSchema = DatabaseTables;
+#[allow(dead_code)] pub type DatabaseSchemas = Vec<DatabaseSchema>;
 
 // Token enum that holds content data or a special character value.
 pub mod token; pub use token::Token;

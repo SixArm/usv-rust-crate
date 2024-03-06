@@ -14,8 +14,8 @@ impl<'a> std::iter::Iterator for UnitIterator<'a> {
             match next {
                 Some(token) => {
                     match token {
-                        Token::UnitString(s) => {
-                            return Some(Token::UnitString(s))
+                        Token::Unit(s) => {
+                            return Some(s)
                         },
                         _ => {},
                     }
@@ -45,22 +45,22 @@ mod tests {
         assert_eq!(
             actual,
             [
-                Token::UnitString("a".into()),
-                Token::UnitString("b".into()),
-                Token::UnitString("c".into()),
-                Token::UnitString("d".into()),
-                Token::UnitString("e".into()),
-                Token::UnitString("f".into()),
-                Token::UnitString("g".into()),
-                Token::UnitString("h".into()),
-                Token::UnitString("i".into()),
-                Token::UnitString("j".into()),
-                Token::UnitString("k".into()),
-                Token::UnitString("l".into()),
-                Token::UnitString("m".into()),
-                Token::UnitString("n".into()),
-                Token::UnitString("o".into()),
-                Token::UnitString("p".into()),
+                Unit::from("a"),
+                Unit::from("b"),
+                Unit::from("c"),
+                Unit::from("d"),
+                Unit::from("e"),
+                Unit::from("f"),
+                Unit::from("g"),
+                Unit::from("h"),
+                Unit::from("i"),
+                Unit::from("j"),
+                Unit::from("k"),
+                Unit::from("l"),
+                Unit::from("m"),
+                Unit::from("n"),
+                Unit::from("o"),
+                Unit::from("p"),
             ]
         );
     }

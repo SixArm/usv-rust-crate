@@ -15,8 +15,8 @@ impl<'a> std::iter::Iterator for RecordIterator<'a> {
             match next {
                 Some(token) => {
                     match token {
-                        Token::UnitString(_) => {
-                            units.push(token)
+                        Token::Unit(unit) => {
+                            units.push(unit)
                         },
                         Token::UnitSeparator => {}
                         Token::RecordSeparator |
@@ -62,36 +62,36 @@ mod tests {
             actual,
             [
                 vec![
-                    Token::UnitString("a".into()),
-                    Token::UnitString("b".into()),
+                    Unit::from("a"),
+                    Unit::from("b"),
                 ],
                 vec![
-                    Token::UnitString("c".into()),
-                    Token::UnitString("d".into()),
+                    Unit::from("c"),
+                    Unit::from("d"),
                 ],
                 vec![
-                    Token::UnitString("e".into()),
-                    Token::UnitString("f".into()),
+                    Unit::from("e"),
+                    Unit::from("f"),
                 ],
                 vec![
-                    Token::UnitString("g".into()),
-                    Token::UnitString("h".into()),
+                    Unit::from("g"),
+                    Unit::from("h"),
                 ],
                 vec![
-                    Token::UnitString("i".into()),
-                    Token::UnitString("j".into()),
+                    Unit::from("i"),
+                    Unit::from("j"),
                 ],
                 vec![
-                    Token::UnitString("k".into()),
-                    Token::UnitString("l".into()),
+                    Unit::from("k"),
+                    Unit::from("l"),
                 ],
                 vec![
-                    Token::UnitString("m".into()),
-                    Token::UnitString("n".into()),
+                    Unit::from("m"),
+                    Unit::from("n"),
                 ],
                 vec![
-                    Token::UnitString("o".into()),
-                    Token::UnitString("p".into()),
+                    Unit::from("o"),
+                    Unit::from("p"),
                 ],
             ]
         );

@@ -60,8 +60,8 @@ let output: Units = input.units().collect();
 assert_eq!(
     output,
     [
-        Token::UnitString("hello".into()),
-        Token::UnitString("world".into()),
+        Unit::from("hello"),
+        Unit::from("world"),
     ]
 );
 ```
@@ -98,12 +98,12 @@ assert_eq!(
     output,
     [
         vec![
-            Token::UnitString("hello".into()),
-            Token::UnitString("world".into()),
+            Unit::from("hello"),
+            Unit::from("world"),
         ],
         vec![
-            Token::UnitString("goodnight".into()),
-            Token::UnitString("moon".into()),
+            Unit::from("goodnight"),
+            Unit::from("moon"),
         ],
     ]
 );
@@ -173,44 +173,44 @@ assert_eq!(
         vec![
             vec![
                 vec![
-                    Token::UnitString("a".into()),
-                    Token::UnitString("b".into()),
+                    Unit::from("a"),
+                    Unit::from("b"),
                 ],
                 vec![
-                    Token::UnitString("c".into()),
-                    Token::UnitString("d".into()),
+                    Unit::from("c"),
+                    Unit::from("d"),
                 ],
             ],
             vec![
                 vec![
-                    Token::UnitString("e".into()),
-                    Token::UnitString("f".into()),
+                    Unit::from("e"),
+                    Unit::from("f"),
                 ],
                 vec![
-                    Token::UnitString("g".into()),
-                    Token::UnitString("h".into()),
+                    Unit::from("g"),
+                    Unit::from("h"),
                 ],
              ],
         ],
         vec![
             vec![
                 vec![
-                    Token::UnitString("i".into()),
-                    Token::UnitString("j".into()),
+                    Unit::from("i"),
+                    Unit::from("j"),
                 ],
                 vec![
-                    Token::UnitString("k".into()),
-                    Token::UnitString("l".into()),
+                    Unit::from("k"),
+                    Unit::from("l"),
                 ],
             ],
             vec![
                 vec![
-                    Token::UnitString("m".into()),
-                    Token::UnitString("n".into()),
+                    Unit::from("m"),
+                    Unit::from("n"),
                 ],
                 vec![
-                    Token::UnitString("o".into()),
-                    Token::UnitString("p".into()),
+                    Unit::from("o"),
+                    Unit::from("p"),
                 ],
             ],
         ],

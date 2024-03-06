@@ -4,4 +4,4 @@ version = 3
 
 [[package]]
 name = "usv"
-version = "0.3.3"
+version = "0.3.4"

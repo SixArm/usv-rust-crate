@@ -11,37 +11,37 @@ fn base_iterator_with_units_records_groups_files() {
     assert_eq!(
         actual,
         [
-            Token::UnitString("a".into()),
+            Token::Unit(Unit::from("a")),
             Token::UnitSeparator,
-            Token::UnitString("b".into()),
+            Token::Unit(Unit::from("b")),
             Token::RecordSeparator,
-            Token::UnitString("c".into()),
+            Token::Unit(Unit::from("c")),
             Token::UnitSeparator,
-            Token::UnitString("d".into()),
+            Token::Unit(Unit::from("d")),
             Token::GroupSeparator,
-            Token::UnitString("e".into()),
+            Token::Unit(Unit::from("e")),
             Token::UnitSeparator,
-            Token::UnitString("f".into()),
+            Token::Unit(Unit::from("f")),
             Token::RecordSeparator,
-            Token::UnitString("g".into()),
+            Token::Unit(Unit::from("g")),
             Token::UnitSeparator,
-            Token::UnitString("h".into()),
+            Token::Unit(Unit::from("h")),
             Token::FileSeparator,
-            Token::UnitString("i".into()),
+            Token::Unit(Unit::from("i")),
             Token::UnitSeparator,
-            Token::UnitString("j".into()),
+            Token::Unit(Unit::from("j")),
             Token::RecordSeparator,
-            Token::UnitString("k".into()),
+            Token::Unit(Unit::from("k")),
             Token::UnitSeparator,
-            Token::UnitString("l".into()),
+            Token::Unit(Unit::from("l")),
             Token::GroupSeparator,
-            Token::UnitString("m".into()),
+            Token::Unit(Unit::from("m")),
             Token::UnitSeparator,
-            Token::UnitString("n".into()),
+            Token::Unit(Unit::from("n")),
             Token::RecordSeparator,
-            Token::UnitString("o".into()),
+            Token::Unit(Unit::from("o")),
             Token::UnitSeparator,
-            Token::UnitString("p".into()),
+            Token::Unit(Unit::from("p")),
             Token::FileSeparator,
         ]
     );
@@ -60,22 +60,22 @@ fn unit_iterator_with_units_records_groups_files() {
     assert_eq!(
         actual,
         [
-            Token::UnitString("a".into()),
-            Token::UnitString("b".into()),
-            Token::UnitString("c".into()),
-            Token::UnitString("d".into()),
-            Token::UnitString("e".into()),
-            Token::UnitString("f".into()),
-            Token::UnitString("g".into()),
-            Token::UnitString("h".into()),
-            Token::UnitString("i".into()),
-            Token::UnitString("j".into()),
-            Token::UnitString("k".into()),
-            Token::UnitString("l".into()),
-            Token::UnitString("m".into()),
-            Token::UnitString("n".into()),
-            Token::UnitString("o".into()),
-            Token::UnitString("p".into()),
+            Unit::from("a"),
+            Unit::from("b"),
+            Unit::from("c"),
+            Unit::from("d"),
+            Unit::from("e"),
+            Unit::from("f"),
+            Unit::from("g"),
+            Unit::from("h"),
+            Unit::from("i"),
+            Unit::from("j"),
+            Unit::from("k"),
+            Unit::from("l"),
+            Unit::from("m"),
+            Unit::from("n"),
+            Unit::from("o"),
+            Unit::from("p"),
         ]
     );
 }
@@ -94,36 +94,36 @@ fn record_iterator_with_units_records_groups_files() {
         actual,
         [
             vec![
-                Token::UnitString("a".into()),
-                Token::UnitString("b".into()),
+                Unit::from("a"),
+                Unit::from("b"),
             ],
             vec![
-                Token::UnitString("c".into()),
-                Token::UnitString("d".into()),
+                Unit::from("c"),
+                Unit::from("d"),
             ],
             vec![
-                Token::UnitString("e".into()),
-                Token::UnitString("f".into()),
+                Unit::from("e"),
+                Unit::from("f"),
             ],
             vec![
-                Token::UnitString("g".into()),
-                Token::UnitString("h".into()),
+                Unit::from("g"),
+                Unit::from("h"),
             ],
             vec![
-                Token::UnitString("i".into()),
-                Token::UnitString("j".into()),
+                Unit::from("i"),
+                Unit::from("j"),
             ],
             vec![
-                Token::UnitString("k".into()),
-                Token::UnitString("l".into()),
+                Unit::from("k"),
+                Unit::from("l"),
             ],
             vec![
-                Token::UnitString("m".into()),
-                Token::UnitString("n".into()),
+                Unit::from("m"),
+                Unit::from("n"),
             ],
             vec![
-                Token::UnitString("o".into()),
-                Token::UnitString("p".into()),
+                Unit::from("o"),
+                Unit::from("p"),
             ],
         ]
     );
@@ -144,42 +144,42 @@ fn group_iterator_with_units_records_groups_files() {
         [
             vec![
                 vec![
-                    Token::UnitString("a".into()),
-                    Token::UnitString("b".into()),
+                    Unit::from("a"),
+                    Unit::from("b"),
                 ],
                 vec![
-                    Token::UnitString("c".into()),
-                    Token::UnitString("d".into()),
-                ],
-            ],
-            vec![
-                vec![
-                    Token::UnitString("e".into()),
-                    Token::UnitString("f".into()),
-                ],
-                vec![
-                    Token::UnitString("g".into()),
-                    Token::UnitString("h".into()),
+                    Unit::from("c"),
+                    Unit::from("d"),
                 ],
             ],
             vec![
                 vec![
-                    Token::UnitString("i".into()),
-                    Token::UnitString("j".into()),
+                    Unit::from("e"),
+                    Unit::from("f"),
                 ],
                 vec![
-                    Token::UnitString("k".into()),
-                    Token::UnitString("l".into()),
+                    Unit::from("g"),
+                    Unit::from("h"),
+                ],
+            ],
+            vec![
+                vec![
+                    Unit::from("i"),
+                    Unit::from("j"),
+                ],
+                vec![
+                    Unit::from("k"),
+                    Unit::from("l"),
                 ]
             ],
             vec![
                 vec![
-                    Token::UnitString("m".into()),
-                    Token::UnitString("n".into()),
+                    Unit::from("m"),
+                    Unit::from("n"),
                 ],
                 vec![
-                    Token::UnitString("o".into()),
-                    Token::UnitString("p".into()),
+                    Unit::from("o"),
+                    Unit::from("p"),
                 ],
             ],
         ],
@@ -202,44 +202,44 @@ fn file_iterator_with_units_records_groups_files() {
             vec![
                 vec![
                     vec![
-                        Token::UnitString("a".into()),
-                        Token::UnitString("b".into()),
+                        Unit::from("a"),
+                        Unit::from("b"),
                     ],
                     vec![
-                        Token::UnitString("c".into()),
-                        Token::UnitString("d".into()),
+                        Unit::from("c"),
+                        Unit::from("d"),
                     ],
                 ],
                 vec![
                     vec![
-                        Token::UnitString("e".into()),
-                        Token::UnitString("f".into()),
+                        Unit::from("e"),
+                        Unit::from("f"),
                     ],
                     vec![
-                        Token::UnitString("g".into()),
-                        Token::UnitString("h".into()),
+                        Unit::from("g"),
+                        Unit::from("h"),
                     ],
                 ],
             ],
             vec![
                 vec![
                     vec![
-                        Token::UnitString("i".into()),
-                        Token::UnitString("j".into()),
+                        Unit::from("i"),
+                        Unit::from("j"),
                     ],
                     vec![
-                        Token::UnitString("k".into()),
-                        Token::UnitString("l".into()),
+                        Unit::from("k"),
+                        Unit::from("l"),
                     ]
                 ],
                 vec![
                     vec![
-                        Token::UnitString("m".into()),
-                        Token::UnitString("n".into()),
+                        Unit::from("m"),
+                        Unit::from("n"),
                     ],
                     vec![
-                        Token::UnitString("o".into()),
-                        Token::UnitString("p".into()),
+                        Unit::from("o"),
+                        Unit::from("p"),
                     ],
                 ],
             ],

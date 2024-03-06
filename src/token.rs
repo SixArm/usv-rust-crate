@@ -1,15 +1,17 @@
 #[derive(Debug, Clone, PartialEq)]
 pub enum Token {
-    // Markers
+    // Separators
     UnitSeparator,
     RecordSeparator,
     GroupSeparator,
     FileSeparator,
+    // Modifiers
     EndOfTransmissionBlock,
+    //SynchronousIdle,
     Escape,
     // Content
-    UnitChar(char),
-    UnitString(String),
+    Unit(crate::Unit),
+    Char(char),
 }
 
 impl std::fmt::Display for Token {
@@ -20,9 +22,10 @@ impl std::fmt::Display for Token {
             Token::GroupSeparator => write!(f, "␝"),
             Token::FileSeparator => write!(f, "␜"),
             Token::EndOfTransmissionBlock => write!(f, "␗"),
+            //Token::SynchronousIdle => write!(f, "␖"),
             Token::Escape => write!(f, "␛"),
-            Token::UnitChar(c) => write!(f, "{}", c),
-            Token::UnitString(s) => write!(f, "{}", s),
+            Token::Char(c) => write!(f, "{}", c),
+            Token::Unit(s) => write!(f, "{}", s),
         }
     }
 }
@@ -35,8 +38,9 @@ impl From<char> for Token {
             '␝' => Token::GroupSeparator,
             '␜' => Token::FileSeparator,
             '␗' => Token::EndOfTransmissionBlock,
+            //'␖' => Token::SynchronousIdle,
             '␛' => Token::Escape,
-            c => Token::UnitChar(c)
+            c => Token::Char(c)
         }
     }
 }
