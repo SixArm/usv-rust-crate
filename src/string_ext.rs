@@ -54,7 +54,7 @@ impl StringExt for String {
 mod tests {
     use super::*;
     use crate::{
-        Token, 
+        Token,
         Tokens,
         Unit,
         Units,

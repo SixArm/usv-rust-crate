@@ -7,7 +7,7 @@ pub enum Token {
     FileSeparator,
     // Modifiers
     EndOfTransmissionBlock,
-    //SynchronousIdle,
+    SynchronousIdle,
     Escape,
     // Content
     Unit(crate::Unit),
@@ -22,7 +22,7 @@ impl std::fmt::Display for Token {
             Token::GroupSeparator => write!(f, "␝"),
             Token::FileSeparator => write!(f, "␜"),
             Token::EndOfTransmissionBlock => write!(f, "␗"),
-            //Token::SynchronousIdle => write!(f, "␖"),
+            Token::SynchronousIdle => write!(f, "␖"),
             Token::Escape => write!(f, "␛"),
             Token::Char(c) => write!(f, "{}", c),
             Token::Unit(s) => write!(f, "{}", s),
@@ -38,7 +38,7 @@ impl From<char> for Token {
             '␝' => Token::GroupSeparator,
             '␜' => Token::FileSeparator,
             '␗' => Token::EndOfTransmissionBlock,
-            //'␖' => Token::SynchronousIdle,
+            '␖' => Token::SynchronousIdle,
             '␛' => Token::Escape,
             c => Token::Char(c)
         }

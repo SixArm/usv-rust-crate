@@ -48,9 +48,9 @@ impl<'a> std::iter::Iterator for TokenIterator<'a> {
                         '␗' => {
                             return Some(Token::EndOfTransmissionBlock)
                         },
-                        // '␖' => {
-                        //     return Some(Token::SynchronousIdle)
-                        // },
+                        '␖' => {
+                            return Some(Token::SynchronousIdle)
+                        },
                         '␛' => {
                             match self.chars.next() {
                                 Some(c) => {
@@ -274,21 +274,21 @@ mod tests {
     ///
     /// Expect: a string of one synchronous idle.
     ///
-    // #[test]
-    // fn synchronous_idle() {
-    //     let input = "␖";
-    //     let iter = TokenIterator {
-    //         chars: input.chars(),
-    //         ..Default::default()
-    //     };
-    //     let actual: Vec<Token> = iter.collect();
-    //     assert_eq!(
-    //         actual,
-    //         [
-    //             Token::SynchronousIdle,
-    //         ]
-    //     );
-    // }
+    #[test]
+    fn synchronous_idle() {
+        let input = "␖";
+        let iter = TokenIterator {
+            chars: input.chars(),
+            ..Default::default()
+        };
+        let actual: Vec<Token> = iter.collect();
+        assert_eq!(
+            actual,
+            [
+                Token::SynchronousIdle,
+            ]
+        );
+    }
 
     /// A string of typical characters of any length then a unit separator
     /// will return a unit of the typical characters and a unit separator.

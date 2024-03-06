@@ -54,7 +54,7 @@ impl StrExt for str {
 mod tests {
     use super::*;
     use crate::{
-        Token, 
+        Token,
         Tokens,
         Unit,
         Units,
