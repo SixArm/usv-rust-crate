@@ -18,11 +18,7 @@ impl<'a> std::iter::Iterator for RecordIterator<'a> {
                         Token::Unit(unit) => {
                             units.push(unit)
                         },
-                        Token::UnitSeparator => {}
-                        Token::RecordSeparator |
-                        Token::GroupSeparator |
-                        Token::FileSeparator |
-                        Token::EndOfTransmissionBlock => {
+                        Token::RecordSeparator => {
                             if !units.is_empty() {
                                 return Some(units)
                             } else {
@@ -33,11 +29,7 @@ impl<'a> std::iter::Iterator for RecordIterator<'a> {
                     }
                 },
                 None => {
-                    if !units.is_empty() {
-                        return Some(units)
-                    } else {
-                        return None
-                    }
+                    return None
                 }
             }
         }
@@ -50,7 +42,7 @@ mod tests {
 
     #[test]
     fn units_records_groups_files() {
-        let input = "a␟b␞c␟d␝e␟f␞g␟h␜i␟j␞k␟l␝m␟n␞o␟p␜";
+        let input = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜";
         let iter = RecordIterator {
             iterator: TokenIterator {
                 chars: input.chars(),
@@ -59,7 +51,7 @@ mod tests {
         };
         let actual: Records = iter.collect();
         assert_eq!(
-            actual,
+            actual, 
             [
                 svec!["a", "b"],
                 svec!["c", "d"],

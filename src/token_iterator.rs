@@ -20,17 +20,6 @@ impl<'a> std::iter::Iterator for TokenIterator<'a> {
 
     fn next(&mut self) -> Option<Self::Item> {
 
-        if let Some(c) = self.next {
-            self.next = None;
-            return match c {
-                '␟' => Some(Token::UnitSeparator),
-                '␞' => Some(Token::RecordSeparator),
-                '␝' => Some(Token::GroupSeparator),
-                '␜' => Some(Token::FileSeparator),
-                _ => panic!("{}", c)
-            }
-        }
-
         // Use the content string to push each character for typical data.
         // When the processing loop encounters any end-of-content aspect,
         // such as a separator or end-of-file, then return the content.
@@ -41,16 +30,12 @@ impl<'a> std::iter::Iterator for TokenIterator<'a> {
             match next {
                 Some(c) => {
                     match c {
-                        '␟' | '␞' | '␝' | '␜' => {
-                            self.next = next;
-                            return Some(Token::Unit(content))
-                        },
-                        '␗' => {
-                            return Some(Token::EndOfTransmissionBlock)
-                        },
-                        '␖' => {
-                            return Some(Token::SynchronousIdle)
-                        },
+                        '␟' => { return Some(Token::Unit(content)) },
+                        '␞' => { return Some(Token::RecordSeparator) },
+                        '␝' => { return Some(Token::GroupSeparator) },
+                        '␜' => { return Some(Token::FileSeparator) },
+                        '␗' => { return Some(Token::EndOfTransmissionBlock) },
+                        '␖' => { return Some(Token::SynchronousIdle) },
                         '␛' => {
                             match self.chars.next() {
                                 Some(c) => {
@@ -132,13 +117,13 @@ mod tests {
     }
 
     /// A string of one unit separator returns one unit
-    /// that contains an empty string, then a unit separator.
+    /// that contains an empty string.
     ///
     /// This is a fundamental test.
     ///
     /// Input: a unit separator.
     ///
-    /// Expect: a unit that contains an empty string, then a unit separator.
+    /// Expect: a unit that contains an empty string.
     ///
     #[test]
     fn unit_separator() {
@@ -152,21 +137,17 @@ mod tests {
             actual,
             [
                 Token::Unit(Unit::from("")),
-                Token::UnitSeparator,
             ]
         );
     }
 
-    /// A string of one record separator returns one unit
-    /// that contains an empty string, then a record separator.
-    ///
-    /// This is because the separator implicitly ends the unit.
+    /// A string of one record separator returns a record separator.
     ///
     /// This is a fundamental test.
     ///
     /// Input: a string of one record separator.
     ///
-    /// Expect: a unit that contains an empty string, then a record separator.
+    /// Expect: a record separator.
     ///
     #[test]
     fn record_separator() {
@@ -179,22 +160,18 @@ mod tests {
         assert_eq!(
             actual,
             [
-                Token::Unit(Unit::from("")),
                 Token::RecordSeparator,
             ]
         );
     }
 
-    /// A string of one group separator returns one unit
-    /// that contains an empty string, then a group separator.
-    ///
-    /// This is because the separator implicitly ends the unit.
+    /// A string of one group separator returns a group separator.
     ///
     /// This is a fundamental test.
     ///
     /// Input: a string of one group separator.
     ///
-    /// Expect: a unit that contains an empty string, then a group separator.
+    /// Expect: a group separator.
     ///
     #[test]
     fn group_separator() {
@@ -207,22 +184,18 @@ mod tests {
         assert_eq!(
             actual,
             [
-                Token::Unit(Unit::from("")),
                 Token::GroupSeparator,
             ]
         );
     }
 
-    /// A string of one file separator returns one unit
-    /// that contains an empty string, then a file separator.
-    ///
-    /// This is because the separator implicitly ends the unit.
+    /// A string of one file separator returns a file separator.
     ///
     /// This is a fundamental test.
     ///
     /// Input: a string of one file separator.
     ///
-    /// Expect: a unit that contains an empty string, then a file separator.
+    /// Expect: a file separator.
     ///
     #[test]
     fn file_separator() {
@@ -235,20 +208,18 @@ mod tests {
         assert_eq!(
             actual,
             [
-                Token::Unit(Unit::from("")),
                 Token::FileSeparator,
             ]
         );
     }
 
-    /// A string of one end of transmission block returns an empty list.
+    /// A string of one end of transmission block returns an end of transmission block.
     ///
     /// This is a fundamental test.
     ///
     /// Input: a string of one unit separator.
     ///
-    /// Expect: a unit that contains an empty string, then an end of
-    /// transmission block.
+    /// Expect: an end of transmission block.
     ///
     #[test]
     fn end_of_transmission_block() {
@@ -266,13 +237,13 @@ mod tests {
         );
     }
 
-    /// A string of one synchronous idle returns itself.
+    /// A string of one synchronous idle returns a synchronous idle..
     ///
     /// This is a fundamental test.
     ///
     /// Input: a string of one synchronous idle.
     ///
-    /// Expect: a string of one synchronous idle.
+    /// Expect: a synchronous idle.
     ///
     #[test]
     fn synchronous_idle() {
@@ -291,13 +262,13 @@ mod tests {
     }
 
     /// A string of typical characters of any length then a unit separator
-    /// will return a unit of the typical characters and a unit separator.
+    /// will return a unit of the typical characters.
     ///
     /// This is a typical test.
     ///
     /// Input: a string of typical characters then a unit separator.
     ///
-    /// Expect: a unit and unit separator.
+    /// Expect: a unit.
     ///
     #[test]
     fn unit() {
@@ -311,18 +282,17 @@ mod tests {
             actual,
             [
                 Token::Unit(Unit::from("a")),
-                Token::UnitSeparator,
             ]
         );
     }
 
-    /// A string of typical units will return typical results.
+    /// A string of typical units will return typical units.
     ///
     /// This is an example documentation test.
     ///
     /// Input: a string of typical units.
     ///
-    /// Expect: typical units and unit separators.
+    /// Expect: typical units .
     ///
     #[test]
     fn units() {
@@ -336,16 +306,14 @@ mod tests {
             actual,
             [
                 Token::Unit(Unit::from("a")),
-                Token::UnitSeparator,
                 Token::Unit(Unit::from("b")),
-                Token::UnitSeparator,
             ]
         );
     }
 
     /// A string of typical units, records, groups, files, etc.
     /// will return typical units, records, groups, files.
-    ///
+    /// 
     /// This is an example documentation test.
     ///
     /// Input: a string of empty units.
@@ -354,7 +322,7 @@ mod tests {
     ///
     #[test]
     fn units_records_groups_files() {
-        let input = "a␟b␞c␟d␝e␟f␞g␟h␜i␟j␞k␟l␝m␟n␞o␟p␜";
+        let input = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜";
         let iter = TokenIterator {
             chars: input.chars(),
             ..Default::default()
@@ -364,36 +332,34 @@ mod tests {
             actual,
             [
                 Token::Unit(Unit::from("a")),
-                Token::UnitSeparator,
                 Token::Unit(Unit::from("b")),
                 Token::RecordSeparator,
                 Token::Unit(Unit::from("c")),
-                Token::UnitSeparator,
                 Token::Unit(Unit::from("d")),
+                Token::RecordSeparator,
                 Token::GroupSeparator,
                 Token::Unit(Unit::from("e")),
-                Token::UnitSeparator,
                 Token::Unit(Unit::from("f")),
                 Token::RecordSeparator,
                 Token::Unit(Unit::from("g")),
-                Token::UnitSeparator,
                 Token::Unit(Unit::from("h")),
+                Token::RecordSeparator,
+                Token::GroupSeparator,
                 Token::FileSeparator,
                 Token::Unit(Unit::from("i")),
-                Token::UnitSeparator,
                 Token::Unit(Unit::from("j")),
                 Token::RecordSeparator,
                 Token::Unit(Unit::from("k")),
-                Token::UnitSeparator,
                 Token::Unit(Unit::from("l")),
+                Token::RecordSeparator,
                 Token::GroupSeparator,
                 Token::Unit(Unit::from("m")),
-                Token::UnitSeparator,
                 Token::Unit(Unit::from("n")),
                 Token::RecordSeparator,
                 Token::Unit(Unit::from("o")),
-                Token::UnitSeparator,
                 Token::Unit(Unit::from("p")),
+                Token::RecordSeparator,
+                Token::GroupSeparator,
                 Token::FileSeparator,
             ]
         );
@@ -411,7 +377,6 @@ mod tests {
             actual,
             [
                 Token::Unit(Unit::from("abc")),
-                Token::UnitSeparator,
             ]
         );
     }
@@ -428,7 +393,6 @@ mod tests {
             actual,
             [
                 Token::Unit(Unit::from("ab␟cd")),
-                Token::UnitSeparator,
             ]
         );
     }
@@ -445,14 +409,13 @@ mod tests {
             actual,
             [
                 Token::Unit(Unit::from("ab␛cd")),
-                Token::UnitSeparator,
             ]
         );
     }
 
     #[test]
     fn escape_eol_per_unit() {
-        let input = "a␟␛\nb␞␛\nc␟␛\nd␞␛\n";
+        let input = "a␟␛\nb␟␞␛\nc␟␛\nd␟␞␛\n";
         let iter = TokenIterator {
             chars: input.chars(),
             ..Default::default()
@@ -462,11 +425,9 @@ mod tests {
             actual,
             [
                 Token::Unit(Unit::from("a")),
-                Token::UnitSeparator,
                 Token::Unit(Unit::from("b")),
                 Token::RecordSeparator,
                 Token::Unit(Unit::from("c")),
-                Token::UnitSeparator,
                 Token::Unit(Unit::from("d")),
                 Token::RecordSeparator,
             ]
@@ -475,7 +436,7 @@ mod tests {
 
     #[test]
     fn escape_eol_per_record() {
-        let input = "a␟b␞␛\nc␟d␞␛\n";
+        let input = "a␟b␟␞␛\nc␟d␟␞␛\n";
         let iter = TokenIterator {
             chars: input.chars(),
             ..Default::default()
@@ -485,11 +446,9 @@ mod tests {
             actual,
             [
                 Token::Unit(Unit::from("a")),
-                Token::UnitSeparator,
                 Token::Unit(Unit::from("b")),
                 Token::RecordSeparator,
                 Token::Unit(Unit::from("c")),
-                Token::UnitSeparator,
                 Token::Unit(Unit::from("d")),
                 Token::RecordSeparator,
             ]

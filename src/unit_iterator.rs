@@ -34,7 +34,7 @@ mod tests {
 
     #[test]
     fn units_records_groups_files() {
-        let input = "a␟b␞c␟d␝e␟f␞g␟h␜i␟j␞k␟l␝m␟n␞o␟p␜";
+        let input = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜";
         let iter = UnitIterator {
             iterator: TokenIterator {
                 chars: input.chars(),
@@ -43,7 +43,7 @@ mod tests {
         };
         let actual: Units = iter.collect();
         assert_eq!(
-            actual,
+            actual, 
             svec!["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"]
         );
     }

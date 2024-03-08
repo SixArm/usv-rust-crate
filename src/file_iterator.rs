@@ -20,7 +20,6 @@ impl<'a> std::iter::Iterator for FileIterator<'a> {
                         Token::Unit(unit) => {
                             units.push(unit)
                         },
-                        Token::UnitSeparator => {}
                         Token::RecordSeparator => {
                             if !units.is_empty() {
                                 records.push(units);
@@ -38,8 +37,7 @@ impl<'a> std::iter::Iterator for FileIterator<'a> {
                                 records = Records::new();
                             }
                         }
-                        Token::FileSeparator |
-                        Token::EndOfTransmissionBlock => {
+                        Token::FileSeparator => {
                             if !units.is_empty() {
                                 records.push(units);
                                 units = Units::new();
@@ -61,22 +59,7 @@ impl<'a> std::iter::Iterator for FileIterator<'a> {
                     }
                 },
                 None => {
-                    if !units.is_empty() {
-                        records.push(units);
-                        units = Units::new();
-                    }
-                    if !records.is_empty() {
-                        groups.push(records);
-                        units = Units::new();
-                        records = Records::new();
-                    }
-                    if !groups.is_empty() {
-                        units.truncate(0);
-                        records.truncate(0);
-                        return Some(groups)
-                    } else {
-                        return None
-                    }
+                    return None
                 }
             }
         }
@@ -89,7 +72,7 @@ mod tests {
 
     #[test]
     fn units_records_groups_files() {
-        let input = "a␟b␞c␟d␝e␟f␞g␟h␜i␟j␞k␟l␝m␟n␞o␟p␜";
+        let input = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜";
         let iter = FileIterator {
             iterator: TokenIterator {
                 chars: input.chars(),
@@ -98,7 +81,7 @@ mod tests {
         };
         let actual: Files = iter.collect();
         assert_eq!(
-            actual,
+            actual, 
             [
                 vec![
                     vec![

@@ -19,16 +19,13 @@ impl<'a> std::iter::Iterator for GroupIterator<'a> {
                         Token::Unit(unit) => {
                             units.push(unit)
                         },
-                        Token::UnitSeparator => {}
                         Token::RecordSeparator => {
                             if !units.is_empty() {
                                 records.push(units);
                                 units = Units::new();
                             }
                         }
-                        Token::GroupSeparator |
-                        Token::FileSeparator |
-                        Token::EndOfTransmissionBlock => {
+                        Token::GroupSeparator => {
                             if !units.is_empty() {
                                 records.push(units);
                                 units = Units::new();
@@ -44,16 +41,7 @@ impl<'a> std::iter::Iterator for GroupIterator<'a> {
                     }
                 },
                 None => {
-                    if !units.is_empty() {
-                        records.push(units);
-                        units = Units::new();
-                    }
-                    if !records.is_empty() {
-                        units.truncate(0);
-                        return Some(records)
-                    } else {
-                        return None
-                    }
+                    return None
                 }
             }
         }
@@ -66,7 +54,7 @@ mod tests {
 
     #[test]
     fn units_records_groups_files() {
-        let input = "a␟b␞c␟d␝e␟f␞g␟h␜i␟j␞k␟l␝m␟n␞o␟p␜";
+        let input = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜";
         let iter = GroupIterator {
             iterator: TokenIterator {
                 chars: input.chars(),
@@ -75,7 +63,7 @@ mod tests {
         };
         let actual: Groups = iter.collect();
         assert_eq!(
-            actual,
+            actual, 
             [
                 vec![
                     svec!["a", "b"],
@@ -93,7 +81,7 @@ mod tests {
                     svec!["m", "n"],
                     svec!["o", "p"],
                 ],
-            ],
+            ]    
         );
     }
 

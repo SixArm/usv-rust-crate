@@ -77,21 +77,21 @@
 //! … is represented in USV as two records, each with two units:
 //!
 //! ```usv
-//! hello␟world␞goodnight␟moon␞
+//! hello␟world␟␞goodnight␟␟moon␞
 //! ```
 //!
 //! Optional: if you prefer to see one record per line, then end each line with a USV escape:
 //!
 //! ```usv
-//! hello␟world␞␛
-//! goodnight␟moon␞␛
+//! hello␟world␟␞␛
+//! goodnight␟moon␟␞␛
 //! ```
 //!
 //! Example source code:
 //!
 //! ```rust
 //! use usv::*;
-//! let input = "hello␟world␞goodnight␟moon␞";
+//! let input = "hello␟world␟␞goodnight␟moon␟␞";
 //! let output: Records = input.records().collect();
 //! assert_eq!(
 //!     output,
@@ -140,30 +140,33 @@
 //! USV with 2 units by 2 records by 2 groups by 2 files:
 //!
 //! ```usv
-//! a␟b␞c␟d␝e␟f␞g␟h␜i␟j␞k␟l␝m␟n␞o␟p␜
+//! a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜
 //! ```
 //!
-//! This is what the USV looks like when you display it with a simple display script included in this repository:
-//!
-//! ```txt
-//! a,b
-//! c,d
-//! -
-//! e,f
-//! g,h
-//! =
-//! i,j
-//! k,l
-//! -
-//! m,n
-//! o,p
+//! Optional: if you prefer to see one record per line, then end each line with a USV escape:
+//! 
+//! ```usv
+//! a␟b␟␞␛
+//! c␟d␟␞␛
+//! ␝␛
+//! e␟f␟␞␛
+//! g␟h␟␞␛
+//! ␝␛
+//! ␜␛
+//! i␟j␟␞␛
+//! k␟l␟␞␛
+//! ␝␛
+//! m␟n␟␞␛
+//! o␟p␟␞␛
+//! ␝␛
+//! ␜␛
 //! ```
 //!
 //! Example source code:
 //!
 //! ```rust
 //! use usv::*;
-//! let input = "a␟b␞c␟d␝e␟f␞g␟h␜i␟j␞k␟l␝m␟n␞o␟p␜";
+//! let input = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜";
 //! let output: Files = input.files().collect();
 //! assert_eq!(
 //!     output,
@@ -247,9 +250,10 @@
 //!
 //! Example of a unit that contains a synchronous idle symbol:
 //!
-// ```usv
-// a␖b␞
-// ```
+//! ```usv
+//! a␖b␞
+//! ```
+//!
 //! ## USV is easy and friendly
 //!
 //! USV is intended to be easy to use and friendly to try:

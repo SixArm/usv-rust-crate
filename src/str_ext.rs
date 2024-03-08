@@ -54,6 +54,7 @@ impl StrExt for str {
 mod tests {
     use super::*;
     use crate::{
+        svec,
         Token,
         Tokens,
         Unit,
@@ -65,42 +66,40 @@ mod tests {
 
     #[test]
     fn token_iterator_with_units_records_groups_files() {
-        let input: &str = "a␟b␞c␟d␝e␟f␞g␟h␜i␟j␞k␟l␝m␟n␞o␟p␜";
+        let input = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜";
         let actual: Tokens = input.tokens().collect();
         assert_eq!(
             actual,
             [
                 Token::Unit(Unit::from("a")),
-                Token::UnitSeparator,
                 Token::Unit(Unit::from("b")),
                 Token::RecordSeparator,
                 Token::Unit(Unit::from("c")),
-                Token::UnitSeparator,
                 Token::Unit(Unit::from("d")),
+                Token::RecordSeparator,
                 Token::GroupSeparator,
                 Token::Unit(Unit::from("e")),
-                Token::UnitSeparator,
                 Token::Unit(Unit::from("f")),
                 Token::RecordSeparator,
                 Token::Unit(Unit::from("g")),
-                Token::UnitSeparator,
                 Token::Unit(Unit::from("h")),
+                Token::RecordSeparator,
+                Token::GroupSeparator,
                 Token::FileSeparator,
                 Token::Unit(Unit::from("i")),
-                Token::UnitSeparator,
                 Token::Unit(Unit::from("j")),
                 Token::RecordSeparator,
                 Token::Unit(Unit::from("k")),
-                Token::UnitSeparator,
                 Token::Unit(Unit::from("l")),
+                Token::RecordSeparator,
                 Token::GroupSeparator,
                 Token::Unit(Unit::from("m")),
-                Token::UnitSeparator,
                 Token::Unit(Unit::from("n")),
                 Token::RecordSeparator,
                 Token::Unit(Unit::from("o")),
-                Token::UnitSeparator,
                 Token::Unit(Unit::from("p")),
+                Token::RecordSeparator,
+                Token::GroupSeparator,
                 Token::FileSeparator,
             ]
         );
@@ -108,174 +107,85 @@ mod tests {
 
     #[test]
     fn unit_iterator_with_units_records_groups_files() {
-        let input: &str = "a␟b␞c␟d␝e␟f␞g␟h␜i␟j␞k␟l␝m␟n␞o␟p␜";
+        let input = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜";
         let actual: Units = input.units().collect();
         assert_eq!(
             actual,
-            [
-                Unit::from("a"),
-                Unit::from("b"),
-                Unit::from("c"),
-                Unit::from("d"),
-                Unit::from("e"),
-                Unit::from("f"),
-                Unit::from("g"),
-                Unit::from("h"),
-                Unit::from("i"),
-                Unit::from("j"),
-                Unit::from("k"),
-                Unit::from("l"),
-                Unit::from("m"),
-                Unit::from("n"),
-                Unit::from("o"),
-                Unit::from("p"),
-            ]
+            svec!["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"]
         );
     }
 
     #[test]
     fn record_iterator_with_units_records_groups_files() {
-        let input: &str = "a␟b␞c␟d␝e␟f␞g␟h␜i␟j␞k␟l␝m␟n␞o␟p␜";
+        let input = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜";
         let actual: Records = input.records().collect();
         assert_eq!(
             actual,
             [
-                vec![
-                    Unit::from("a"),
-                    Unit::from("b"),
-                ],
-                vec![
-                    Unit::from("c"),
-                    Unit::from("d"),
-                ],
-                vec![
-                    Unit::from("e"),
-                    Unit::from("f"),
-                ],
-                vec![
-                    Unit::from("g"),
-                    Unit::from("h"),
-                ],
-                vec![
-                    Unit::from("i"),
-                    Unit::from("j"),
-                ],
-                vec![
-                    Unit::from("k"),
-                    Unit::from("l"),
-                ],
-                vec![
-                    Unit::from("m"),
-                    Unit::from("n"),
-                ],
-                vec![
-                    Unit::from("o"),
-                    Unit::from("p"),
-                ],
+                svec!["a", "b"],
+                svec!["c", "d"],
+                svec!["e", "f"],
+                svec!["g", "h"],
+                svec!["i", "j"],
+                svec!["k", "l"],
+                svec!["m", "n"],
+                svec!["o", "p"],
             ]
         );
     }
 
     #[test]
     fn group_iterator_with_units_records_groups_files() {
-        let input: &str = "a␟b␞c␟d␝e␟f␞g␟h␜i␟j␞k␟l␝m␟n␞o␟p␜";
+        let input = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜";
         let actual: Groups = input.groups().collect();
         assert_eq!(
             actual,
             [
                 vec![
-                    vec![
-                        Unit::from("a"),
-                        Unit::from("b"),
-                    ],
-                    vec![
-                        Unit::from("c"),
-                        Unit::from("d"),
-                    ],
+                    svec!["a", "b"],
+                    svec!["c", "d"],
                 ],
                 vec![
-                    vec![
-                        Unit::from("e"),
-                        Unit::from("f"),
-                    ],
-                    vec![
-                        Unit::from("g"),
-                        Unit::from("h"),
-                    ],
+                    svec!["e", "f"],
+                    svec!["g", "h"],
                 ],
                 vec![
-                    vec![
-                        Unit::from("i"),
-                        Unit::from("j"),
-                    ],
-                    vec![
-                        Unit::from("k"),
-                        Unit::from("l"),
-                    ]
+                    svec!["i", "j"],
+                    svec!["k", "l"]
                 ],
                 vec![
-                    vec![
-                        Unit::from("m"),
-                        Unit::from("n"),
-                    ],
-                    vec![
-                        Unit::from("o"),
-                        Unit::from("p"),
-                    ],
+                    svec!["m", "n"],
+                    svec!["o", "p"],
                 ],
-            ],
+            ]
         );
     }
 
     #[test]
     fn file_iterator_with_units_records_groups_files() {
-        let input: &str = "a␟b␞c␟d␝e␟f␞g␟h␜i␟j␞k␟l␝m␟n␞o␟p␜";
+        let input = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜";
         let actual: Files = input.files().collect();
         assert_eq!(
             actual,
             [
                 vec![
                     vec![
-                        vec![
-                            Unit::from("a"),
-                            Unit::from("b"),
-                        ],
-                        vec![
-                            Unit::from("c"),
-                            Unit::from("d"),
-                        ],
+                        svec!["a", "b"],
+                        svec!["c", "d"],
                     ],
                     vec![
-                        vec![
-                            Unit::from("e"),
-                            Unit::from("f"),
-                        ],
-                        vec![
-                            Unit::from("g"),
-                            Unit::from("h"),
-                        ],
+                        svec!["e", "f"],
+                        svec!["g", "h"],
                     ],
                 ],
                 vec![
                     vec![
-                        vec![
-                            Unit::from("i"),
-                            Unit::from("j"),
-                        ],
-                        vec![
-                            Unit::from("k"),
-                            Unit::from("l"),
-                        ]
+                        svec!["i", "j"],
+                        svec!["k", "l"],
                     ],
                     vec![
-                        vec![
-                            Unit::from("m"),
-                            Unit::from("n"),
-                        ],
-                        vec![
-                            Unit::from("o"),
-                            Unit::from("p"),
-                        ],
+                        svec!["m", "n"],
+                        svec!["o", "p"],
                     ],
                 ],
             ]

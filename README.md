@@ -80,14 +80,14 @@ This kind of data:
 Is represented in USV as two records, each with two units:
 
 ```
-hello␟world␞goodnight␟moon␞
+hello␟world␟␞goodnight␟moon␟␞
 ```
 
 Optional: if you prefer to see one record per line, then end each line with a USV escape:
 
 ```usv
-hello␟world␞␛
-goodnight␟moon␞␛
+hello␟world␟␞␛
+goodnight␟moon␟␞␛
 ```
 
 Example source code:
@@ -144,30 +144,33 @@ Example files:
 USV with 2 units by 2 records by 2 groups by 2 files:
 
 ```usv
-a␟b␞c␟d␝e␟f␞g␟h␜i␟j␞k␟l␝m␟n␞o␟p␜
+a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜
 ```
 
-This is what the USV looks like when you display it with a simple display script included in this repository:
+Optional: if you prefer to see one record per line, then end each line with a USV escape:
 
-```txt
-a,b
-c,d
--
-e,f
-g,h
-=
-i,j
-k,l
--
-m,n
-o,p
+```usv
+a␟b␟␞␛
+c␟d␟␞␛
+␝␛
+e␟f␟␞␛
+g␟h␟␞␛
+␝␛
+␜␛
+i␟j␟␞␛
+k␟l␟␞␛
+␝␛
+m␟n␟␞␛
+o␟p␟␞␛
+␝␛
+␜␛
 ```
 
 Example source code:
 
 ```rust
 use usv::*;
-let input = "a␟b␞c␟d␝e␟f␞g␟h␜i␟j␞k␟l␝m␟n␞o␟p␜";
+let input = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜
 let output: Files = input.files().collect();
 assert_eq!(
     output,
