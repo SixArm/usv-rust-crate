@@ -221,13 +221,13 @@
 //!
 //! ## Escape
 //!
-//! The escape symbol flips the purpose of the subsequent character:
+//! The Escape symbol flips the purpose of the subsequent character:
 //!
 //! * Escape + USV special character: the character is treated as content.
 //!
 //! * Escape + USV typical character: the character is ignored.
 //!
-//! USV with a unit that contains an Escape + End of Transmission Block (ETB), which is treated as content:
+//! USV with a unit that contains an Escape + End of Transmission Block, which is treated as content:
 //!
 //! ```usv
 //! a␛␗b␟
@@ -242,13 +242,13 @@
 //!
 //! ## Synchronous Idle
 //!
-//! The synchronous idle symbol is a heartbeat, and is especially useful for streaming data, such as to keep a connection alive.
+//! The Synchronous Idle is a heartbeat, and is especially useful for streaming data, such as to keep a connection alive.
 //!
 //! * It tells the data reader that data streaming is still in progress.
 //! 
 //! * It has no effect on the output content.
 //!
-//! Example of a unit that contains a synchronous idle symbol:
+//! Example of a unit that contains a Synchronous Idle:
 //!
 //! ```usv
 //! a␖b␞

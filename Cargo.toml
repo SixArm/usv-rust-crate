@@ -1,6 +1,6 @@
 [package]
 name = "usv"
-version = "0.5.0"
+version = "0.5.1"
 edition = "2021"
 authors = ["Joel Parker Henderson <joel@joelparkerhenderson.com>"]
 description = "USV: Unicode Separated Values for data markup, including for spreadsheets, databases, text files, and more. Improves on CSV, TSV, ASV."

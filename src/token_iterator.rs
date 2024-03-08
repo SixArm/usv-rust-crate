@@ -40,7 +40,7 @@ impl<'a> std::iter::Iterator for TokenIterator<'a> {
                             match self.chars.next() {
                                 Some(c) => {
                                     match c {
-                                        '␟' | '␞' | '␝' | '␜' | '␗' | '␛' => {
+                                        '␟' | '␞' | '␝' | '␜' | '␗' | '␖' | '␛' => {
                                             content.push(c);
                                         },
                                         _ => {},
