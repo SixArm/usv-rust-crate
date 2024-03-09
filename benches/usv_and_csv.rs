@@ -43,7 +43,7 @@ pub fn random_csv_data(unit_length: usize, unit_count: usize, record_count: usiz
 pub fn bench_usv(s: &String) -> usize {
     let mut n = 0;
     for record in s.records() {
-        for _/*unit*/ in record {           
+        for _/*unit*/ in record {          
             n += 1;
         }
     }
@@ -67,7 +67,7 @@ fn bench_combine(c: &mut Criterion){
     let unit_length = 10;
     let unit_count = 1000;
     let record_count = 1000;
-    
+   
     let usv_data = random_usv_data(unit_length, unit_count, record_count);
     let csv_data = random_csv_data(unit_length, unit_count, record_count);
 

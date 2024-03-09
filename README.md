@@ -30,7 +30,7 @@ Modifiers:
 * ␗ U+2417 Symbol for End of Transmission Block (ETB).
 
 * ␖ U+2416 Symbol For Synchronous Idle (SYN).
- 
+
 
 ## Hello World
 
@@ -118,15 +118,23 @@ Documentation links:
 
 * [Frequently asked questions](https://github.com/SixArm/usv/blob/main/doc/faq/)
 
+* [BNF: Backus-Naur form for standardization](https://github.com/SixArm/usv/blob/main/doc/bnf/)
+
+* [TODO list](https://github.com/SixArm/usv/blob/main/doc/todo/)
+
+Context help:
+
 * [Comparisons with CSV, TSV, TDF, ASV, DEL](https://github.com/SixArm/usv/blob/main/doc/comparisons/)
 
 * [How to type Unicode characters](https://github.com/SixArm/usv/blob/main/doc/how-to-type-unicode-characters/)
 
-* [BNF: Backus-Naur form for standardization](https://github.com/SixArm/usv/blob/main/doc/bnf/)
-
 * [History of ASCII separated values (ASV)](https://github.com/SixArm/usv/blob/main/doc/history-of-ascii-separated-values/)
 
-* [TODO list](https://github.com/SixArm/usv/blob/main/doc/todo/)
+Commands to convert between formats:
+
+* [usv-to-csv](https://crates.io/crates/usv-to-csv)
+
+* [csv-to-usv](https://crates.io/crates/csv-to-usv)
 
 Example files:
 
@@ -137,7 +145,6 @@ Example files:
 * [blog-posts.usv](examples/blog-posts.usv) versus [blog-posts.csv](https://github.com/SixArm/usv/blob/main/examples/blog-posts.csv)
 
 * [end-of-transmission-block.usv](https://github.com/SixArm/usv/blob/main/examples/end-of-transmission-block.usv)
-
 
 ## Examples
 
@@ -250,7 +257,7 @@ c␟d␞␛
 The Synchronous Idle is a heartbeat, and is especially useful for streaming data, such as to keep a connection alive.
 
 * It tells the data reader that data streaming is still in progress.
- 
+
 * It has no effect on the output content.
 
 Example of a unit that contains a Synchronous Idle:

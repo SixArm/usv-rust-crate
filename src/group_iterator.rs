@@ -63,7 +63,7 @@ mod tests {
         };
         let actual: Groups = iter.collect();
         assert_eq!(
-            actual, 
+            actual,
             [
                 vec![
                     svec!["a", "b"],
@@ -81,7 +81,7 @@ mod tests {
                     svec!["m", "n"],
                     svec!["o", "p"],
                 ],
-            ]    
+            ]   
         );
     }
 

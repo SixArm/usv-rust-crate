@@ -81,7 +81,7 @@ mod tests {
         };
         let actual: Files = iter.collect();
         assert_eq!(
-            actual, 
+            actual,
             [
                 vec![
                     vec![

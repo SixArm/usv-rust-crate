@@ -51,7 +51,7 @@ mod tests {
         };
         let actual: Records = iter.collect();
         assert_eq!(
-            actual, 
+            actual,
             [
                 svec!["a", "b"],
                 svec!["c", "d"],

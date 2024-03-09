@@ -43,7 +43,7 @@ mod tests {
         };
         let actual: Units = iter.collect();
         assert_eq!(
-            actual, 
+            actual,
             svec!["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"]
         );
     }

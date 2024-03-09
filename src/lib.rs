@@ -114,15 +114,23 @@
 //!
 //! * [Frequently asked questions](https://github.com/sixarm/usv/blob/main/doc/faq/)
 //!
+//! * [BNF: Backus-Naur form for standardization](https://github.com/sixarm/usv/blob/main/doc/bnf/)
+//!
+//! * [TODO list](https://github.com/sixarm/usv/blob/main/doc/todo/)
+//!
+//! Context help:
+//! 
 //! * [Comparisons with CSV, TSV, TDF, ASV, DEL](https://github.com/sixarm/usv/blob/main/doc/comparisons/)
 //!
 //! * [How to type Unicode characters](https://github.com/sixarm/usv/blob/main/doc/how-to-type-unicode-characters/)
 //!
-//! * [BNF: Backus-Naur form for standardization](https://github.com/sixarm/usv/blob/main/doc/bnf/)
-//!
 //! * [History of ASCII separated values (ASV)](https://github.com/sixarm/usv/blob/main/history-of-ascii-separated-values/)
 //!
-//! * [TODO list](https://github.com/sixarm/usv/blob/main/doc/todo/)
+//! Commands to convert between formats:
+//!
+//! * [usv-to-csv](https://crates.io/crates/usv-to-csv)
+//!
+//! * [csv-to-usv](https://crates.io/crates/csv-to-usv)
 //!
 //! Example files:
 //!
@@ -144,7 +152,7 @@
 //! ```
 //!
 //! Optional: if you prefer to see one record per line, then end each line with a USV escape:
-//! 
+//!
 //! ```usv
 //! a␟b␟␞␛
 //! c␟d␟␞␛
@@ -245,7 +253,7 @@
 //! The Synchronous Idle is a heartbeat, and is especially useful for streaming data, such as to keep a connection alive.
 //!
 //! * It tells the data reader that data streaming is still in progress.
-//! 
+//!
 //! * It has no effect on the output content.
 //!
 //! Example of a unit that contains a Synchronous Idle:

@@ -3,14 +3,12 @@ use crate::token::Token;
 #[derive(Debug)]
 pub struct TokenIterator<'a> {
     pub chars: std::str::Chars<'a>,
-    pub next: Option<char>,
 }
 
 impl<'a> Default for TokenIterator<'a> {
     fn default() -> TokenIterator<'a> {
         TokenIterator {
             chars: "".chars(),
-            next: None,
         }
     }
 }
@@ -26,8 +24,7 @@ impl<'a> std::iter::Iterator for TokenIterator<'a> {
         let mut content = String::new();
 
         loop {
-            let next = self.chars.next();
-            match next {
+            match self.chars.next() {
                 Some(c) => {
                     match c {
                         '␟' => { return Some(Token::Unit(content)) },
@@ -84,7 +81,6 @@ mod tests {
         let input = "";
         let iter = TokenIterator {
             chars: input.chars(),
-            ..Default::default()
         };
         let actual: Vec<Token> = iter.collect();
         assert_eq!(
@@ -107,7 +103,6 @@ mod tests {
         let input = "a";
         let iter = TokenIterator {
             chars: input.chars(),
-            ..Default::default()
         };
         let actual: Vec<Token> = iter.collect();
         assert_eq!(
@@ -130,7 +125,6 @@ mod tests {
         let input = "␟";
         let iter = TokenIterator {
             chars: input.chars(),
-            ..Default::default()
         };
         let actual: Vec<Token> = iter.collect();
         assert_eq!(
@@ -154,7 +148,6 @@ mod tests {
         let input = "␞";
         let iter = TokenIterator {
             chars: input.chars(),
-            ..Default::default()
         };
         let actual: Vec<Token> = iter.collect();
         assert_eq!(
@@ -178,7 +171,6 @@ mod tests {
         let input = "␝";
         let iter = TokenIterator {
             chars: input.chars(),
-            ..Default::default()
         };
         let actual: Vec<Token> = iter.collect();
         assert_eq!(
@@ -202,7 +194,6 @@ mod tests {
         let input = "␜";
         let iter = TokenIterator {
             chars: input.chars(),
-            ..Default::default()
         };
         let actual: Vec<Token> = iter.collect();
         assert_eq!(
@@ -226,7 +217,6 @@ mod tests {
         let input = "␗";
         let iter = TokenIterator {
             chars: input.chars(),
-            ..Default::default()
         };
         let actual: Vec<Token> = iter.collect();
         assert_eq!(
@@ -250,7 +240,6 @@ mod tests {
         let input = "␖";
         let iter = TokenIterator {
             chars: input.chars(),
-            ..Default::default()
         };
         let actual: Vec<Token> = iter.collect();
         assert_eq!(
@@ -275,7 +264,6 @@ mod tests {
         let input = "a␟";
         let iter = TokenIterator {
             chars: input.chars(),
-            ..Default::default()
         };
         let actual: Vec<Token> = iter.collect();
         assert_eq!(
@@ -299,7 +287,6 @@ mod tests {
         let input = "a␟b␟";
         let iter = TokenIterator {
             chars: input.chars(),
-            ..Default::default()
         };
         let actual: Vec<Token> = iter.collect();
         assert_eq!(
@@ -313,7 +300,7 @@ mod tests {
 
     /// A string of typical units, records, groups, files, etc.
     /// will return typical units, records, groups, files.
-    /// 
+    ///
     /// This is an example documentation test.
     ///
     /// Input: a string of empty units.
@@ -325,7 +312,6 @@ mod tests {
         let input = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜";
         let iter = TokenIterator {
             chars: input.chars(),
-            ..Default::default()
         };
         let actual: Vec<Token> = iter.collect();
         assert_eq!(
@@ -370,7 +356,6 @@ mod tests {
         let input = "ab␛xc␟";
         let iter = TokenIterator {
             chars: input.chars(),
-            ..Default::default()
         };
         let actual: Vec<Token> = iter.collect();
         assert_eq!(
@@ -386,7 +371,6 @@ mod tests {
         let input = "ab␛␟cd␟";
         let iter = TokenIterator {
             chars: input.chars(),
-            ..Default::default()
         };
         let actual: Vec<Token> = iter.collect();
         assert_eq!(
@@ -402,7 +386,6 @@ mod tests {
         let input = "ab␛␛cd␟";
         let iter = TokenIterator {
             chars: input.chars(),
-            ..Default::default()
         };
         let actual: Vec<Token> = iter.collect();
         assert_eq!(
@@ -418,7 +401,6 @@ mod tests {
         let input = "a␟␛\nb␟␞␛\nc␟␛\nd␟␞␛\n";
         let iter = TokenIterator {
             chars: input.chars(),
-            ..Default::default()
         };
         let actual: Vec<Token> = iter.collect();
         assert_eq!(
@@ -439,7 +421,6 @@ mod tests {
         let input = "a␟b␟␞␛\nc␟d␟␞␛\n";
         let iter = TokenIterator {
             chars: input.chars(),
-            ..Default::default()
         };
         let actual: Vec<Token> = iter.collect();
         assert_eq!(

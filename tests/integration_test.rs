@@ -52,7 +52,6 @@ fn unit_iterator_with_units_records_groups_files() {
     let iter = UnitIterator {
         iterator: TokenIterator {
             chars: input.chars(),
-            ..Default::default()
         }
     };
     let actual: Units = iter.collect();
@@ -68,7 +67,6 @@ fn record_iterator_with_units_records_groups_files() {
     let iter = RecordIterator {
         iterator: TokenIterator {
             chars: input.chars(),
-            ..Default::default()
         }
     };
     let actual: Records = iter.collect();
@@ -93,12 +91,11 @@ fn group_iterator_with_units_records_groups_files() {
     let iter = GroupIterator {
         iterator: TokenIterator {
             chars: input.chars(),
-            ..Default::default()
         }
     };
     let actual: Groups = iter.collect();
     assert_eq!(
-        actual, 
+        actual,
         [
             vec![
                 svec!["a", "b"],
@@ -126,7 +123,6 @@ fn file_iterator_with_units_records_groups_files() {
     let iter = FileIterator {
         iterator: TokenIterator {
             chars: input.chars(),
-            ..Default::default()
         }
     };
     let actual: Files = iter.collect();
