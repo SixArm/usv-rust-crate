@@ -1,6 +1,6 @@
 [package]
 name = "usv"
-version = "0.5.1"
+version = "0.5.2"
 edition = "2021"
 authors = ["Joel Parker Henderson <joel@joelparkerhenderson.com>"]
 description = "USV: Unicode Separated Values for data markup, including for spreadsheets, databases, text files, and more. Improves on CSV, TSV, ASV."
@@ -13,3 +13,12 @@ categories = []
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+
+[dev-dependencies]
+criterion = "*"
+rand = "*"
+csv = "*"
+
+[[bench]]
+name = "usv_and_csv"
+harness = false

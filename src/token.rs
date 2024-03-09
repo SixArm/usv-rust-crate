@@ -25,22 +25,7 @@ impl std::fmt::Display for Token {
             Token::SynchronousIdle => write!(f, "␖"),
             Token::Escape => write!(f, "␛"),
             Token::Char(c) => write!(f, "{}", c),
-            Token::Unit(s) => write!(f, "{}", s),
-        }
-    }
-}
-
-impl From<char> for Token {
-    fn from(c: char) -> Self {
-        match c {
-            '␟' => Token::UnitSeparator,
-            '␞' => Token::RecordSeparator,
-            '␝' => Token::GroupSeparator,
-            '␜' => Token::FileSeparator,
-            '␗' => Token::EndOfTransmissionBlock,
-            '␖' => Token::SynchronousIdle,
-            '␛' => Token::Escape,
-            c => Token::Char(c)
+            Token::Unit(s) => write!(f, "{}␟", s),
         }
     }
 }
