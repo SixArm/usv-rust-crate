@@ -1,6 +1,6 @@
 [package]
 name = "usv"
-version = "0.5.3"
+version = "0.7.0"
 edition = "2021"
 authors = ["Joel Parker Henderson <joel@joelparkerhenderson.com>"]
 description = "USV: Unicode Separated Values for data markup, including for spreadsheets, databases, text files, and more. Improves on CSV, TSV, ASV."
@@ -15,9 +15,9 @@ categories = []
 [dependencies]
 
 [dev-dependencies]
-criterion = "*"
-rand = "*"
-csv = "*"
+criterion = ">= 0.5"
+rand = ">= 0.8"
+csv = "1"
 
 [[bench]]
 name = "usv_and_csv"

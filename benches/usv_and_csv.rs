@@ -40,17 +40,17 @@ pub fn random_csv_data(unit_length: usize, unit_count: usize, record_count: usiz
     s
 }
 
-pub fn bench_usv(s: &String) -> usize {
+pub fn parse_usv(s: &String) -> usize {
     let mut n = 0;
     for record in s.records() {
-        for _/*unit*/ in record {          
+        for _/*unit*/ in record.units() {
             n += 1;
         }
     }
     n
 }
 
-fn bench_csv(s: &String) -> Result<usize, Box<dyn Error>> {
+fn parse_csv(s: &String) -> Result<usize, Box<dyn Error>> {
     let mut n = 0;
     let mut reader = csv::Reader::from_reader(s.as_bytes());
     for result in reader.records() {
@@ -63,11 +63,11 @@ fn bench_csv(s: &String) -> Result<usize, Box<dyn Error>> {
     Ok(n)
 }
 
-fn bench_combine(c: &mut Criterion){
+fn bench_usv_csv(c: &mut Criterion){
     let unit_length = 10;
     let unit_count = 1000;
     let record_count = 1000;
-   
+
     let usv_data = random_usv_data(unit_length, unit_count, record_count);
     let csv_data = random_csv_data(unit_length, unit_count, record_count);
 
@@ -75,10 +75,10 @@ fn bench_combine(c: &mut Criterion){
         &format!("benchmark group unit_length: {}, unit_count: {}, record_count: {}", unit_length, unit_count, record_count)
     );
     group.sample_size(10);
-    group.bench_function("bench_usv", |b| b.iter(|| bench_usv(&usv_data)));
-    group.bench_function("bench_csv", |b| b.iter(|| bench_csv(&csv_data)));
+    group.bench_function("parse_usv", |b| b.iter(|| parse_usv(&usv_data)));
+    group.bench_function("parse_csv", |b| b.iter(|| parse_csv(&csv_data)));
     group.finish();
 }
 
-criterion_group!(benches, bench_combine);
+criterion_group!(benches, bench_usv_csv);
 criterion_main!(benches);
