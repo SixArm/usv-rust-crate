@@ -82,7 +82,7 @@ assert_eq!(
 );
 ```
 
-## All together
+## Loops
 
 ```rust
 use usv::*;

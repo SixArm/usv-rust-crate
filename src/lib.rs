@@ -82,7 +82,7 @@
 //! );
 //! ```
 //! 
-//! ## All together
+//! ## Loops
 //!
 //! ```rust
 //! use usv::*;
