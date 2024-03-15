@@ -8,19 +8,25 @@
 //!
 //! Separators:
 //!
-//! * ␟ U+241F Symbol for Unit Separator (US).
+//! * File Separator (FS) is U+001C or U+241C ␜
 //!
-//! * ␞ U+241E Symbol for Record Separator (RS).
+//! * Group Separator (GS) is U+001D or U+241D ␝
 //!
-//! * ␝ U+241D Symbol for Group Separator (GS).
+//! * Record Separator (RS) is U+001E or U+241E ␞
 //!
-//! * ␜ U+241C Symbol for File Separator (FS).
+//! * Unit Separator (US) is U+001F or U+241F ␟
 //!
 //! Modifiers:
 //!
-//! * ␛ U+241B Symbol for Escape (ESC).
+//! * Escape (ESC) is U+001B or U+241B ␛
 //!
-//! * ␗ U+2417 Symbol for End of Transmission Block (ETB).
+//! * End of Transmission (EOT) is U+0004 or U+2404 ␄
+//!
+//! Liners:
+//!
+//! * Carriage Return (CR) is U+000D
+//!
+//! * Line Feed (LF) is U+000A
 //!
 //! ## Units
 //!
@@ -81,7 +87,7 @@
 //!     ]
 //! );
 //! ```
-//! 
+//!
 //! ## Loops
 //!
 //! ```rust
@@ -108,8 +114,24 @@ pub mod string_iterator; pub use string_iterator::StringIterator;
 
 // Iterator extensions for units, records, groups, files.
 pub mod str_ext; pub use str_ext::StrExt;
-pub mod string_ext; pub use string_ext::StringExt;
 
+/// svec! makes a string vector from an array of &str.
+///
+/// Example:
+///
+/// ```
+/// use usv::svec;
+/// let items = svec!["a", "b", "c"];
+/// assert_eq!(
+///     items,
+///     vec![
+///         String::from("a"),
+///         String::from("b"),
+///         String::from("c"),
+///     ]
+/// );
+/// ```
+///
 #[macro_export]
 macro_rules! svec[
     ($($x:expr),*) => (

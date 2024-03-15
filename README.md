@@ -8,19 +8,25 @@ The USV repo is <https://github.com/sixarm/usv>.
 
 Separators:
 
-* ␟ U+241F Symbol for Unit Separator (US).
+* File Separator (FS) is U+001C or U+241C ␜
 
-* ␞ U+241E Symbol for Record Separator (RS).
+* Group Separator (GS) is U+001D or U+241D ␝
 
-* ␝ U+241D Symbol for Group Separator (GS).
+* Record Separator (RS) is U+001E or U+241E ␞
 
-* ␜ U+241C Symbol for File Separator (FS).
+* Unit Separator (US) is U+001F or U+241F ␟
 
 Modifiers:
 
-* ␛ U+241B Symbol for Escape (ESC).
+* Escape (ESC) is U+001B or U+241B ␛
 
-* ␗ U+2417 Symbol for End of Transmission Block (ETB).
+* End of Transmission (EOT) is U+0004 or U+2404 ␄
+
+Liners:
+
+* Carriage Return (CR) is U+000D
+
+* Line Feed (LF) is U+000A
 
 ## Units
 

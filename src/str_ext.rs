@@ -11,31 +11,35 @@ pub trait StrExt {
 /// Iterator implementations for units, records, groups, files.
 impl StrExt for str {
 
-    fn units(&self) -> StringIterator {
+    fn files(&self) -> StringIterator {
         StringIterator {
             chars: self.chars(),
-            c: '␟',
-        }
-    }
-
-    fn records(&self) -> StringIterator {
-        StringIterator {
-            chars: self.chars(),
-            c: '␞',
+            control: '\u{001C}',
+            symbol: '␜',
         }
     }
 
     fn groups(&self) -> StringIterator {
         StringIterator {
             chars: self.chars(),
-            c: '␝',
+            control: '\u{001D}',
+            symbol: '␝',
         }
     }
 
-    fn files(&self) -> StringIterator {
+    fn records(&self) -> StringIterator {
         StringIterator {
             chars: self.chars(),
-            c: '␜',
+            control: '\u{001E}',
+            symbol: '␞',
+        }
+    }
+
+    fn units(&self) -> StringIterator {
+        StringIterator {
+            chars: self.chars(),
+            control: '\u{001F}',
+            symbol: '␟',
         }
     }
 
@@ -44,56 +48,34 @@ impl StrExt for str {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::svec;
 
     #[test]
-    fn units() {
-        let input = "a␟b␟";
-        let actual: Vec<String> = input.units().collect();
-        assert_eq!(
-            actual,
-            vec![
-                String::from("a"),
-                String::from("b"),
-            ]
-        );
-    }
-
-    #[test]
-    fn records() {
-        let input =  "a␟b␟␞c␟d␟␞";
-        let actual: Vec<String> = input.records().collect();
-        assert_eq!(
-            actual,
-            vec![
-                String::from("a␟b␟"),
-                String::from("c␟d␟"),
-            ]
-        );
+    fn files() {
+        let input = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝\u{001C}i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜";
+        let actual: Vec<String> = input.files().collect();
+        assert_eq!(actual, svec!["a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝", "i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝"]);
     }
 
     #[test]
     fn groups() {
-        let input = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝";
+        let input = "a␟b␟␞c␟d␟␞\u{001D}e␟f␟␞g␟h␟␞␝";
         let actual: Vec<String> = input.groups().collect();
-        assert_eq!(
-            actual,
-            vec![
-                String::from("a␟b␟␞c␟d␟␞"),
-                String::from("e␟f␟␞g␟h␟␞"),
-            ]
-        );
+        assert_eq!(actual, svec!["a␟b␟␞c␟d␟␞", "e␟f␟␞g␟h␟␞"]);
     }
 
     #[test]
-    fn files() {
-        let input = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜";
-        let actual: Vec<String> = input.files().collect();
-        assert_eq!(
-            actual,
-            vec![
-                String::from("a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝"),
-                String::from("i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝"),
-            ]
-        );
+    fn records() {
+        let input =  "a␟b␟\u{001E}c␟d␟␞";
+        let actual: Vec<String> = input.records().collect();
+        assert_eq!(actual, svec!["a␟b␟", "c␟d␟"]);
     }
+
+    #[test]
+    fn units() {
+        let input = "a\u{001F}b␟";
+        let actual: Vec<String> = input.units().collect();
+        assert_eq!(actual, svec!["a", "b"]);
+    }
+
 }
