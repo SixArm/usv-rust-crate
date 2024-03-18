@@ -2,12 +2,12 @@ use crate::{END_OF_TRANSMISSION_SYMBOL_STR, ESCAPE_SYMBOL_STR, FILE_SEPARATOR_SY
 
 #[allow(dead_code)]
 pub struct Style<'a> {
-    file_separator: &'a str,
-    group_separator: &'a str,
-    record_separator: &'a str,
-    unit_separator: &'a str,
-    escape: &'a str,
-    end_of_transmission: &'a str,
+    pub file_separator: &'a str,
+    pub group_separator: &'a str,
+    pub record_separator: &'a str,
+    pub unit_separator: &'a str,
+    pub escape: &'a str,
+    pub end_of_transmission: &'a str,
 }
 
 impl<'a> Default for Style<'a> {

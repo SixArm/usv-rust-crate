@@ -109,11 +109,17 @@
 //! );
 //! ```
 
+// Constants for each USV character as a control character and symbol character.
+pub mod constants; pub use constants::*;
+
 // Iterator for unit, record, group, file.
 pub mod string_iterator; pub use string_iterator::StringIterator;
 
 // Iterator extensions for units, records, groups, files.
 pub mod str_ext; pub use str_ext::StrExt;
+
+// Style provides rendering configuration for separators etc.
+pub mod style; pub use style::Style;
 
 /// svec! makes a string vector from an array of &str.
 ///
