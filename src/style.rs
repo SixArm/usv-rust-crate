@@ -1,6 +1,7 @@
-use crate::{END_OF_TRANSMISSION_SYMBOL_STR, ESCAPE_SYMBOL_STR, FILE_SEPARATOR_SYMBOL_STR, GROUP_SEPARATOR_SYMBOL_STR, RECORD_SEPARATOR_SYMBOL_STR, UNIT_SEPARATOR_SYMBOL_STR};
+use crate::constants::*;
 
 #[allow(dead_code)]
+#[derive(Debug)]
 pub struct Style<'a> {
     pub file_separator: &'a str,
     pub group_separator: &'a str,
