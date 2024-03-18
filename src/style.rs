@@ -2,24 +2,24 @@ use crate::constants::*;
 
 #[allow(dead_code)]
 #[derive(Debug)]
-pub struct Style<'a> {
-    pub file_separator: &'a str,
-    pub group_separator: &'a str,
-    pub record_separator: &'a str,
-    pub unit_separator: &'a str,
-    pub escape: &'a str,
-    pub end_of_transmission: &'a str,
+pub struct Style {
+    pub file_separator: String,
+    pub group_separator: String,
+    pub record_separator: String,
+    pub unit_separator: String,
+    pub escape: String,
+    pub end_of_transmission: String,
 }
 
-impl<'a> Default for Style<'a> {
+impl Default for Style {
     fn default() -> Self {
         Self {
-            file_separator: FILE_SEPARATOR_SYMBOL_STR,
-            group_separator: GROUP_SEPARATOR_SYMBOL_STR,
-            record_separator: RECORD_SEPARATOR_SYMBOL_STR,
-            unit_separator: UNIT_SEPARATOR_SYMBOL_STR,
-            escape: ESCAPE_SYMBOL_STR,
-            end_of_transmission: END_OF_TRANSMISSION_SYMBOL_STR,
+            file_separator: String::from(FILE_SEPARATOR_SYMBOL_STR),
+            group_separator: String::from(GROUP_SEPARATOR_SYMBOL_STR),
+            record_separator: String::from(RECORD_SEPARATOR_SYMBOL_STR),
+            unit_separator: String::from(UNIT_SEPARATOR_SYMBOL_STR),
+            escape: String::from(ESCAPE_SYMBOL_STR),
+            end_of_transmission: String::from(END_OF_TRANSMISSION_SYMBOL_STR),
         }
     }
 }
