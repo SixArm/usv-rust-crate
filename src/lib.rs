@@ -112,6 +112,9 @@
 // Constants for each USV character as a control character and symbol character.
 pub mod constants; pub use constants::*;
 
+// Examples for demos and tests.
+pub mod examples; pub use examples::*;
+
 // Iterator for unit, record, group, file.
 pub mod string_iterator; pub use string_iterator::StringIterator;
 
