@@ -124,6 +124,9 @@ pub mod str_ext; pub use str_ext::StrExt;
 // Style provides rendering configuration for separators etc.
 pub mod style; pub use style::Style;
 
+// Layout provides style decorations for rendering liners.
+pub mod layout; pub use layout::*;
+
 /// svec! makes a string vector from an array of &str.
 ///
 /// Example:
