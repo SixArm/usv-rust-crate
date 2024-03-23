@@ -4,7 +4,7 @@ use crate::style::*;
 
 pub struct StyleBraces;
 impl StyleTrait for StyleBraces {
-    fn style() -> Style {
+    fn style(&self) -> Style {
         Style {
             unit_separator: String::from(UNIT_SEPARATOR_BRACE),
             record_separator: String::from(RECORD_SEPARATOR_BRACE),
@@ -22,7 +22,7 @@ mod tests {
 
     #[test]
     fn test() {
-        let style = StyleBraces::style();
+        let style = StyleBraces.style();
         assert_eq!(style.unit_separator, "{US}");
         assert_eq!(style.record_separator, "{RS}");
         assert_eq!(style.group_separator, "{GS}");

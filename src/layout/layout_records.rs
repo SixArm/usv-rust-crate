@@ -3,7 +3,7 @@ use crate::layout::LayoutTrait;
 
 pub struct LayoutRecords;
 impl LayoutTrait for LayoutRecords {
-    fn layout(style: &Style) -> Style {
+    fn layout(&self, style: &Style) -> Style {
         Style { 
             unit_separator:       style.unit_separator.clone(),
             record_separator:     format!("{}\n", style.record_separator),
@@ -21,7 +21,7 @@ mod tests {
 
     #[test]
     fn test() {
-        let style = LayoutRecords::layout(&Style::default());
+        let style = LayoutRecords.layout(&Style::default());
         assert_eq!(style.unit_separator, "␟");
         assert_eq!(style.record_separator, "␞\n");
         assert_eq!(style.group_separator, "␝\n");

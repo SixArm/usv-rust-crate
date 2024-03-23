@@ -4,7 +4,7 @@ use crate::style::*;
 
 pub struct StyleControls;
 impl StyleTrait for StyleControls {
-    fn style() -> Style {
+    fn style(&self) -> Style {
         Style {
             unit_separator: String::from(UNIT_SEPARATOR_CONTROL),
             record_separator: String::from(RECORD_SEPARATOR_CONTROL),
@@ -22,7 +22,7 @@ mod tests {
 
     #[test]
     fn test() {
-        let style = StyleControls::style();
+        let style = StyleControls.style();
         assert_eq!(style.unit_separator, "\u{001F}");
         assert_eq!(style.record_separator, "\u{001E}");
         assert_eq!(style.group_separator, "\u{001D}");

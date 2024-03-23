@@ -1,14 +1,44 @@
+//! USV style is the terminology for how marks are displayed.
+//! 
+//! The style helps make USV more useful for more people.
+//! 
+//! The style is not part of the USV specification.
+//! 
+//! The style is the set of these strings:
+//! 
+//! * unit_separator
+//! * record_separator
+//! * group_separator
+//! * file_separator
+//! * escape
+//! * end_of_transmission
+//! 
+//! Currently these are the styles:
+//! 
+//! * style-symbols: Use symbols such as "␟" for Unit Separator.
+//!   This style tends to be easies for visual text editing.
+//! 
+//! * style-controls : Use controls such as "\u001F" for Unit Separator.
+//!   This style is the most-similar to ASCII Separated Values (ASV).
+//!
+//! * style-braces : Use braces such as "{US}" for Unit Separator.
+//!   This style is to help plain text readers, and is not USV output.
+//!
+//! You can create your own styles that are equivalent to the above.
+//! 
+//! This USV Rust crate provides style capabilities:
+//! 
+//! * StyleTrait provides the style() function that creates a style.
+
 use crate::constants::*;
 
 pub trait StyleTrait {
-    fn style() -> Style;
+    fn style(&self) -> Style;
 }
 
-pub enum StyleEnum {
-    Symbols,
-    Controls,
-    Braces,
-}
+pub mod style_symbols;
+pub mod style_controls;
+pub mod style_braces;
 
 #[allow(dead_code)]
 #[derive(Debug, PartialEq, Clone)]
@@ -34,10 +64,6 @@ impl Default for Style {
     }
 }
 
-pub mod style_symbols;
-pub mod style_controls;
-pub mod style_braces;
-
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -52,6 +78,5 @@ mod tests {
         assert_eq!(style.escape, "␛");
         assert_eq!(style.end_of_transmission, "␄");
     }
-
 
 }
