@@ -4,7 +4,7 @@ use crate::layout::LayoutTrait;
 pub struct LayoutFiles;
 impl LayoutTrait for LayoutFiles {
     fn layout(&self, style: &Style) -> Style {
-        Style { 
+        Style {
             unit_separator:       style.unit_separator.clone(),
             record_separator:     style.record_separator.clone(),
             group_separator:      style.group_separator.clone(),

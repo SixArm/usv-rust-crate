@@ -33,14 +33,8 @@ Liners:
 ```rust
 use usv::*;
 let input = "a␟b␟";
-let units: Vec<String> = input.units().collect();
-assert_eq!(
-    units,
-    vec![
-        String::from("a"),
-        String::from("b"),
-    ]
-);
+let units: Units = input.units().collect();
+assert_eq!(units, ["a", "b"]);
 ```
 
 ## Records
@@ -48,14 +42,8 @@ assert_eq!(
 ```rust
 use usv::*;
 let input = "a␟b␟␞c␟d␟␞";
-let records: Vec<String> = input.records().collect();
-assert_eq!(
-    records,
-    vec![
-        String::from("a␟b␟"),
-        String::from("c␟d␟"),
-    ]
-);
+let records: Records = input.records().collect();
+assert_eq!(records, [["a", "b"],["c", "d"]]);
 ```
 
 ## Groups
@@ -63,14 +51,8 @@ assert_eq!(
 ```rust
 use usv::*;
 let input = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝";
-let groups: Vec<String> = input.groups().collect();
-assert_eq!(
-    groups,
-    vec![
-        String::from("a␟b␟␞c␟d␟␞"),
-        String::from("e␟f␟␞g␟h␟␞"),
-    ]
-);
+let groups: Groups = input.groups().collect();
+assert_eq!(groups, [[["a", "b"],["c", "d"]],[["e", "f"],["g", "h"]]]);
 ```
 
 ## Files
@@ -78,33 +60,6 @@ assert_eq!(
 ```rust
 use usv::*;
 let input = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜";
-let files: Vec<String> = input.files().collect();
-assert_eq!(
-    files,
-    vec![
-        String::from("a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝"),
-        String::from("i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝"),
-    ]
-);
-```
-
-## Loops
-
-```rust
-use usv::*;
-let input = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜";
-let mut string = String::new();
-for file in input.files() {
-    for group in file.groups() {
-        for record in group.records() {
-            for unit in record.units() {
-                string += &unit;
-            }
-        }
-    }
-}
-assert_eq!(
-    string,
-    String::from("abcdefghijklmnop"),
-);
+let files: Files = input.files().collect();
+assert_eq!(files, [[[["a", "b"],["c", "d"]],[["e", "f"],["g", "h"]]],[[["i", "j"],["k", "l"]],[["m", "n"],["o", "p"]]]]);
 ```

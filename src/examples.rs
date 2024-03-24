@@ -624,3 +624,17 @@ pub const EXAMPLE_STYLE_BRACES_FILE_AND_LAYOUT_FILES: &str = "a{US}b{US}{RS}c{US
 
 /// Example Style::braces() with USV files and layout records.
 pub const EXAMPLE_STYLE_BRACES_FILES_AND_LAYOUT_FILES: &str = "a{US}b{US}{RS}c{US}d{US}{RS}{GS}e{US}f{US}{RS}g{US}h{US}{RS}{GS}{FS}\ni{US}j{US}{RS}k{US}l{US}{RS}{GS}m{US}n{US}{RS}o{US}p{US}{RS}{GS}{FS}\n";
+
+//// Arrays
+
+/// Example array with USV units
+pub const EXAMPLE_ARRAY_UNITS: [&str;2] = ["a","b"];
+
+/// Example array with USV units
+pub const EXAMPLE_ARRAY_RECORDS: [[&str;2];2] = [["a","b"],["c","d"]];
+
+/// Example array with USV files
+pub const EXAMPLE_ARRAY_GROUPS: [[[&str;2];2];2] = [[["a","b"],["c","d"]],[["e","f"],["g","h"]]];
+
+/// Example array with USV files
+pub const EXAMPLE_ARRAY_FILES: [[[[&str;2];2];2];2] = [[[["a","b"],["c","d"]],[["e","f"],["g","h"]]],[[["i","j"],["k","l"]],[["m","n"],["o","p"]]]];

@@ -1,81 +1,83 @@
-use crate::string_iterator::StringIterator;
+use crate::{
+    TokenIterator,
+    UnitIterator,
+    RecordIterator,
+    GroupIterator,
+    FileIterator,
+};
 
-/// Iterator definitions for units, records, groups, files.
 pub trait StrExt {
-    fn units(&self) -> StringIterator;
-    fn records(&self) -> StringIterator;
-    fn groups(&self) -> StringIterator;
-    fn files(&self) -> StringIterator;
+    fn tokens(&self) -> TokenIterator;
+    fn units(&self) -> UnitIterator;
+    fn records(&self) -> RecordIterator;
+    fn groups(&self) -> GroupIterator;
+    fn files(&self) -> FileIterator;
 }
 
-/// Iterator implementations for units, records, groups, files.
 impl StrExt for str {
 
-    fn files(&self) -> StringIterator {
-        StringIterator {
+    fn tokens(&self) -> TokenIterator {
+        TokenIterator {
             chars: self.chars(),
-            control: '\u{001C}',
-            symbol: '␜',
+            ..Default::default()
         }
     }
 
-    fn groups(&self) -> StringIterator {
-        StringIterator {
-            chars: self.chars(),
-            control: '\u{001D}',
-            symbol: '␝',
+    fn units(&self) -> UnitIterator {
+        UnitIterator {
+            iterator: self.tokens()
         }
     }
 
-    fn records(&self) -> StringIterator {
-        StringIterator {
-            chars: self.chars(),
-            control: '\u{001E}',
-            symbol: '␞',
+    fn records(&self) -> RecordIterator {
+        RecordIterator {
+            iterator: self.tokens()
         }
     }
 
-    fn units(&self) -> StringIterator {
-        StringIterator {
-            chars: self.chars(),
-            control: '\u{001F}',
-            symbol: '␟',
+    fn groups(&self) -> GroupIterator {
+        GroupIterator {
+            iterator: self.tokens()
+        }
+    }
+
+    fn files(&self) -> FileIterator {
+        FileIterator {
+            iterator: self.tokens()
         }
     }
 
 }
+
 
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::svec;
+    use crate::examples::*;
 
     #[test]
-    fn files() {
-        let input = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝\u{001C}i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜";
-        let actual: Vec<String> = input.files().collect();
-        assert_eq!(actual, svec!["a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝", "i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝"]);
+    fn tokens_test() {
+        let actual: TokenIterator = EXAMPLE_STYLE_SYMBOLS_FILES.tokens();
     }
 
     #[test]
-    fn groups() {
-        let input = "a␟b␟␞c␟d␟␞\u{001D}e␟f␟␞g␟h␟␞␝";
-        let actual: Vec<String> = input.groups().collect();
-        assert_eq!(actual, svec!["a␟b␟␞c␟d␟␞", "e␟f␟␞g␟h␟␞"]);
+    fn units_test() {
+        let actual: UnitIterator = EXAMPLE_STYLE_SYMBOLS_UNITS.units();
     }
 
     #[test]
-    fn records() {
-        let input =  "a␟b␟\u{001E}c␟d␟␞";
-        let actual: Vec<String> = input.records().collect();
-        assert_eq!(actual, svec!["a␟b␟", "c␟d␟"]);
+    fn records_test() {
+        let actual: RecordIterator = EXAMPLE_STYLE_SYMBOLS_RECORDS.records();
     }
 
     #[test]
-    fn units() {
-        let input = "a\u{001F}b␟";
-        let actual: Vec<String> = input.units().collect();
-        assert_eq!(actual, svec!["a", "b"]);
+    fn groups_test() {
+        let actual: GroupIterator = EXAMPLE_STYLE_SYMBOLS_GROUPS.groups();
+    }
+
+    #[test]
+    fn files_test() {
+        let actual: FileIterator = EXAMPLE_STYLE_SYMBOLS_FILES.files();
     }
 
 }

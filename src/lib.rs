@@ -33,14 +33,8 @@
 //! ```rust
 //! use usv::*;
 //! let input = "a␟b␟";
-//! let units: Vec<String> = input.units().collect();
-//! assert_eq!(
-//!     units,
-//!     vec![
-//!         String::from("a"),
-//!         String::from("b"),
-//!     ]
-//! );
+//! let units: Units = input.units().collect();
+//! assert_eq!(units, ["a", "b"]);
 //! ```
 //!
 //! ## Records
@@ -48,14 +42,8 @@
 //! ```rust
 //! use usv::*;
 //! let input = "a␟b␟␞c␟d␟␞";
-//! let records: Vec<String> = input.records().collect();
-//! assert_eq!(
-//!     records,
-//!     vec![
-//!         String::from("a␟b␟"),
-//!         String::from("c␟d␟"),
-//!     ]
-//! );
+//! let records: Records = input.records().collect();
+//! assert_eq!(records, [["a", "b"],["c", "d"]]);
 //! ```
 //!
 //! ## Groups
@@ -63,14 +51,8 @@
 //! ```rust
 //! use usv::*;
 //! let input = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝";
-//! let groups: Vec<String> = input.groups().collect();
-//! assert_eq!(
-//!     groups,
-//!     vec![
-//!         String::from("a␟b␟␞c␟d␟␞"),
-//!         String::from("e␟f␟␞g␟h␟␞"),
-//!     ]
-//! );
+//! let groups: Groups = input.groups().collect();
+//! assert_eq!(groups, [[["a", "b"],["c", "d"]],[["e", "f"],["g", "h"]]]);
 //! ```
 //!
 //! ## Files
@@ -78,45 +60,36 @@
 //! ```rust
 //! use usv::*;
 //! let input = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜";
-//! let files: Vec<String> = input.files().collect();
-//! assert_eq!(
-//!     files,
-//!     vec![
-//!         String::from("a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝"),
-//!         String::from("i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝"),
-//!     ]
-//! );
-//! ```
-//!
-//! ## Loops
-//!
-//! ```rust
-//! use usv::*;
-//! let input = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜";
-//! let mut string = String::new();
-//! for file in input.files() {
-//!     for group in file.groups() {
-//!         for record in group.records() {
-//!             for unit in record.units() {
-//!                 string += &unit;
-//!             }
-//!         }
-//!     }
-//! }
-//! assert_eq!(
-//!     string,
-//!     String::from("abcdefghijklmnop"),
-//! );
+//! let files: Files = input.files().collect();
+//! assert_eq!(files, [[[["a", "b"],["c", "d"]],[["e", "f"],["g", "h"]]],[[["i", "j"],["k", "l"]],[["m", "n"],["o", "p"]]]]);
 //! ```
 
 // Constants for each USV character as a control character and symbol character.
 pub mod constants; pub use constants::*;
 
+// Token enum that holds content data or a special character value.
+pub mod token; pub use token::Token;
+
 // Examples for demos and tests.
 pub mod examples; pub use examples::*;
 
-// Iterator for unit, record, group, file.
-pub mod string_iterator; pub use string_iterator::StringIterator;
+// Type aliases for USV naming
+#[allow(dead_code)] pub type Tokens = Vec<Token>;
+#[allow(dead_code)] pub type Unit = String;
+#[allow(dead_code)] pub type Units = Vec<Unit>;
+#[allow(dead_code)] pub type Record = Units;
+#[allow(dead_code)] pub type Records = Vec<Record>;
+#[allow(dead_code)] pub type Group = Records;
+#[allow(dead_code)] pub type Groups = Vec<Records>;
+#[allow(dead_code)] pub type File = Groups;
+#[allow(dead_code)] pub type Files = Vec<File>;
+
+// Iterator for token, unit, record, group, file.
+pub mod token_iterator; pub use token_iterator::*;
+pub mod unit_iterator; pub use unit_iterator::*;
+pub mod record_iterator; pub use record_iterator::*;
+pub mod group_iterator; pub use group_iterator::*;
+pub mod file_iterator; pub use file_iterator::*;
 
 // Iterator extensions for units, records, groups, files.
 pub mod str_ext; pub use str_ext::StrExt;
@@ -127,29 +100,5 @@ pub mod style; pub use style::Style;
 // Layout provides style decorations for rendering liners.
 pub mod layout; pub use layout::*;
 
-/// svec! makes a string vector from an array of &str.
-///
-/// Example:
-///
-/// ```
-/// use usv::svec;
-/// let items = svec!["a", "b", "c"];
-/// assert_eq!(
-///     items,
-///     vec![
-///         String::from("a"),
-///         String::from("b"),
-///         String::from("c"),
-///     ]
-/// );
-/// ```
-///
-#[macro_export]
-macro_rules! svec[
-    ($($x:expr),*) => (
-        vec![$($x),*].into_iter()
-                     .map(|s: &'static str| s.to_string())
-                     .collect::<Vec<String>>()
-    );
-    ($($x:expr,)*) => (svec![$($x),*]);
-];
+// svec! macro that makes string vectors.
+pub mod svec; pub use svec::*;

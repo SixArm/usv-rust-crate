@@ -1,23 +1,23 @@
 //! USV style is the terminology for how marks are displayed.
-//! 
+//!
 //! The style helps make USV more useful for more people.
-//! 
+//!
 //! The style is not part of the USV specification.
-//! 
+//!
 //! The style is the set of these strings:
-//! 
+//!
 //! * unit_separator
 //! * record_separator
 //! * group_separator
 //! * file_separator
 //! * escape
 //! * end_of_transmission
-//! 
+//!
 //! Currently these are the styles:
-//! 
+//!
 //! * style-symbols: Use symbols such as "␟" for Unit Separator.
 //!   This style tends to be easies for visual text editing.
-//! 
+//!
 //! * style-controls : Use controls such as "\u001F" for Unit Separator.
 //!   This style is the most-similar to ASCII Separated Values (ASV).
 //!
@@ -25,9 +25,9 @@
 //!   This style is to help plain text readers, and is not USV output.
 //!
 //! You can create your own styles that are equivalent to the above.
-//! 
+//!
 //! This USV Rust crate provides style capabilities:
-//! 
+//!
 //! * StyleTrait provides the style() function that creates a style.
 
 use crate::constants::*;
