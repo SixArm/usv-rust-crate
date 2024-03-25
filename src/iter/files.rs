@@ -1,11 +1,30 @@
+use crate as usv;
 use crate::*;
 
 #[derive(Debug)]
-pub struct FileIterator<'a> {
-    pub iterator: TokenIterator<'a>,
+pub struct Files<'a> {
+    pub iterator: usv::iter::Tokens<'a>,
 }
 
-impl<'a> std::iter::Iterator for FileIterator<'a> {
+impl<'a> From<usv::iter::Tokens<'a>> for Files<'a> {
+    fn from(iterator: usv::iter::Tokens<'a>) -> Self {
+        Self { iterator }
+    }
+}
+
+impl<'a> From<std::str::Chars<'a>> for Files<'a> {
+    fn from(chars: std::str::Chars<'a>) -> Self {
+        Self::from(usv::iter::Tokens::from(chars))
+    }
+}
+
+impl<'a> From<&'a str> for Files<'a> {
+    fn from(str: &'a str) -> Self {
+        Self::from(usv::iter::Tokens::from(str))
+    }
+}
+
+impl<'a> std::iter::Iterator for Files<'a> {
     type Item = File;
 
     fn next(&mut self) -> Option<Self::Item> {
@@ -69,17 +88,12 @@ impl<'a> std::iter::Iterator for FileIterator<'a> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate as usv;
 
     #[test]
     fn test() {
         let input = EXAMPLE_STYLE_SYMBOLS_FILES;
-        let iter = FileIterator {
-            iterator: TokenIterator {
-                chars: input.chars(),
-                ..Default::default()
-            }
-        };
-        let actual: Files = iter.collect();
+        let actual: usv::Files = usv::iter::Files::from(input).collect();
         assert_eq!(actual, EXAMPLE_ARRAY_FILES);
     }
 

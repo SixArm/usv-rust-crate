@@ -1,11 +1,30 @@
+use crate as usv;
 use crate::*;
 
 #[derive(Debug)]
-pub struct RecordIterator<'a> {
-    pub iterator: TokenIterator<'a>,
+pub struct Records<'a> {
+    pub iterator: usv::iter::Tokens<'a>,
 }
 
-impl<'a> std::iter::Iterator for RecordIterator<'a> {
+impl<'a> From<usv::iter::Tokens<'a>> for Records<'a> {
+    fn from(iterator: usv::iter::Tokens<'a>) -> Self {
+        Self { iterator }
+    }
+}
+
+impl<'a> From<std::str::Chars<'a>> for Records<'a> {
+    fn from(chars: std::str::Chars<'a>) -> Self {
+        Self::from(usv::iter::Tokens::from(chars))
+    }
+}
+
+impl<'a> From<&'a str> for Records<'a> {
+    fn from(str: &'a str) -> Self {
+        Self::from(usv::iter::Tokens::from(str))
+    }
+}
+
+impl<'a> std::iter::Iterator for Records<'a> {
     type Item = Record;
 
     fn next(&mut self) -> Option<Self::Item> {
@@ -39,17 +58,12 @@ impl<'a> std::iter::Iterator for RecordIterator<'a> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate as usv;
 
     #[test]
     fn units_records_groups_files() {
         let input = EXAMPLE_STYLE_SYMBOLS_RECORDS;
-        let iter = RecordIterator {
-            iterator: TokenIterator {
-                chars: input.chars(),
-                ..Default::default()
-            }
-        };
-        let actual: Records = iter.collect();
+        let actual: usv::Records = usv::iter::Records::from(input).collect();
         assert_eq!(actual, EXAMPLE_ARRAY_RECORDS);
     }
 

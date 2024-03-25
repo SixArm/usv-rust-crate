@@ -1,11 +1,30 @@
+use crate as usv;
 use crate::*;
 
 #[derive(Debug)]
-pub struct GroupIterator<'a> {
-    pub iterator: TokenIterator<'a>,
+pub struct Groups<'a> {
+    pub iterator: crate::iter::Tokens<'a>,
 }
 
-impl<'a> std::iter::Iterator for GroupIterator<'a> {
+impl<'a> From<crate::iter::Tokens<'a>> for Groups<'a> {
+    fn from(iterator: crate::iter::Tokens<'a>) -> Self {
+        Self { iterator }
+    }
+}
+
+impl<'a> From<std::str::Chars<'a>> for Groups<'a> {
+    fn from(chars: std::str::Chars<'a>) -> Self {
+        Self::from(crate::iter::Tokens::from(chars))
+    }
+}
+
+impl<'a> From<&'a str> for Groups<'a> {
+    fn from(str: &'a str) -> Self {
+        Self::from(usv::iter::Tokens::from(str))
+    }
+}
+
+impl<'a> std::iter::Iterator for Groups<'a> {
     type Item = Group;
 
     fn next(&mut self) -> Option<Self::Item> {
@@ -51,17 +70,12 @@ impl<'a> std::iter::Iterator for GroupIterator<'a> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate as usv;
 
     #[test]
     fn test() {
         let input = EXAMPLE_STYLE_SYMBOLS_GROUPS;
-        let iter = GroupIterator {
-            iterator: TokenIterator {
-                chars: input.chars(),
-                ..Default::default()
-            }
-        };
-        let actual: Groups = iter.collect();
+        let actual: usv::Groups = usv::iter::Groups::from(input).collect();
         assert_eq!(actual, EXAMPLE_ARRAY_GROUPS);
     }
 

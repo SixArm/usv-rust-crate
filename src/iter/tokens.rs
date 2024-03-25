@@ -1,20 +1,24 @@
-use crate::token::Token;
+use crate as usv;
 
 #[derive(Debug)]
-pub struct TokenIterator<'a> {
+pub struct Tokens<'a> {
     pub chars: std::str::Chars<'a>,
 }
 
-impl<'a> Default for TokenIterator<'a> {
-    fn default() -> TokenIterator<'a> {
-        TokenIterator {
-            chars: "".chars(),
-        }
+impl<'a> From<std::str::Chars<'a>> for Tokens<'a> {
+    fn from(chars: std::str::Chars<'a>) -> Self {
+        Self { chars }
     }
 }
 
-impl<'a> std::iter::Iterator for TokenIterator<'a> {
-    type Item = Token;
+impl<'a> From<&'a str> for Tokens<'a> {
+    fn from(str: &'a str) -> Self {
+        Self { chars: str.chars() }
+    }
+}
+
+impl<'a> std::iter::Iterator for Tokens<'a> {
+    type Item = usv::Token;
 
     fn next(&mut self) -> Option<Self::Item> {
 
@@ -27,11 +31,11 @@ impl<'a> std::iter::Iterator for TokenIterator<'a> {
             match self.chars.next() {
                 Some(c) => {
                     match c {
-                        '\u{001F}' | '␟' => { return Some(Token::Unit(content)) },
-                        '\u{001E}' | '␞' => { return Some(Token::RecordSeparator) },
-                        '\u{001D}' | '␝' => { return Some(Token::GroupSeparator) },
-                        '\u{001C}' | '␜' => { return Some(Token::FileSeparator) },
-                        '\u{0004}' | '␄' => { return Some(Token::EndOfTransmission) },
+                        '\u{001F}' | '␟' => { return Some(usv::Token::Unit(content)) },
+                        '\u{001E}' | '␞' => { return Some(usv::Token::RecordSeparator) },
+                        '\u{001D}' | '␝' => { return Some(usv::Token::GroupSeparator) },
+                        '\u{001C}' | '␜' => { return Some(usv::Token::FileSeparator) },
+                        '\u{0004}' | '␄' => { return Some(usv::Token::EndOfTransmission) },
                         '\u{001B}' | '␛' => {
                             match self.chars.next() {
                                 Some(c) => {
@@ -68,9 +72,8 @@ impl<'a> std::iter::Iterator for TokenIterator<'a> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate as usv;
     use crate::examples::*;
-    use crate::{Token, Tokens, Unit};
-    use crate::token_iterator::TokenIterator;
 
     /// An empty string returns an empty list,
     /// because there are no separators.
@@ -84,10 +87,7 @@ mod tests {
     #[test]
     fn empty() {
         let input = "";
-        let iter = TokenIterator {
-            chars: input.chars(),
-        };
-        let actual: Vec<Token> = iter.collect();
+        let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
         assert_eq!(
             actual,
             []
@@ -106,10 +106,7 @@ mod tests {
     #[test]
     fn chaff() {
         let input = "a";
-        let iter = TokenIterator {
-            chars: input.chars(),
-        };
-        let actual: Vec<Token> = iter.collect();
+        let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
         assert_eq!(
             actual,
             []
@@ -126,20 +123,14 @@ mod tests {
     ///
     #[test]
     fn unit_separator() {
-        let expect = [Token::Unit(Unit::from(""))];
+        let expect = [usv::Token::Unit(usv::Unit::from(""))];
         // Control
         let input = "\u{001F}";
-        let iter = TokenIterator {
-            chars: input.chars(),
-        };
-        let actual: Vec<Token> = iter.collect();
+        let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
         assert_eq!(actual, expect);
         // Symbol
         let input = "␟";
-        let iter = TokenIterator {
-            chars: input.chars(),
-        };
-        let actual: Vec<Token> = iter.collect();
+        let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
         assert_eq!(actual, expect);
     }
 
@@ -153,20 +144,14 @@ mod tests {
     ///
     #[test]
     fn record_separator_control() {
-        let expect = [Token::RecordSeparator];
+        let expect = [usv::Token::RecordSeparator];
         // Control
         let input = "\u{001E}";
-        let iter = TokenIterator {
-            chars: input.chars(),
-        };
-        let actual: Vec<Token> = iter.collect();
+        let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
         assert_eq!(actual, expect);
         // Symbol
         let input = "␞";
-        let iter = TokenIterator {
-            chars: input.chars(),
-        };
-        let actual: Vec<Token> = iter.collect();
+        let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
         assert_eq!(actual, expect);
     }
 
@@ -180,20 +165,14 @@ mod tests {
     ///
     #[test]
     fn group_separator_symbol() {
-        let expect = [Token::GroupSeparator];
+        let expect = [usv::Token::GroupSeparator];
         // Control
         let input = "\u{001D}";
-        let iter = TokenIterator {
-            chars: input.chars(),
-        };
-        let actual: Vec<Token> = iter.collect();
+        let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
         assert_eq!(actual, expect);
         // Symbol
         let input = "␝";
-        let iter = TokenIterator {
-            chars: input.chars(),
-        };
-        let actual: Vec<Token> = iter.collect();
+        let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
         assert_eq!(actual, expect);
     }
 
@@ -207,20 +186,14 @@ mod tests {
     ///
     #[test]
     fn file_separator() {
-        let expect = [Token::FileSeparator];
+        let expect = [usv::Token::FileSeparator];
         // Control
         let input = "␜";
-        let iter = TokenIterator {
-            chars: input.chars(),
-        };
-        let actual: Vec<Token> = iter.collect();
+        let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
         assert_eq!(actual, expect);
         // Symbol
         let input = "␜";
-        let iter = TokenIterator {
-            chars: input.chars(),
-        };
-        let actual: Vec<Token> = iter.collect();
+        let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
         assert_eq!(actual, expect);
     }
 
@@ -234,20 +207,14 @@ mod tests {
     ///
     #[test]
     fn end_of_transmission() {
-        let expect = [Token::EndOfTransmission];
+        let expect = [usv::Token::EndOfTransmission];
         // Control
         let input = "\u{0004}";
-        let iter = TokenIterator {
-            chars: input.chars(),
-        };
-        let actual: Vec<Token> = iter.collect();
+        let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
         assert_eq!(actual, expect);
         // Symbol
         let input = "␄";
-        let iter = TokenIterator {
-            chars: input.chars(),
-        };
-        let actual: Vec<Token> = iter.collect();
+        let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
         assert_eq!(actual, expect);
     }
 
@@ -263,14 +230,11 @@ mod tests {
     #[test]
     fn unit() {
         let input = "a␟";
-        let iter = TokenIterator {
-            chars: input.chars(),
-        };
-        let actual: Vec<Token> = iter.collect();
+        let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
         assert_eq!(
             actual,
             [
-                Token::Unit(Unit::from("a")),
+                usv::Token::Unit(usv::Unit::from("a")),
             ]
         );
     }
@@ -286,15 +250,12 @@ mod tests {
     #[test]
     fn units() {
         let input = EXAMPLE_STYLE_SYMBOLS_UNITS;
-        let iter = TokenIterator {
-            chars: input.chars(),
-        };
-        let actual: Vec<Token> = iter.collect();
+        let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
         assert_eq!(
             actual,
             [
-                Token::Unit(Unit::from("a")),
-                Token::Unit(Unit::from("b")),
+                usv::Token::Unit(usv::Unit::from("a")),
+                usv::Token::Unit(usv::Unit::from("b")),
             ]
         );
     }
@@ -310,19 +271,16 @@ mod tests {
     #[test]
     fn records() {
         let input = EXAMPLE_STYLE_SYMBOLS_RECORDS;
-        let iter = TokenIterator {
-            chars: input.chars(),
-        };
-        let actual: Vec<Token> = iter.collect();
+        let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
         assert_eq!(
             actual,
             [
-                Token::Unit(Unit::from("a")),
-                Token::Unit(Unit::from("b")),
-                Token::RecordSeparator,
-                Token::Unit(Unit::from("c")),
-                Token::Unit(Unit::from("d")),
-                Token::RecordSeparator,
+                usv::Token::Unit(usv::Unit::from("a")),
+                usv::Token::Unit(usv::Unit::from("b")),
+                usv::Token::RecordSeparator,
+                usv::Token::Unit(usv::Unit::from("c")),
+                usv::Token::Unit(usv::Unit::from("d")),
+                usv::Token::RecordSeparator,
             ]
         );
     }
@@ -338,27 +296,24 @@ mod tests {
     #[test]
     fn groups() {
         let input = EXAMPLE_STYLE_SYMBOLS_GROUPS;
-        let iter = TokenIterator {
-            chars: input.chars(),
-        };
-        let actual: Vec<Token> = iter.collect();
+        let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
         assert_eq!(
             actual,
             [
-                Token::Unit(Unit::from("a")),
-                Token::Unit(Unit::from("b")),
-                Token::RecordSeparator,
-                Token::Unit(Unit::from("c")),
-                Token::Unit(Unit::from("d")),
-                Token::RecordSeparator,
-                Token::GroupSeparator,
-                Token::Unit(Unit::from("e")),
-                Token::Unit(Unit::from("f")),
-                Token::RecordSeparator,
-                Token::Unit(Unit::from("g")),
-                Token::Unit(Unit::from("h")),
-                Token::RecordSeparator,
-                Token::GroupSeparator,
+                usv::Token::Unit(usv::Unit::from("a")),
+                usv::Token::Unit(usv::Unit::from("b")),
+                usv::Token::RecordSeparator,
+                usv::Token::Unit(usv::Unit::from("c")),
+                usv::Token::Unit(usv::Unit::from("d")),
+                usv::Token::RecordSeparator,
+                usv::Token::GroupSeparator,
+                usv::Token::Unit(usv::Unit::from("e")),
+                usv::Token::Unit(usv::Unit::from("f")),
+                usv::Token::RecordSeparator,
+                usv::Token::Unit(usv::Unit::from("g")),
+                usv::Token::Unit(usv::Unit::from("h")),
+                usv::Token::RecordSeparator,
+                usv::Token::GroupSeparator,
             ]
         );
     }
@@ -374,43 +329,40 @@ mod tests {
     #[test]
     fn token_iterator_with_files() {
         let input = EXAMPLE_STYLE_SYMBOLS_FILES;
-        let iter = TokenIterator {
-            chars: input.chars(),
-        };
-        let actual: Vec<Token> = iter.collect();
+        let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
         assert_eq!(
             actual,
             [
-                Token::Unit(Unit::from("a")),
-                Token::Unit(Unit::from("b")),
-                Token::RecordSeparator,
-                Token::Unit(Unit::from("c")),
-                Token::Unit(Unit::from("d")),
-                Token::RecordSeparator,
-                Token::GroupSeparator,
-                Token::Unit(Unit::from("e")),
-                Token::Unit(Unit::from("f")),
-                Token::RecordSeparator,
-                Token::Unit(Unit::from("g")),
-                Token::Unit(Unit::from("h")),
-                Token::RecordSeparator,
-                Token::GroupSeparator,
-                Token::FileSeparator,
-                Token::Unit(Unit::from("i")),
-                Token::Unit(Unit::from("j")),
-                Token::RecordSeparator,
-                Token::Unit(Unit::from("k")),
-                Token::Unit(Unit::from("l")),
-                Token::RecordSeparator,
-                Token::GroupSeparator,
-                Token::Unit(Unit::from("m")),
-                Token::Unit(Unit::from("n")),
-                Token::RecordSeparator,
-                Token::Unit(Unit::from("o")),
-                Token::Unit(Unit::from("p")),
-                Token::RecordSeparator,
-                Token::GroupSeparator,
-                Token::FileSeparator,
+                usv::Token::Unit(usv::Unit::from("a")),
+                usv::Token::Unit(usv::Unit::from("b")),
+                usv::Token::RecordSeparator,
+                usv::Token::Unit(usv::Unit::from("c")),
+                usv::Token::Unit(usv::Unit::from("d")),
+                usv::Token::RecordSeparator,
+                usv::Token::GroupSeparator,
+                usv::Token::Unit(usv::Unit::from("e")),
+                usv::Token::Unit(usv::Unit::from("f")),
+                usv::Token::RecordSeparator,
+                usv::Token::Unit(usv::Unit::from("g")),
+                usv::Token::Unit(usv::Unit::from("h")),
+                usv::Token::RecordSeparator,
+                usv::Token::GroupSeparator,
+                usv::Token::FileSeparator,
+                usv::Token::Unit(usv::Unit::from("i")),
+                usv::Token::Unit(usv::Unit::from("j")),
+                usv::Token::RecordSeparator,
+                usv::Token::Unit(usv::Unit::from("k")),
+                usv::Token::Unit(usv::Unit::from("l")),
+                usv::Token::RecordSeparator,
+                usv::Token::GroupSeparator,
+                usv::Token::Unit(usv::Unit::from("m")),
+                usv::Token::Unit(usv::Unit::from("n")),
+                usv::Token::RecordSeparator,
+                usv::Token::Unit(usv::Unit::from("o")),
+                usv::Token::Unit(usv::Unit::from("p")),
+                usv::Token::RecordSeparator,
+                usv::Token::GroupSeparator,
+                usv::Token::FileSeparator,
             ]
         );
     }
@@ -418,14 +370,11 @@ mod tests {
     #[test]
     fn escape_then_typical_character() {
         let input = "ab␛xc␟";
-        let iter = TokenIterator {
-            chars: input.chars(),
-        };
-        let actual: Vec<Token> = iter.collect();
+        let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
         assert_eq!(
             actual,
             [
-                Token::Unit(Unit::from("abc")),
+                usv::Token::Unit(usv::Unit::from("abc")),
             ]
         );
     }
@@ -433,14 +382,11 @@ mod tests {
     #[test]
     fn escape_then_special_character() {
         let input = "ab␛␟cd␟";
-        let iter = TokenIterator {
-            chars: input.chars(),
-        };
-        let actual: Vec<Token> = iter.collect();
+        let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
         assert_eq!(
             actual,
             [
-                Token::Unit(Unit::from("ab␟cd")),
+                usv::Token::Unit(usv::Unit::from("ab␟cd")),
             ]
         );
     }
@@ -448,14 +394,11 @@ mod tests {
     #[test]
     fn escape_twice() {
         let input = "ab␛␛cd␟";
-        let iter = TokenIterator {
-            chars: input.chars(),
-        };
-        let actual: Vec<Token> = iter.collect();
+        let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
         assert_eq!(
             actual,
             [
-                Token::Unit(Unit::from("ab␛cd")),
+                usv::Token::Unit(usv::Unit::from("ab␛cd")),
             ]
         );
     }
@@ -463,19 +406,16 @@ mod tests {
     #[test]
     fn escape_eol_per_unit() {
         let input = "a␟␛\nb␟␞␛\nc␟␛\nd␟␞␛\n";
-        let iter = TokenIterator {
-            chars: input.chars(),
-        };
-        let actual: Vec<Token> = iter.collect();
+        let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
         assert_eq!(
             actual,
             [
-                Token::Unit(Unit::from("a")),
-                Token::Unit(Unit::from("b")),
-                Token::RecordSeparator,
-                Token::Unit(Unit::from("c")),
-                Token::Unit(Unit::from("d")),
-                Token::RecordSeparator,
+                usv::Token::Unit(usv::Unit::from("a")),
+                usv::Token::Unit(usv::Unit::from("b")),
+                usv::Token::RecordSeparator,
+                usv::Token::Unit(usv::Unit::from("c")),
+                usv::Token::Unit(usv::Unit::from("d")),
+                usv::Token::RecordSeparator,
             ]
         );
     }
@@ -483,19 +423,16 @@ mod tests {
     #[test]
     fn escape_eol_per_record() {
         let input = "a␟b␟␞␛\nc␟d␟␞␛\n";
-        let iter = TokenIterator {
-            chars: input.chars(),
-        };
-        let actual: Vec<Token> = iter.collect();
+        let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
         assert_eq!(
             actual,
             [
-                Token::Unit(Unit::from("a")),
-                Token::Unit(Unit::from("b")),
-                Token::RecordSeparator,
-                Token::Unit(Unit::from("c")),
-                Token::Unit(Unit::from("d")),
-                Token::RecordSeparator,
+                usv::Token::Unit(usv::Unit::from("a")),
+                usv::Token::Unit(usv::Unit::from("b")),
+                usv::Token::RecordSeparator,
+                usv::Token::Unit(usv::Unit::from("c")),
+                usv::Token::Unit(usv::Unit::from("d")),
+                usv::Token::RecordSeparator,
             ]
         );
     }

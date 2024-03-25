@@ -43,7 +43,7 @@ pub fn random_csv_data(unit_length: usize, unit_count: usize, record_count: usiz
 pub fn parse_usv(s: &String) -> usize {
     let mut n = 0;
     for record in s.records() {
-        for _/*unit*/ in record.units() {
+        for _/*unit*/ in record {
             n += 1;
         }
     }

@@ -85,11 +85,13 @@ pub mod examples; pub use examples::*;
 #[allow(dead_code)] pub type Files = Vec<File>;
 
 // Iterator for token, unit, record, group, file.
-pub mod token_iterator; pub use token_iterator::*;
-pub mod unit_iterator; pub use unit_iterator::*;
-pub mod record_iterator; pub use record_iterator::*;
-pub mod group_iterator; pub use group_iterator::*;
-pub mod file_iterator; pub use file_iterator::*;
+pub mod iter {
+    pub mod tokens; pub use tokens::*;
+    pub mod units; pub use units::*;
+    pub mod records; pub use records::*;
+    pub mod groups; pub use groups::*;
+    pub mod files; pub use files::*;
+}
 
 // Iterator extensions for units, records, groups, files.
 pub mod str_ext; pub use str_ext::StrExt;
