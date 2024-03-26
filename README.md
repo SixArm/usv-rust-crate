@@ -63,3 +63,40 @@ let input = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜i␟j␟␞k�
 let files: Files = input.files().collect();
 assert_eq!(files, [[[["a", "b"],["c", "d"]],[["e", "f"],["g", "h"]]],[[["i", "j"],["k", "l"]],[["m", "n"],["o", "p"]]]]);
 ```
+
+## Token
+
+A token is the underlying USV enumeration for parsing a string to output:
+
+```no_run
+pub enum Token {
+    Unit(String),
+    UnitSeparator,
+    RecordSeparator,
+    GroupSeparator,
+    FileSeparator,
+    EndOfTransmission,
+}
+```
+
+## Type aliases
+
+* Token = described above
+
+* Tokens = Vec<Token>
+
+* Unit = String
+
+* Units = Vec<Unit>
+
+* Record = Units
+
+* Records = Vec<Record>
+
+* Group = Records
+
+* Groups = Vec<Records>
+
+* File = Groups
+
+* Files = Vec<File>

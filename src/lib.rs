@@ -63,6 +63,43 @@
 //! let files: Files = input.files().collect();
 //! assert_eq!(files, [[[["a", "b"],["c", "d"]],[["e", "f"],["g", "h"]]],[[["i", "j"],["k", "l"]],[["m", "n"],["o", "p"]]]]);
 //! ```
+//!
+//! ## Token
+//!
+//! A token is the underlying USV enumeration for parsing a string to output:
+//!
+//! ```no_run
+//! pub enum Token {
+//!     Unit(String),
+//!     UnitSeparator,
+//!     RecordSeparator,
+//!     GroupSeparator,
+//!     FileSeparator,
+//!     EndOfTransmission,
+//! }
+//! ```
+//!
+//! ## Type aliases
+//!
+//! * Token = described above
+//!
+//! * Tokens = Vec<Token>
+//!
+//! * Unit = String
+//!
+//! * Units = Vec<Unit>
+//!
+//! * Record = Units
+//!
+//! * Records = Vec<Record>
+//!
+//! * Group = Records
+//!
+//! * Groups = Vec<Records>
+//!
+//! * File = Groups
+//!
+//! * Files = Vec<File>
 
 // Constants for each USV character as a control character and symbol character.
 pub mod constants; pub use constants::*;
@@ -85,13 +122,7 @@ pub mod examples; pub use examples::*;
 #[allow(dead_code)] pub type Files = Vec<File>;
 
 // Iterator for token, unit, record, group, file.
-pub mod iter {
-    pub mod tokens; pub use tokens::*;
-    pub mod units; pub use units::*;
-    pub mod records; pub use records::*;
-    pub mod groups; pub use groups::*;
-    pub mod files; pub use files::*;
-}
+pub mod iter;
 
 // Iterator extensions for units, records, groups, files.
 pub mod str_ext; pub use str_ext::StrExt;

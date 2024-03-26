@@ -92,7 +92,7 @@ mod tests {
 
     #[test]
     fn test() {
-        let input = EXAMPLE_STYLE_SYMBOLS_FILES;
+        let input = EXAMPLE_FILES_STYLE_SYMBOLS;
         let actual: usv::Files = usv::iter::Files::from(input).collect();
         assert_eq!(actual, EXAMPLE_ARRAY_FILES);
     }

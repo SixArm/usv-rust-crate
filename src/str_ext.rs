@@ -41,27 +41,27 @@ mod tests {
 
     #[test]
     fn tokens_test() {
-        let _actual: usv::iter::Tokens = EXAMPLE_STYLE_SYMBOLS_FILES.tokens();
+        let _actual: usv::iter::Tokens = EXAMPLE_FILES_STYLE_SYMBOLS.tokens();
     }
 
     #[test]
     fn units_test() {
-        let _actual: usv::iter::Units = EXAMPLE_STYLE_SYMBOLS_UNITS.units();
+        let _actual: usv::iter::Units = EXAMPLE_UNITS_STYLE_SYMBOLS.units();
     }
 
     #[test]
     fn records_test() {
-        let _actual: usv::iter::Records = EXAMPLE_STYLE_SYMBOLS_RECORDS.records();
+        let _actual: usv::iter::Records = EXAMPLE_RECORDS_STYLE_SYMBOLS.records();
     }
 
     #[test]
     fn groups_test() {
-        let _actual: usv::iter::Groups = EXAMPLE_STYLE_SYMBOLS_GROUPS.groups();
+        let _actual: usv::iter::Groups = EXAMPLE_GROUPS_STYLE_SYMBOLS.groups();
     }
 
     #[test]
     fn files_test() {
-        let _actual: usv::iter::Files = EXAMPLE_STYLE_SYMBOLS_FILES.files();
+        let _actual: usv::iter::Files = EXAMPLE_FILES_STYLE_SYMBOLS.files();
     }
 
 }

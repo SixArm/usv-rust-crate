@@ -74,7 +74,7 @@ mod tests {
 
     #[test]
     fn test() {
-        let input = EXAMPLE_STYLE_SYMBOLS_GROUPS;
+        let input = EXAMPLE_GROUPS_STYLE_SYMBOLS;
         let actual: usv::Groups = usv::iter::Groups::from(input).collect();
         assert_eq!(actual, EXAMPLE_ARRAY_GROUPS);
     }

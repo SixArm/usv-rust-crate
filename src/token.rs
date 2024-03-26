@@ -4,7 +4,7 @@
 
 #[derive(Debug, Clone, PartialEq)]
 pub enum Token {
-    Unit(crate::Unit),
+    Unit(String),
     UnitSeparator,
     RecordSeparator,
     GroupSeparator,

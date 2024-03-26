@@ -62,7 +62,7 @@ mod tests {
 
     #[test]
     fn units_records_groups_files() {
-        let input = EXAMPLE_STYLE_SYMBOLS_RECORDS;
+        let input = EXAMPLE_RECORDS_STYLE_SYMBOLS;
         let actual: usv::Records = usv::iter::Records::from(input).collect();
         assert_eq!(actual, EXAMPLE_ARRAY_RECORDS);
     }

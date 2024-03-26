@@ -249,7 +249,7 @@ mod tests {
     ///
     #[test]
     fn units() {
-        let input = EXAMPLE_STYLE_SYMBOLS_UNITS;
+        let input = EXAMPLE_UNITS_STYLE_SYMBOLS;
         let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
         assert_eq!(
             actual,
@@ -270,7 +270,7 @@ mod tests {
     ///
     #[test]
     fn records() {
-        let input = EXAMPLE_STYLE_SYMBOLS_RECORDS;
+        let input = EXAMPLE_RECORDS_STYLE_SYMBOLS;
         let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
         assert_eq!(
             actual,
@@ -295,7 +295,7 @@ mod tests {
     ///
     #[test]
     fn groups() {
-        let input = EXAMPLE_STYLE_SYMBOLS_GROUPS;
+        let input = EXAMPLE_GROUPS_STYLE_SYMBOLS;
         let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
         assert_eq!(
             actual,
@@ -328,7 +328,7 @@ mod tests {
     ///
     #[test]
     fn token_iterator_with_files() {
-        let input = EXAMPLE_STYLE_SYMBOLS_FILES;
+        let input = EXAMPLE_FILES_STYLE_SYMBOLS;
         let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
         assert_eq!(
             actual,
