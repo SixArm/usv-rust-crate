@@ -28,6 +28,7 @@ impl<'a> std::iter::Iterator for Files<'a> {
     type Item = File;
 
     fn next(&mut self) -> Option<Self::Item> {
+        let mut end_flag = false;
         let mut units = Units::new();
         let mut records = Records::new();
         let mut groups = Groups::new();
@@ -39,6 +40,7 @@ impl<'a> std::iter::Iterator for Files<'a> {
                         Token::Unit(unit) => {
                             units.push(unit)
                         },
+                        Token::UnitSeparator => {},
                         Token::RecordSeparator => {
                             if !units.is_empty() {
                                 records.push(units);
@@ -56,28 +58,26 @@ impl<'a> std::iter::Iterator for Files<'a> {
                                 records = Records::new();
                             }
                         }
-                        Token::FileSeparator => {
-                            if !units.is_empty() {
-                                records.push(units);
-                                units = Units::new();
-                            }
-                            if !records.is_empty() {
-                                groups.push(records);
-                                units = Units::new();
-                                records = Records::new();
-                            }
-                            if !groups.is_empty() {
-                                units.truncate(0);
-                                records.truncate(0);
-                                return Some(groups)
-                            } else {
-                                return None
-                            }
-                        },
-                        _ => {}
+                        _ => end_flag = true,
                     }
                 },
-                None => {
+                None => end_flag = true,
+            }
+            if end_flag {
+                if !units.is_empty() {
+                    records.push(units);
+                    units = Units::new();
+                }
+                if !records.is_empty() {
+                    groups.push(records);
+                    units = Units::new();
+                    records = Records::new();
+                }
+                if !groups.is_empty() {
+                    units.truncate(0);
+                    records.truncate(0);
+                    return Some(groups)
+                } else {
                     return None
                 }
             }

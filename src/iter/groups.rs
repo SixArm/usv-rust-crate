@@ -28,6 +28,7 @@ impl<'a> std::iter::Iterator for Groups<'a> {
     type Item = Group;
 
     fn next(&mut self) -> Option<Self::Item> {
+        let mut end_flag = false;
         let mut units = Units::new();
         let mut records = Records::new();
         loop {
@@ -35,31 +36,27 @@ impl<'a> std::iter::Iterator for Groups<'a> {
             match next {
                 Some(token) => {
                     match token {
-                        Token::Unit(unit) => {
-                            units.push(unit)
-                        },
+                        Token::Unit(unit) => units.push(unit),
+                        Token::UnitSeparator => {},
                         Token::RecordSeparator => {
                             if !units.is_empty() {
                                 records.push(units);
                                 units = Units::new();
                             }
-                        }
-                        Token::GroupSeparator => {
-                            if !units.is_empty() {
-                                records.push(units);
-                                units = Units::new();
-                            }
-                            if !records.is_empty() {
-                                units.truncate(0);
-                                return Some(records)
-                            } else {
-                                return None
-                            }
                         },
-                        _ => {}
+                        _ => end_flag = true,
                     }
                 },
-                None => {
+                None => end_flag = true,
+            }
+            if end_flag {
+                if !units.is_empty() {
+                    records.push(units);
+                    units = Units::new();
+                }
+                if !records.is_empty() {
+                    return Some(records)
+                } else {
                     return None
                 }
             }
