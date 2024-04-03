@@ -28,24 +28,26 @@ impl<'a> std::iter::Iterator for Records<'a> {
     type Item = Record;
 
     fn next(&mut self) -> Option<Self::Item> {
-        let mut end_flag = false;
         let mut units = Units::new();
         loop {
             let next = self.iterator.next();
             match next {
                 Some(token) => {
                     match token {
-                        Token::Unit(unit) => units.push(unit),
-                        Token::UnitSeparator => {},
-                        _ => end_flag = true
+                        Token::Unit(unit) => {
+                            units.push(unit)
+                        },
+                        Token::RecordSeparator => {
+                            if !units.is_empty() {
+                                return Some(units)
+                            } else {
+                                return None
+                            }
+                        },
+                        _ => {}
                     }
                 },
-                None => end_flag = true,
-            }
-            if end_flag {
-                if !units.is_empty() {
-                    return Some(units)
-                } else {
+                None => {
                     return None
                 }
             }
@@ -59,7 +61,7 @@ mod tests {
     use crate as usv;
 
     #[test]
-    fn test() {
+    fn units_records_groups_files() {
         let input = EXAMPLE_RECORDS_STYLE_SYMBOLS;
         let actual: usv::Records = usv::iter::Records::from(input).collect();
         assert_eq!(actual, EXAMPLE_ARRAY_RECORDS);

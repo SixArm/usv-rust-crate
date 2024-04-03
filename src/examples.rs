@@ -3,149 +3,149 @@
 //// General purpose examples, without any specific style, without any specific layout.
 
 /// Example USV unit.
-pub const EXAMPLE_UNIT: &str = "a";
+pub const EXAMPLE_UNIT: &str = "a␟";
 
 /// Example USV units.
-pub const EXAMPLE_UNITS: &str = "a␟b";
+pub const EXAMPLE_UNITS: &str = "a␟b␟";
 
 /// Example USV record.
-pub const EXAMPLE_RECORD: &str = "a␟b";
+pub const EXAMPLE_RECORD: &str = "a␟b␟␞";
 
 /// Example USV records.
-pub const EXAMPLE_RECORDS: &str = "a␟b␞c␟d";
+pub const EXAMPLE_RECORDS: &str = "a␟b␟␞c␟d␟␞";
 
 /// Example USV group.
-pub const EXAMPLE_GROUP: &str = "a␟b␞c␟d";
+pub const EXAMPLE_GROUP: &str = "a␟b␟␞c␟d␟␞␝";
 
 /// Example USV groups.
-pub const EXAMPLE_GROUPS: &str = "a␟b␞c␟d␝e␟f␞g␟h";
+pub const EXAMPLE_GROUPS: &str = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝";
 
 /// Example USV file.
-pub const EXAMPLE_FILE: &str = "a␟b␞c␟d␝e␟f␞g␟h";
+pub const EXAMPLE_FILE: &str = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜";
 
 /// Example USV files.
-pub const EXAMPLE_FILES: &str = "a␟b␞c␟d␝e␟f␞g␟h␜i␟j␞k␟l␝m␟n␞o␟p";
+pub const EXAMPLE_FILES: &str = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜";
 
 //// With style symbols
 
 /// Example USV unit with style symbols.
-pub const EXAMPLE_UNIT_STYLE_SYMBOLS: &str = "a";
+pub const EXAMPLE_UNIT_STYLE_SYMBOLS: &str = "a␟";
 
 /// Example USV units with style symbols.
-pub const EXAMPLE_UNITS_STYLE_SYMBOLS: &str = "a␟b";
+pub const EXAMPLE_UNITS_STYLE_SYMBOLS: &str = "a␟b␟";
 
 /// Example USV record with style symbols.
-pub const EXAMPLE_RECORD_STYLE_SYMBOLS: &str = "a␟b";
+pub const EXAMPLE_RECORD_STYLE_SYMBOLS: &str = "a␟b␟␞";
 
 /// Example USV records with style symbols.
-pub const EXAMPLE_RECORDS_STYLE_SYMBOLS: &str = "a␟b␞c␟d";
+pub const EXAMPLE_RECORDS_STYLE_SYMBOLS: &str = "a␟b␟␞c␟d␟␞";
 
 /// Example USV group with style symbols.
-pub const EXAMPLE_GROUP_STYLE_SYMBOLS: &str = "a␟b␞c␟d";
+pub const EXAMPLE_GROUP_STYLE_SYMBOLS: &str = "a␟b␟␞c␟d␟␞␝";
 
 /// Example USV groups with style symbols.
-pub const EXAMPLE_GROUPS_STYLE_SYMBOLS: &str = "a␟b␞c␟d␝e␟f␞g␟h";
+pub const EXAMPLE_GROUPS_STYLE_SYMBOLS: &str = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝";
 
 /// Example USV file with style symbols.
-pub const EXAMPLE_FILE_STYLE_SYMBOLS: &str = "a␟b␞c␟d␝e␟f␞g␟h";
+pub const EXAMPLE_FILE_STYLE_SYMBOLS: &str = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜";
 
 /// Example USV files with style symbols.
-pub const EXAMPLE_FILES_STYLE_SYMBOLS: &str = "a␟b␞c␟d␝e␟f␞g␟h␜i␟j␞k␟l␝m␟n␞o␟p";
+pub const EXAMPLE_FILES_STYLE_SYMBOLS: &str = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜";
 
 //// With style controls
 
 /// Example USV unit with style controls.
-pub const EXAMPLE_UNIT_STYLE_CONTROLS: &str = "a";
+pub const EXAMPLE_UNIT_STYLE_CONTROLS: &str = "a\u{001F}";
 
 /// Example USV units with style controls.
-pub const EXAMPLE_UNITS_STYLE_CONTROLS: &str = "a\u{001F}b";
+pub const EXAMPLE_UNITS_STYLE_CONTROLS: &str = "a\u{001F}b\u{001F}";
 
 /// Example USV record with style controls.
-pub const EXAMPLE_RECORD_STYLE_CONTROLS: &str = "a\u{001F}b";
+pub const EXAMPLE_RECORD_STYLE_CONTROLS: &str = "a\u{001F}b\u{001F}\u{001E}";
 
 /// Example USV records with style controls.
-pub const EXAMPLE_RECORDS_STYLE_CONTROLS: &str = "a\u{001F}b\u{001E}c\u{001F}d";
+pub const EXAMPLE_RECORDS_STYLE_CONTROLS: &str = "a\u{001F}b\u{001F}\u{001E}c\u{001F}d\u{001F}\u{001E}";
 
 /// Example USV group with style controls.
-pub const EXAMPLE_GROUP_STYLE_CONTROLS: &str = "a\u{001F}b\u{001E}c\u{001F}d";
+pub const EXAMPLE_GROUP_STYLE_CONTROLS: &str = "a\u{001F}b\u{001F}\u{001E}c\u{001F}d\u{001F}\u{001E}\u{001D}";
 
 /// Example USV groups with style controls.
-pub const EXAMPLE_GROUPS_STYLE_CONTROLS: &str = "a\u{001F}b\u{001E}c\u{001F}d\u{001D}e\u{001F}f\u{001E}g\u{001F}h";
+pub const EXAMPLE_GROUPS_STYLE_CONTROLS: &str = "a\u{001F}b\u{001F}\u{001E}c\u{001F}d\u{001F}\u{001E}\u{001D}e\u{001F}f\u{001F}\u{001E}g\u{001F}h\u{001F}\u{001E}\u{001D}";
 
 /// Example USV file with style controls.
-pub const EXAMPLE_FILE_STYLE_CONTROLS: &str = "a\u{001F}b\u{001E}c\u{001F}d\u{001D}e\u{001F}f\u{001E}g\u{001F}h";
+pub const EXAMPLE_FILE_STYLE_CONTROLS: &str = "a\u{001F}b\u{001F}\u{001E}c\u{001F}d\u{001F}\u{001E}\u{001D}e\u{001F}f\u{001F}\u{001E}g\u{001F}h\u{001F}\u{001E}\u{001D}\u{001C}";
 
 /// Example USV files with style controls.
-pub const EXAMPLE_FILES_STYLE_CONTROLS: &str = "a\u{001F}b\u{001E}c\u{001F}d\u{001D}e\u{001F}f\u{001E}g\u{001F}h\u{001C}i\u{001F}j\u{001E}k\u{001F}l\u{001D}m\u{001F}n\u{001E}o\u{001F}p";
+pub const EXAMPLE_FILES_STYLE_CONTROLS: &str = "a\u{001F}b\u{001F}\u{001E}c\u{001F}d\u{001F}\u{001E}\u{001D}e\u{001F}f\u{001F}\u{001E}g\u{001F}h\u{001F}\u{001E}\u{001D}\u{001C}i\u{001F}j\u{001F}\u{001E}k\u{001F}l\u{001F}\u{001E}\u{001D}m\u{001F}n\u{001F}\u{001E}o\u{001F}p\u{001F}\u{001E}\u{001D}\u{001C}";
 
 //// With style braces
 
 /// Example USV unit with style braces.
-pub const EXAMPLE_UNIT_STYLE_BRACES: &str = "a";
+pub const EXAMPLE_UNIT_STYLE_BRACES: &str = "a{US}";
 
 /// Example USV units with style braces.
-pub const EXAMPLE_UNITS_STYLE_BRACES: &str = "a{US}b";
+pub const EXAMPLE_UNITS_STYLE_BRACES: &str = "a{US}b{US}";
 
 /// Example USV record with style braces.
-pub const EXAMPLE_RECORD_STYLE_BRACES: &str = "a{US}b";
+pub const EXAMPLE_RECORD_STYLE_BRACES: &str = "a{US}b{US}{RS}";
 
 /// Example USV records with style braces.
-pub const EXAMPLE_RECORDS_STYLE_BRACES: &str = "a{US}b{RS}c{US}d";
+pub const EXAMPLE_RECORDS_STYLE_BRACES: &str = "a{US}b{US}{RS}c{US}d{US}{RS}";
 
 /// Example USV group with style braces.
-pub const EXAMPLE_GROUP_STYLE_BRACES: &str = "a{US}b{RS}c{US}d";
+pub const EXAMPLE_GROUP_STYLE_BRACES: &str = "a{US}b{US}{RS}c{US}d{US}{RS}{GS}";
 
 /// Example USV groups with style braces.
-pub const EXAMPLE_GROUPS_STYLE_BRACES: &str = "a{US}b{RS}c{US}d{GS}e{US}f{RS}g{US}h";
+pub const EXAMPLE_GROUPS_STYLE_BRACES: &str = "a{US}b{US}{RS}c{US}d{US}{RS}{GS}e{US}f{US}{RS}g{US}h{US}{RS}{GS}";
 
 /// Example USV file with style braces.
-pub const EXAMPLE_FILE_STYLE_BRACES: &str = "a{US}b{RS}c{US}d{GS}e{US}f{RS}g{US}h";
+pub const EXAMPLE_FILE_STYLE_BRACES: &str = "a{US}b{US}{RS}c{US}d{US}{RS}{GS}e{US}f{US}{RS}g{US}h{US}{RS}{GS}{FS}";
 
 /// Example USV files with style braces.
-pub const EXAMPLE_FILES_STYLE_BRACES: &str = "a{US}b{RS}c{US}d{GS}e{US}f{RS}g{US}h{FS}i{US}j{RS}k{US}l{GS}m{US}n{RS}o{US}p";
+pub const EXAMPLE_FILES_STYLE_BRACES: &str = "a{US}b{US}{RS}c{US}d{US}{RS}{GS}e{US}f{US}{RS}g{US}h{US}{RS}{GS}{FS}i{US}j{US}{RS}k{US}l{US}{RS}{GS}m{US}n{US}{RS}o{US}p{US}{RS}{GS}{FS}";
 
 //// With style symbols and layout 0
 
 /// Example USV unit with style symbols and layout 0.
-pub const EXAMPLE_UNIT_STYLE_SYMBOLS_LAYOUT_0: &str = "a";
+pub const EXAMPLE_UNIT_STYLE_SYMBOLS_LAYOUT_0: &str = "a␟";
 
 /// Example USV units with style symbols and layout 0.
-pub const EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_0: &str = "a␟b";
+pub const EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_0: &str = "a␟b␟";
 
 /// Example USV record with style symbols and layout 0.
-pub const EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_0: &str = "a␟b";
+pub const EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_0: &str = "a␟b␟␞";
 
 /// Example USV records with style symbols and layout 0.
-pub const EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_0: &str = "a␟b␞c␟d";
+pub const EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_0: &str = "a␟b␟␞c␟d␟␞";
 
 /// Example USV group with style symbols and layout 0.
-pub const EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_0: &str = "a␟b␞c␟d";
+pub const EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_0: &str = "a␟b␟␞c␟d␟␞␝";
 
 /// Example USV groups with style symbols and layout 0.
-pub const EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_0: &str = "a␟b␞c␟d␝e␟f␞g␟h";
+pub const EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_0: &str = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝";
 
 /// Example USV file with style symbols and layout 0.
-pub const EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_0: &str = "a␟b␞c␟d␝e␟f␞g␟h";
+pub const EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_0: &str = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜";
 
 /// Example USV files with style symbols and layout 0.
-pub const EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_0: &str = "a␟b␞c␟d␝e␟f␞g␟h␜i␟j␞k␟l␝m␟n␞o␟p";
+pub const EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_0: &str = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜";
 
 //// With style symbols and layout 1
 
 /// Example USV unit with style symbols and layout 1.
-pub const EXAMPLE_UNIT_STYLE_SYMBOLS_LAYOUT_1: &str = "a\n";
+pub const EXAMPLE_UNIT_STYLE_SYMBOLS_LAYOUT_1: &str = "a\n␟\n";
 
 /// Example USV units with style symbols and layout 1.
-pub const EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_1: &str = "a\n␟\nb\n";
+pub const EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_1: &str = "a\n␟\nb\n␟\n";
 
 /// Example USV record with style symbols and layout 1.
-pub const EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_1: &str = "a\n␟\nb\n";
+pub const EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_1: &str = "a\n␟\nb\n␟\n\n␞\n";
 
 /// Example USV records with style symbols and layout 1.
-pub const EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_1: &str = "a\n␟\nb\n␞\nc\n␟\nd\n";
+pub const EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_1: &str = "a\n␟\nb\n␞\nc\n␟\nd\n␟\n\n␞\n";
 
 /// Example USV group with style symbols and layout 1.
-pub const EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_1: &str = "a\n␟\nb\n␞\nc\n␟\nd\n";
+pub const EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_1: &str = "a\n␟\nb\n␞\nc\n␟\nd\n␟\n\n␞\n\n␟\n\n␞\n\n␝\n";
 
 /// Example USV groups with style symbols and layout 1.
 pub const EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_1: &str = "a\n␟\nb\n␞\nc\n␟\nd\n␝\ne\n␟\nf\n␞\ng\n␟\nh\n";
@@ -184,138 +184,138 @@ pub const EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_2: &str = "a\n\n␟\n\nb\n\n␞\n\n
 
 //// With style symbols and layout units
 
-/// Example USV unit with style symbols and layout records.
+/// Example USV unit with style symbols and layout units.
 pub const EXAMPLE_UNIT_STYLE_SYMBOLS_LAYOUT_UNITS: &str = "a␟\nb␟\n";
 
-/// Example USV units with style symbols and layout records.
+/// Example USV units with style symbols and layout units.
 pub const EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_UNITS: &str = "a␟\nb␟\n";
 
-/// Example USV record with style symbols and layout records.
+/// Example USV record with style symbols and layout units.
 pub const EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_UNITS: &str = "a␟\nb␟\n␞\n";
 
-/// Example USV records with style symbols and layout records.
+/// Example USV records with style symbols and layout units.
 pub const EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_UNITS: &str = "a␟\nb␟\n␞\nc␟\nd␟\n␞\n";
 
-/// Example USV group with style symbols and layout records.
+/// Example USV group with style symbols and layout units.
 pub const EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_UNITS: &str = "a␟\nb␟\n␞\nc␟\nd␟\n␞\n␝\n";
 
-/// Example USV groups with style symbols and layout records.
+/// Example USV groups with style symbols and layout units.
 pub const EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_UNITS: &str = "a␟\nb␟\n␞\nc␟\nd␟\n␞\n␝\ne␟\nf␟\n␞\ng␟\nh␟\n␞\n␝\n";
 
-/// Example USV file with style symbols and layout records.
+/// Example USV file with style symbols and layout units.
 pub const EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_UNITS: &str = "a␟\nb␟\n␞\nc␟\nd␟\n␞\n␝\ne␟\nf␟\n␞\ng␟\nh␟\n␞\n␝\n␜\n";
 
-/// Example USV files with style symbols and layout records.
+/// Example USV files with style symbols and layout units.
 pub const EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_UNITS: &str = "a␟\nb␞\nc␟\nd␝\ne␟\nf␞\ng␟\nh␜\ni␟\nj␞\nk␟\nl␝\nm␟\nn␞\no␟\np\n";
 
 //// With style symbols and layout records
 
 /// Example USV unit with style symbols and layout records.
-pub const EXAMPLE_UNIT_STYLE_SYMBOLS_LAYOUT_RECORDS: &str = "a";
+pub const EXAMPLE_UNIT_STYLE_SYMBOLS_LAYOUT_RECORDS: &str = "a␟";
 
 /// Example USV units with style symbols and layout records.
-pub const EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_RECORDS: &str = "a␟b";
+pub const EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_RECORDS: &str = "a␟b␟";
 
 /// Example USV record with style symbols and layout records.
-pub const EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_RECORDS: &str = "a␟b";
+pub const EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_RECORDS: &str = "a␟b␟␞\n";
 
 /// Example USV records with style symbols and layout records.
-pub const EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_RECORDS: &str = "a␟b␞\nc␟d";
+pub const EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_RECORDS: &str = "a␟b␟␞\nc␟d␟␞\n";
 
 /// Example USV group with style symbols and layout records.
-pub const EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_RECORDS: &str = "a␟b␞\nc␟d";
+pub const EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_RECORDS: &str = "a␟b␟␞\nc␟d␟␞\n␝\n";
 
 /// Example USV groups with style symbols and layout records.
-pub const EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_RECORDS: &str = "a␟b␞\nc␟d␝\ne␟f␞\ng␟h␝\n";
+pub const EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_RECORDS: &str = "a␟b␟␞\nc␟d␟␞\n␝\ne␟f␟␞\ng␟h␟␞\n␝\n";
 
 /// Example USV file with style symbols and layout records.
-pub const EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_RECORDS: &str = "a␟b␞\nc␟d␞\n␝\ne␟f␞\ng␟h␝";
+pub const EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_RECORDS: &str = "a␟b␟␞\nc␟d␟␞\n␝\ne␟f␟␞\ng␟h␟␞\n␝\n␜\n";
 
 /// Example USV files with style symbols and layout records.
-pub const EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_RECORDS: &str = "a␟b␞\nc␟d␝\ne␟f␞\ng␟h␜\ni␟j␞\nk␟l␝\nm␟n␞\no␟p";
+pub const EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_RECORDS: &str = "a␟b␟␞\nc␟d␟␞\n␝\ne␟f␟␞\ng␟h␟␞\n␝\n␜\ni␟j␟␞\nk␟l␟␞\n␝\nm␟n␟␞\no␟p␟␞\n␝\n␜\n";
 
 //// With style symbols and layout groups
 
-/// Example USV unit with style symbols and layout records.
-pub const EXAMPLE_UNIT_STYLE_SYMBOLS_LAYOUT_GROUPS: &str = "a␟b";
+/// Example USV unit with style symbols and layout groups.
+pub const EXAMPLE_UNIT_STYLE_SYMBOLS_LAYOUT_GROUPS: &str = "a␟";
 
-/// Example USV units with style symbols and layout records.
-pub const EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_GROUPS: &str = "a␟b";
+/// Example USV units with style symbols and layout groups.
+pub const EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_GROUPS: &str = "a␟b␟";
 
-/// Example USV record with style symbols and layout records.
-pub const EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_GROUPS: &str = "a␟b";
+/// Example USV record with style symbols and layout groups.
+pub const EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_GROUPS: &str = "a␟b␟␞";
 
-/// Example USV records with style symbols and layout records.
-pub const EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_GROUPS: &str = "a␟b␞c␟d";
+/// Example USV records with style symbols and layout groups.
+pub const EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_GROUPS: &str = "a␟b␟␞c␟d␟␞";
 
-/// Example USV group with style symbols and layout records.
-pub const EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_GROUPS: &str = "a␟b␞c␟d␝\n";
+/// Example USV group with style symbols and layout groups.
+pub const EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_GROUPS: &str = "a␟b␟␞c␟d␟␞␝\n";
 
-/// Example USV groups with style symbols and layout records.
-pub const EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_GROUPS: &str = "a␟b␞c␟d␝\ne␟f␞g␟h␝\n";
+/// Example USV groups with style symbols and layout groups.
+pub const EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_GROUPS: &str = "a␟b␟␞c␟d␟␞␝\ne␟f␟␞g␟h␟␞␝\n";
 
-/// Example USV file with style symbols and layout records.
-pub const EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_GROUPS: &str = "a␟b␞c␟d␝\ne␟f␞g␟h␝\n␜\n";
+/// Example USV file with style symbols and layout groups.
+pub const EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_GROUPS: &str = "a␟b␟␞c␟d␟␞␝\ne␟f␟␞g␟h␟␞␝\n␜\n";
 
-/// Example USV files with style symbols and layout records.
-pub const EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_GROUPS: &str = "a␟b␞c␟d␝\ne␟f␞g␟h␜\ni␟j␞k␟l␝\nm␟n␞o␟p\n";
+/// Example USV files with style symbols and layout groups.
+pub const EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_GROUPS: &str = "a␟b␟␞c␟d␟␞␝\ne␟f␟␞g␟h␟␞␝\n␜\ni␟j␟␞k␟l␟␞␝\nm␟n␟␞o␟p␟␞␝\n␜\n";
 
 //// With style symbols and layout files
 
-/// Example USV unit with style symbols and layout records.
-pub const EXAMPLE_UNIT_STYLE_SYMBOLS_LAYOUT_FILES: &str = "a␟b";
+/// Example USV unit with style symbols and layout files.
+pub const EXAMPLE_UNIT_STYLE_SYMBOLS_LAYOUT_FILES: &str = "a␟";
 
-/// Example USV units with style symbols and layout records.
-pub const EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_FILES: &str = "a␟b";
+/// Example USV units with style symbols and layout files.
+pub const EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_FILES: &str = "a␟b␟";
 
-/// Example USV record with style symbols and layout records.
-pub const EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_FILES: &str = "a␟b";
+/// Example USV record with style symbols and layout files.
+pub const EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_FILES: &str = "a␟b␟␞";
 
-/// Example USV records with style symbols and layout records.
-pub const EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_FILES: &str = "a␟b␞c␟d";
+/// Example USV records with style symbols and layout files.
+pub const EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_FILES: &str = "a␟b␟␞c␟d␟␞";
 
-/// Example USV group with style symbols and layout records.
-pub const EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_FILES: &str = "a␟b␞c␟d";
+/// Example USV group with style symbols and layout files.
+pub const EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_FILES: &str = "a␟b␟␞c␟d␟␞␝";
 
-/// Example USV groups with style symbols and layout records.
-pub const EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_FILES: &str = "a␟b␞c␟d␝e␟f␞g␟h";
+/// Example USV groups with style symbols and layout files.
+pub const EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_FILES: &str = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝";
 
-/// Example USV file with style symbols and layout records.
-pub const EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_FILES: &str = "a␟b␞c␟d␝e␟f␞g␟h␜\n";
+/// Example USV file with style symbols and layout files.
+pub const EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_FILES: &str = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜\n";
 
-/// Example USV files with style symbols and layout records.
-pub const EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_FILES: &str = "a␟b␞c␟d␝e␟f␞g␟h␜\ni␟j␞k␟l␝m␟n␞o␟p␜\n";
+/// Example USV files with style symbols and layout files.
+pub const EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_FILES: &str = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜\ni␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜\n";
 
 //// With style controls and layout 0
 
 /// Example USV unit with style controls and layout 0.
-pub const EXAMPLE_UNIT_STYLE_CONTROLS_LAYOUT_0: &str = "a";
+pub const EXAMPLE_UNIT_STYLE_CONTROLS_LAYOUT_0: &str = "a\u{001F}";
 
 /// Example USV units with style controls and layout 0.
-pub const EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_0: &str = "a\u{001F}b";
+pub const EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_0: &str = "a\u{001F}b\u{001F}";
 
 /// Example USV record with style controls and layout 0.
-pub const EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_0: &str = "a\u{001F}b";
+pub const EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_0: &str = "a\u{001F}b\u{001F}\u{001E}";
 
 /// Example USV records with style controls and layout 0.
-pub const EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_0: &str = "a\u{001F}b\u{001E}c\u{001F}d";
+pub const EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_0: &str = "a\u{001F}b\u{001F}\u{001E}c\u{001F}d\u{001F}\u{001E}";
 
 /// Example USV group with style controls and layout 0.
-pub const EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_0: &str = "a\u{001F}b\u{001E}c\u{001F}d";
+pub const EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_0: &str = "a\u{001F}b\u{001F}\u{001E}c\u{001F}d\u{001F}\u{001E}\u{001D}";
 
 /// Example USV groups with style controls and layout 0.
-pub const EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_0: &str = "a\u{001F}b\u{001E}c\u{001F}d\u{001D}e\u{001F}f\u{001E}g\u{001F}h";
+pub const EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_0: &str = "a\u{001F}b\u{001F}\u{001E}c\u{001F}d\u{001F}\u{001E}\u{001D}e\u{001F}f\u{001F}\u{001E}g\u{001F}h\u{001F}\u{001E}\u{001D}";
 
 /// Example USV file with style controls and layout 0.
-pub const EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_0: &str = "a\u{001F}b\u{001E}c\u{001F}d\u{001D}e\u{001F}f\u{001E}g\u{001F}h";
+pub const EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_0: &str = "a\u{001F}b\u{001F}\u{001E}c\u{001F}d\u{001F}\u{001E}\u{001D}e\u{001F}f\u{001F}\u{001E}g\u{001F}h\u{001F}\u{001E}\u{001D}\u{001C}";
 
 /// Example USV files with style controls and layout 0.
-pub const EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_0: &str = "a\u{001F}b\u{001E}c\u{001F}d\u{001D}e\u{001F}f\u{001E}g\u{001F}h\u{001C}i\u{001F}j\u{001E}k\u{001F}l\u{001D}m\u{001F}n\u{001E}o\u{001F}p";
+pub const EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_0: &str = "a\u{001F}b\u{001F}\u{001E}c\u{001F}d\u{001F}\u{001E}\u{001D}e\u{001F}f\u{001F}\u{001E}g\u{001F}h\u{001F}\u{001E}\u{001D}\u{001C}i\u{001F}j\u{001F}\u{001E}k\u{001F}l\u{001F}\u{001E}\u{001D}m\u{001F}n\u{001F}\u{001E}o\u{001F}p\u{001F}\u{001E}\u{001D}\u{001C}";
 
 //// With style controls and layout 1
 
 /// Example USV unit with style controls and layout 1.
-pub const EXAMPLE_UNIT_STYLE_CONTROLS_LAYOUT_1: &str = "a";
+pub const EXAMPLE_UNIT_STYLE_CONTROLS_LAYOUT_1: &str = "a\n\u{001F}";
 
 /// Example USV units with style controls and layout 1.
 pub const EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_1: &str = "a\n\u{001F}\nb";
@@ -341,13 +341,13 @@ pub const EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_1: &str = "a\n\u{001F}\nb\n\u{001E
 //// With style controls and layout 2
 
 /// Example USV unit with style controls and layout 2.
-pub const EXAMPLE_UNIT_STYLE_CONTROLS_LAYOUT_2: &str = "a";
+pub const EXAMPLE_UNIT_STYLE_CONTROLS_LAYOUT_2: &str = "a\n\n\u{001F}\n\n";
 
 /// Example USV units with style controls and layout 2.
-pub const EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_2: &str = "a\n\n\u{001F}\n\nb";
+pub const EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_2: &str = "a\n\n\u{001F}\n\nb\n\n\u{001F}\n\n";
 
 /// Example USV record with style controls and layout 2.
-pub const EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_2: &str = "a\n\n\u{001F}\n\nb";
+pub const EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_2: &str = "a\n\n\u{001F}\n\nb\n\n\u{001F}\n\n\n\n\u{001E}\n\n";
 
 /// Example USV records with style controls and layout 2.
 pub const EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_2: &str = "a\n\n\u{001F}\n\nb\n\n\u{001E}\n\nc\n\n\u{001F}\n\nd";
@@ -367,13 +367,13 @@ pub const EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_2: &str = "a\n\n\u{001F}\n\nb\n\n\
 //// With style controls and layout units
 
 /// Example USV unit with style controls and layout records.
-pub const EXAMPLE_UNIT_STYLE_CONTROLS_LAYOUT_UNITS: &str = "a";
+pub const EXAMPLE_UNIT_STYLE_CONTROLS_LAYOUT_UNITS: &str = "a\u{001F}\n";
 
 /// Example USV units with style controls and layout records.
-pub const EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_UNITS: &str = "a\u{001F}\nb";
+pub const EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_UNITS: &str = "a\u{001F}\nb\u{001F}\n";
 
 /// Example USV record with style controls and layout records.
-pub const EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_UNITS: &str = "a\u{001F}\nb";
+pub const EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_UNITS: &str = "a\u{001F}\nb\u{001F}\n\u{001E}\n";
 
 /// Example USV records with style controls and layout records.
 pub const EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_UNITS: &str = "a\u{001F}\nb\u{001E}\nc\u{001F}\nd";
@@ -393,106 +393,106 @@ pub const EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_UNITS: &str = "a\u{001F}\nb\u{001E
 //// With style controls and layout records
 
 /// Example USV unit with style controls and layout records.
-pub const EXAMPLE_UNIT_STYLE_CONTROLS_LAYOUT_RECORDS: &str = "a";
+pub const EXAMPLE_UNIT_STYLE_CONTROLS_LAYOUT_RECORDS: &str = "a\u{001F}";
 
 /// Example USV units with style controls and layout records.
-pub const EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_RECORDS: &str = "a\u{001F}b";
+pub const EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_RECORDS: &str = "a\u{001F}b\u{001F}";
 
 /// Example USV record with style controls and layout records.
-pub const EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_RECORDS: &str = "a\u{001F}b";
+pub const EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_RECORDS: &str = "a\u{001F}b\u{001F}\u{001E}\n";
 
 /// Example USV records with style controls and layout records.
-pub const EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_RECORDS: &str = "a\u{001F}b\u{001E}\nc\u{001F}d";
+pub const EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_RECORDS: &str = "a\u{001F}b\u{001F}\u{001E}\nc\u{001F}d\u{001F}\u{001E}\n";
 
 /// Example USV group with style controls and layout records.
-pub const EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_RECORDS: &str = "a\u{001F}b\u{001E}\nc\u{001F}d";
+pub const EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_RECORDS: &str = "a\u{001F}b\u{001F}\u{001E}\nc\u{001F}d\u{001F}\u{001E}\n\u{001D}\n";
 
 /// Example USV groups with style controls and layout records.
-pub const EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_RECORDS: &str = "a\u{001F}b\u{001E}\nc\u{001F}d\u{001D}\ne\u{001F}f\u{001E}\ng\u{001F}h";
+pub const EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_RECORDS: &str = "a\u{001F}b\u{001F}\u{001E}\nc\u{001F}d\u{001F}\u{001E}\n\u{001D}\ne\u{001F}f\u{001F}\u{001E}\ng\u{001F}h\u{001F}\u{001E}\n\u{001D}\n";
 
 /// Example USV file with style controls and layout records.
-pub const EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_RECORDS: &str = "a\u{001F}b\u{001E}\nc\u{001F}d\u{001D}\ne\u{001F}f\u{001E}\ng\u{001F}h";
+pub const EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_RECORDS: &str = "a\u{001F}b\u{001F}\u{001E}\nc\u{001F}d\u{001F}\u{001E}\n\u{001D}\ne\u{001F}f\u{001F}\u{001E}\ng\u{001F}h\u{001F}\u{001E}\n\u{001D}\n\u{001C}\n";
 
 /// Example USV files with style controls and layout records.
-pub const EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_RECORDS: &str = "a\u{001F}b\u{001E}\nc\u{001F}d\u{001D}\ne\u{001F}f\u{001E}\ng\u{001F}h\u{001C}\ni\u{001F}j\u{001E}\nk\u{001F}l\u{001D}\nm\u{001F}n\u{001E}\no\u{001F}p";
+pub const EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_RECORDS: &str = "a\u{001F}b\u{001F}\u{001E}\nc\u{001F}d\u{001F}\u{001E}\n\u{001D}\ne\u{001F}f\u{001F}\u{001E}\ng\u{001F}h\u{001F}\u{001E}\n\u{001D}\n\u{001C}\ni\u{001F}j\u{001F}\u{001E}\nk\u{001F}l\u{001F}\u{001E}\n\u{001D}\nm\u{001F}n\u{001F}\u{001E}\no\u{001F}p\u{001F}\u{001E}\n\u{001D}\n\u{001C}\n";
 
 //// With style controls and layout groups
 
 /// Example USV unit with style controls and layout records.
-pub const EXAMPLE_UNIT_STYLE_CONTROLS_LAYOUT_GROUPS: &str = "a";
+pub const EXAMPLE_UNIT_STYLE_CONTROLS_LAYOUT_GROUPS: &str = "a\u{001F}";
 
 /// Example USV units with style controls and layout records.
-pub const EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_GROUPS: &str = "a\u{001F}b";
+pub const EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_GROUPS: &str = "a\u{001F}b\u{001F}";
 
 /// Example USV record with style controls and layout records.
-pub const EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_GROUPS: &str = "a\u{001F}b";
+pub const EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_GROUPS: &str = "a\u{001F}b\u{001F}\u{001E}";
 
 /// Example USV records with style controls and layout records.
-pub const EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_GROUPS: &str = "a\u{001F}b\u{001E}c\u{001F}d";
+pub const EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_GROUPS: &str = "a\u{001F}b\u{001F}\u{001E}c\u{001F}d\u{001F}\u{001E}";
 
 /// Example USV group with style controls and layout records.
-pub const EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_GROUPS: &str = "a\u{001F}b\u{001E}c\u{001F}d";
+pub const EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_GROUPS: &str = "a\u{001F}b\u{001F}\u{001E}c\u{001F}d\u{001F}\u{001E}\u{001D}\n";
 
 /// Example USV groups with style controls and layout records.
-pub const EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_GROUPS: &str = "a\u{001F}b\u{001E}c\u{001F}d\u{001D}\ne\u{001F}f\u{001E}g\u{001F}h";
+pub const EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_GROUPS: &str = "a\u{001F}b\u{001F}\u{001E}c\u{001F}d\u{001F}\u{001E}\u{001D}\ne\u{001F}f\u{001F}\u{001E}g\u{001F}h\u{001F}\u{001E}\u{001D}\n";
 
 /// Example USV file with style controls and layout records.
-pub const EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_GROUPS: &str = "a\u{001F}b\u{001E}c\u{001F}d\u{001D}\ne\u{001F}f\u{001E}g\u{001F}h";
+pub const EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_GROUPS: &str = "a\u{001F}b\u{001F}\u{001E}c\u{001F}d\u{001F}\u{001E}\u{001D}\ne\u{001F}f\u{001F}\u{001E}g\u{001F}h\u{001F}\u{001E}\u{001D}\n\u{001C}\n";
 
 /// Example USV files with style controls and layout records.
-pub const EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_GROUPS: &str = "a\u{001F}b\u{001E}c\u{001F}d\u{001D}\ne\u{001F}f\u{001E}g\u{001F}h\u{001C}\ni\u{001F}j\u{001E}k\u{001F}l\u{001D}\nm\u{001F}n\u{001E}o\u{001F}p";
+pub const EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_GROUPS: &str = "a\u{001F}b\u{001F}\u{001E}c\u{001F}d\u{001F}\u{001E}\u{001D}\ne\u{001F}f\u{001F}\u{001E}g\u{001F}h\u{001F}\u{001E}\u{001D}\n\u{001C}\ni\u{001F}j\u{001F}\u{001E}k\u{001F}l\u{001F}\u{001E}\u{001D}\nm\u{001F}n\u{001F}\u{001E}o\u{001F}p\u{001F}\u{001E}\u{001D}\n\u{001C}\n";
 
 //// With style controls and layout files
 
 /// Example USV unit with style controls and layout records.
-pub const EXAMPLE_UNIT_STYLE_CONTROLS_LAYOUT_FILES: &str = "a";
+pub const EXAMPLE_UNIT_STYLE_CONTROLS_LAYOUT_FILES: &str = "a\u{001F}";
 
 /// Example USV units with style controls and layout records.
-pub const EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_FILES: &str = "a\u{001F}b";
+pub const EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_FILES: &str = "a\u{001F}b\u{001F}";
 
 /// Example USV record with style controls and layout records.
-pub const EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_FILES: &str = "a\u{001F}b";
+pub const EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_FILES: &str = "a\u{001F}b\u{001F}\u{001E}";
 
 /// Example USV records with style controls and layout records.
-pub const EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_FILES: &str = "a\u{001F}b\u{001E}c\u{001F}d";
+pub const EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_FILES: &str = "a\u{001F}b\u{001F}\u{001E}c\u{001F}d\u{001F}\u{001E}";
 
 /// Example USV group with style controls and layout records.
-pub const EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_FILES: &str = "a\u{001F}b\u{001E}c\u{001F}d";
+pub const EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_FILES: &str = "a\u{001F}b\u{001F}\u{001E}c\u{001F}d\u{001F}\u{001E}\u{001D}";
 
 /// Example USV groups with style controls and layout records.
-pub const EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_FILES: &str = "a\u{001F}b\u{001E}c\u{001F}d\u{001D}e\u{001F}f\u{001E}g\u{001F}h";
+pub const EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_FILES: &str = "a\u{001F}b\u{001F}\u{001E}c\u{001F}d\u{001F}\u{001E}\u{001D}e\u{001F}f\u{001F}\u{001E}g\u{001F}h\u{001F}\u{001E}\u{001D}";
 
 /// Example USV file with style controls and layout records.
-pub const EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_FILES: &str = "a\u{001F}b\u{001E}c\u{001F}d\u{001D}e\u{001F}f\u{001E}g\u{001F}h";
+pub const EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_FILES: &str = "a\u{001F}b\u{001F}\u{001E}c\u{001F}d\u{001F}\u{001E}\u{001D}e\u{001F}f\u{001F}\u{001E}g\u{001F}h\u{001F}\u{001E}\u{001D}\u{001C}\n";
 
 /// Example USV files with style controls and layout records.
-pub const EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_FILES: &str = "a\u{001F}b\u{001E}c\u{001F}d\u{001D}e\u{001F}f\u{001E}g\u{001F}h\u{001C}\ni\u{001F}j\u{001E}k\u{001F}l\u{001D}m\u{001F}n\u{001E}o\u{001F}p";
+pub const EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_FILES: &str = "a\u{001F}b\u{001F}\u{001E}c\u{001F}d\u{001F}\u{001E}\u{001D}e\u{001F}f\u{001F}\u{001E}g\u{001F}h\u{001F}\u{001E}\u{001D}\u{001C}\ni\u{001F}j\u{001F}\u{001E}k\u{001F}l\u{001F}\u{001E}\u{001D}m\u{001F}n\u{001F}\u{001E}o\u{001F}p\u{001F}\u{001E}\u{001D}\u{001C}\n";
 
 //// With style braces and layout 0
 
 /// Example USV unit with style braces and layout 0.
-pub const EXAMPLE_UNIT_STYLE_BRACES_LAYOUT_0: &str = "a";
+pub const EXAMPLE_UNIT_STYLE_BRACES_LAYOUT_0: &str = "a{US}";
 
 /// Example USV units with style braces and layout 0.
-pub const EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_0: &str = "a{US}b";
+pub const EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_0: &str = "a{US}b{US}";
 
 /// Example USV record with style braces and layout 0.
-pub const EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_0: &str = "a{US}b";
+pub const EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_0: &str = "a{US}b{US}{RS}";
 
 /// Example USV records with style braces and layout 0.
-pub const EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_0: &str = "a{US}b{RS}c{US}d";
+pub const EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_0: &str = "a{US}b{US}{RS}c{US}d{US}{RS}";
 
 /// Example USV group with style braces and layout 0.
-pub const EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_0: &str = "a{US}b{RS}c{US}d";
+pub const EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_0: &str = "a{US}b{US}{RS}c{US}d{US}{RS}{GS}";
 
 /// Example USV groups with style braces and layout 0.
-pub const EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_0: &str = "a{US}b{RS}c{US}d{GS}e{US}f{RS}g{US}h";
+pub const EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_0: &str = "a{US}b{US}{RS}c{US}d{US}{RS}{GS}e{US}f{US}{RS}g{US}h{US}{RS}{GS}";
 
 /// Example USV file with style braces and layout 0.
-pub const EXAMPLE_FILE_STYLE_BRACES_LAYOUT_0: &str = "a{US}b{RS}c{US}d{GS}e{US}f{RS}g{US}h";
+pub const EXAMPLE_FILE_STYLE_BRACES_LAYOUT_0: &str = "a{US}b{US}{RS}c{US}d{US}{RS}{GS}e{US}f{US}{RS}g{US}h{US}{RS}{GS}{FS}";
 
 /// Example USV files with style braces and layout 0.
-pub const EXAMPLE_FILES_STYLE_BRACES_LAYOUT_0: &str = "a{US}b{RS}c{US}d{GS}e{US}f{RS}g{US}h{FS}i{US}j{RS}k{US}l{GS}m{US}n{RS}o{US}p";
+pub const EXAMPLE_FILES_STYLE_BRACES_LAYOUT_0: &str = "a{US}b{US}{RS}c{US}d{US}{RS}{GS}e{US}f{US}{RS}g{US}h{US}{RS}{GS}{FS}i{US}j{US}{RS}k{US}l{US}{RS}{GS}m{US}n{US}{RS}o{US}p{US}{RS}{GS}{FS}";
 
 //// With style braces and layout 1
 
@@ -575,80 +575,80 @@ pub const EXAMPLE_FILES_STYLE_BRACES_LAYOUT_UNITS: &str = "a{US}\nb{RS}\nc{US}\n
 //// With style braces and layout records
 
 /// Example USV unit with style braces and layout records.
-pub const EXAMPLE_UNIT_STYLE_BRACES_LAYOUT_RECORDS: &str = "a";
+pub const EXAMPLE_UNIT_STYLE_BRACES_LAYOUT_RECORDS: &str = "a{US}";
 
 /// Example USV units with style braces and layout records.
-pub const EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_RECORDS: &str = "a{US}b";
+pub const EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_RECORDS: &str = "a{US}b{US}";
 
 /// Example USV record with style braces and layout records.
-pub const EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_RECORDS: &str = "a{US}b";
+pub const EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_RECORDS: &str = "a{US}b{US}{RS}\n";
 
 /// Example USV records with style braces and layout records.
-pub const EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_RECORDS: &str = "a{US}b{RS}\nc{US}d";
+pub const EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_RECORDS: &str = "a{US}b{US}{RS}\nc{US}d{US}{RS}\n";
 
 /// Example USV group with style braces and layout records.
-pub const EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_RECORDS: &str = "a{US}b{RS}\nc{US}d";
+pub const EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_RECORDS: &str = "a{US}b{US}{RS}\nc{US}d{US}{RS}\n{GS}\n";
 
 /// Example USV groups with style braces and layout records.
-pub const EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_RECORDS: &str = "a{US}b{RS}\nc{US}d{GS}\ne{US}f{RS}\ng{US}h";
+pub const EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_RECORDS: &str = "a{US}b{US}{RS}\nc{US}d{US}{RS}\n{GS}\ne{US}f{US}{RS}\ng{US}h{US}{RS}\n{GS}\n";
 
 /// Example USV file with style braces and layout records.
-pub const EXAMPLE_FILE_STYLE_BRACES_LAYOUT_RECORDS: &str = "a{US}b{RS}\nc{US}d{GS}\ne{US}f{RS}\ng{US}h";
+pub const EXAMPLE_FILE_STYLE_BRACES_LAYOUT_RECORDS: &str = "a{US}b{US}{RS}\nc{US}d{US}{RS}\n{GS}\ne{US}f{US}{RS}\ng{US}h{US}{RS}\n{GS}\n{FS}\n";
 
 /// Example USV files with style braces and layout records.
-pub const EXAMPLE_FILES_STYLE_BRACES_LAYOUT_RECORDS: &str = "a{US}b{RS}\nc{US}d{GS}\ne{US}f{RS}\ng{US}h{FS}\ni{US}j{RS}\nk{US}l{GS}\nm{US}n{RS}\no{US}p";
+pub const EXAMPLE_FILES_STYLE_BRACES_LAYOUT_RECORDS: &str = "a{US}b{US}{RS}\nc{US}d{US}{RS}\n{GS}\ne{US}f{US}{RS}\ng{US}h{US}{RS}\n{GS}\n{FS}\ni{US}j{US}{RS}\nk{US}l{US}{RS}\n{GS}\nm{US}n{US}{RS}\no{US}p{US}{RS}\n{GS}\n{FS}\n";
 
 //// With style braces and layout groups
 
 /// Example USV unit with style braces and layout groups.
-pub const EXAMPLE_UNIT_STYLE_BRACES_LAYOUT_GROUPS: &str = "a";
+pub const EXAMPLE_UNIT_STYLE_BRACES_LAYOUT_GROUPS: &str = "a{US}";
 
 /// Example USV units with style braces and layout groups.
-pub const EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_GROUPS: &str = "a{US}b";
+pub const EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_GROUPS: &str = "a{US}b{US}";
 
 /// Example USV record with style braces and layout groups.
-pub const EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_GROUPS: &str = "a{US}b";
+pub const EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_GROUPS: &str = "a{US}b{US}{RS}";
 
 /// Example USV records with style braces and layout groups.
-pub const EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_GROUPS: &str = "a{US}b{RS}c{US}d";
+pub const EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_GROUPS: &str = "a{US}b{US}{RS}c{US}d{US}{RS}";
 
 /// Example USV group with style braces and layout groups.
-pub const EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_GROUPS: &str = "a{US}b{RS}c{US}d{GS}\n";
+pub const EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_GROUPS: &str = "a{US}b{US}{RS}c{US}d{US}{RS}{GS}\n";
 
 /// Example USV groups with style braces and layout groups.
-pub const EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_GROUPS: &str = "a{US}b{RS}c{US}d{GS}\ne{US}f{RS}g{US}h";
+pub const EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_GROUPS: &str = "a{US}b{US}{RS}c{US}d{US}{RS}{GS}\ne{US}f{US}{RS}g{US}h{US}{RS}{GS}\n";
 
 /// Example USV file with style braces and layout groups.
-pub const EXAMPLE_FILE_STYLE_BRACES_LAYOUT_GROUPS: &str = "a{US}b{RS}c{US}d{GS}\ne{US}f{RS}g{US}h";
+pub const EXAMPLE_FILE_STYLE_BRACES_LAYOUT_GROUPS: &str = "a{US}b{US}{RS}c{US}d{US}{RS}{GS}\ne{US}f{US}{RS}g{US}h{US}{RS}{GS}\n{FS}\n";
 
 /// Example USV files with style braces and layout groups.
-pub const EXAMPLE_FILES_STYLE_BRACES_LAYOUT_GROUPS: &str = "a{US}b{RS}c{US}d{GS}\ne{US}f{RS}g{US}h{GS}\n{FS}\ni{US}j{RS}k{US}l{GS}\nm{US}n{RS}o{US}p";
+pub const EXAMPLE_FILES_STYLE_BRACES_LAYOUT_GROUPS: &str = "a{US}b{US}{RS}c{US}d{US}{RS}{GS}\ne{US}f{US}{RS}g{US}h{US}{RS}{GS}\n{FS}\ni{US}j{US}{RS}k{US}l{US}{RS}{GS}\nm{US}n{US}{RS}o{US}p{US}{RS}{GS}\n{FS}\n";
 
 //// With style braces and layout files
 
 /// Example USV unit with style braces and layout files.
-pub const EXAMPLE_UNIT_STYLE_BRACES_LAYOUT_FILES: &str = "a";
+pub const EXAMPLE_UNIT_STYLE_BRACES_LAYOUT_FILES: &str = "a{US}";
 
 /// Example USV units with style braces and layout files.
-pub const EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_FILES: &str = "a{US}b";
+pub const EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_FILES: &str = "a{US}b{US}";
 
 /// Example USV record with style braces and layout files.
-pub const EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_FILES: &str = "a{US}b";
+pub const EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_FILES: &str = "a{US}b{US}{RS}";
 
 /// Example USV records with style braces and layout files.
-pub const EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_FILES: &str = "a{US}b{RS}c{US}d";
+pub const EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_FILES: &str = "a{US}b{US}{RS}c{US}d{US}{RS}";
 
 /// Example USV group with style braces and layout files.
-pub const EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_FILES: &str = "a{US}b{RS}c{US}d";
+pub const EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_FILES: &str = "a{US}b{US}{RS}c{US}d{US}{RS}{GS}";
 
 /// Example USV groups with style braces and layout files.
-pub const EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_FILES: &str = "a{US}b{RS}c{US}d{GS}e{US}f{RS}g{US}h";
+pub const EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_FILES: &str = "a{US}b{US}{RS}c{US}d{US}{RS}{GS}e{US}f{US}{RS}g{US}h{US}{RS}{GS}";
 
 /// Example USV file with style braces and layout files.
-pub const EXAMPLE_FILE_STYLE_BRACES_LAYOUT_FILES: &str = "a{US}b{RS}c{US}d{GS}e{US}f{RS}g{US}h";
+pub const EXAMPLE_FILE_STYLE_BRACES_LAYOUT_FILES: &str = "a{US}b{US}{RS}c{US}d{US}{RS}{GS}e{US}f{US}{RS}g{US}h{US}{RS}{GS}{FS}\n";
 
 /// Example USV files with style braces and layout files.
-pub const EXAMPLE_FILES_STYLE_BRACES_LAYOUT_FILES: &str = "a{US}b{RS}c{US}d{GS}e{US}f{RS}g{US}h{FS}\ni{US}j{RS}k{US}l{GS}m{US}n{RS}o{US}p";
+pub const EXAMPLE_FILES_STYLE_BRACES_LAYOUT_FILES: &str = "a{US}b{US}{RS}c{US}d{US}{RS}{GS}e{US}f{US}{RS}g{US}h{US}{RS}{GS}{FS}\ni{US}j{US}{RS}k{US}l{US}{RS}{GS}m{US}n{US}{RS}o{US}p{US}{RS}{GS}{FS}\n";
 
 //// Arrays
 
@@ -663,45 +663,3 @@ pub const EXAMPLE_ARRAY_GROUPS: [[[&str;2];2];2] = [[["a","b"],["c","d"]],[["e",
 
 /// Example array with USV files
 pub const EXAMPLE_ARRAY_FILES: [[[[&str;2];2];2];2] = [[[["a","b"],["c","d"]],[["e","f"],["g","h"]]],[[["i","j"],["k","l"]],[["m","n"],["o","p"]]]];
-
-//// Spreadsheets + style symbols
-
-/// Example spreadsheet sheet with style symbols.
-pub const EXAMPLE_SHEET_STYLE_SYMBOLS: &str = "Sheet1␞a␟b␞c␟d";
-
-/// Example spreadsheet sheets with style symbols.
-pub const EXAMPLE_SHEETS_STYLE_SYMBOLS: &str = "Sheet1␞a␟b␞c␟d␝Sheet2␞e␟f␞g␟h";
-
-/// Example spreadsheet folio with style symbols.
-pub const EXAMPLE_FOLIO_STYLE_SYMBOLS: &str = "Sheet1␞a␟b␞c␟d␝Sheet2␞e␟f␞g␟h";
-
-/// Example spreadsheet folios with style symbols.
-pub const EXAMPLE_FOLIOS_STYLE_SYMBOLS: &str = "Sheet1␞a␟b␞c␟d␝Sheet2␞e␟f␞g␟h␜Sheet1␞i␟j␞k␟l␝Sheet2␞m␟n␞o␟p";
-
-//// Spreadsheets + style controls
-
-/// Example spreadsheet sheet with style controls.
-pub const EXAMPLE_SHEET_STYLE_CONTROLS: &str = "Sheet1\u{001E}a\u{001F}b\u{001E}c\u{001F}d";
-
-/// Example spreadsheet sheets with style controls.
-pub const EXAMPLE_SHEETS_STYLE_CONTROLS: &str = "Sheet1\u{001E}a\u{001F}b\u{001E}c\u{001F}d\u{001D}Sheet2\u{001E}e\u{001F}f\u{001E}g\u{001F}h";
-
-/// Example spreadsheet folio with style controls.
-pub const EXAMPLE_FOLIO_STYLE_CONTROLS: &str = "Sheet1\u{001E}a\u{001F}b\u{001E}c\u{001F}d\u{001D}Sheet2\u{001E}e\u{001F}f\u{001E}g\u{001F}h";
-
-/// Example spreadsheet folios with style controls.
-pub const EXAMPLE_FOLIOS_STYLE_CONTROLS: &str = "Sheet1\u{001E}a\u{001F}b\u{001E}c\u{001F}d\u{001D}Sheet2\u{001E}e\u{001F}f\u{001E}g\u{001F}h\u{001C}Sheet1\u{001E}i\u{001F}j\u{001E}k\u{001F}l\u{001E}Sheet2\u{001D}m\u{001F}n\u{001E}o\u{001F}p";
-
-//// Spreadsheets + style braces
-
-/// Example spreadsheet sheet with style braces.
-pub const EXAMPLE_SHEET_STYLE_BRACES: &str = "Sheet1{RS}a{US}b{RS}c{US}d";
-
-/// Example spreadsheet sheets with style braces.
-pub const EXAMPLE_SHEETS_STYLE_BRACES: &str = "Sheet1{RS}a{US}b{RS}c{US}d{GS}Sheet2{RS}e{US}f{RS}g{US}h";
-
-/// Example spreadsheet folio with style braces.
-pub const EXAMPLE_FOLIO_STYLE_BRACES: &str = "Sheet1{RS}a{US}b{RS}c{US}d{GS}Sheet2{RS}e{US}f{RS}g{US}h";
-
-/// Example spreadsheet folios with style braces.
-pub const EXAMPLE_FOLIOS_STYLE_BRACES: &str = "Sheet1{RS}a{US}b{RS}c{US}d{GS}Sheet2{RS}e{US}f{RS}g{US}h{FS}Sheet1{RS}i{US}j{RS}k{US}l{GS}Sheet2{RS}m{US}n{RS}o{US}p";
