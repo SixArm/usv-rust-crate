@@ -705,117 +705,117 @@ mod tests {
     fn example_unit_style_symbols() {
         assert_content(EXAMPLE_UNIT_STYLE_SYMBOLS, "a");
     }
-    
+
     #[test]
     fn example_unit_style_symbols_layout_0() {
         assert_content(EXAMPLE_UNIT_STYLE_SYMBOLS_LAYOUT_0, "a");
     }
-    
+
     #[test]
     fn example_unit_style_symbols_layout_1() {
         assert_content(EXAMPLE_UNIT_STYLE_SYMBOLS_LAYOUT_1, "a");
     }
-    
+
     #[test]
     fn example_unit_style_symbols_layout_2() {
         assert_content(EXAMPLE_UNIT_STYLE_SYMBOLS_LAYOUT_2, "a");
     }
-    
+
     #[test]
     fn example_unit_style_symbols_layout_unit() {
         assert_content(EXAMPLE_UNIT_STYLE_SYMBOLS_LAYOUT_UNITS, "a");
     }
-    
+
     #[test]
     fn example_unit_style_symbols_layout_records() {
         assert_content(EXAMPLE_UNIT_STYLE_SYMBOLS_LAYOUT_RECORDS, "a");
     }
-    
+
     #[test]
     fn example_unit_style_symbols_layout_groups() {
         assert_content(EXAMPLE_UNIT_STYLE_SYMBOLS_LAYOUT_GROUPS, "a");
     }
-    
+
     #[test]
     fn example_unit_style_symbols_layout_files() {
         assert_content(EXAMPLE_UNIT_STYLE_SYMBOLS_LAYOUT_FILES, "a");
     }
-    
+
     #[test]
     fn example_unit_style_controls() {
         assert_content(EXAMPLE_UNIT_STYLE_CONTROLS, "a");
     }
-    
+
     #[test]
     fn example_unit_style_controls_layout_0() {
         assert_content(EXAMPLE_UNIT_STYLE_CONTROLS_LAYOUT_0, "a");
     }
-    
+
     #[test]
     fn example_unit_style_controls_layout_1() {
         assert_content(EXAMPLE_UNIT_STYLE_CONTROLS_LAYOUT_1, "a");
     }
-    
+
     #[test]
     fn example_unit_style_controls_layout_2() {
         assert_content(EXAMPLE_UNIT_STYLE_CONTROLS_LAYOUT_2, "a");
     }
-    
+
     #[test]
     fn example_unit_style_controls_layout_unit() {
         assert_content(EXAMPLE_UNIT_STYLE_CONTROLS_LAYOUT_UNITS, "a");
     }
-    
+
     #[test]
     fn example_unit_style_controls_layout_records() {
         assert_content(EXAMPLE_UNIT_STYLE_CONTROLS_LAYOUT_RECORDS, "a");
     }
-    
+
     #[test]
     fn example_unit_style_controls_layout_groups() {
         assert_content(EXAMPLE_UNIT_STYLE_CONTROLS_LAYOUT_GROUPS, "a");
     }
-    
+
     #[test]
     fn example_unit_style_controls_layout_files() {
         assert_content(EXAMPLE_UNIT_STYLE_CONTROLS_LAYOUT_FILES, "a");
     }
-    
+
     #[test]
     fn example_unit_style_braces() {
         assert_content(EXAMPLE_UNIT_STYLE_BRACES, "a");
     }
-    
+
     #[test]
     fn example_unit_style_braces_layout_0() {
         assert_content(EXAMPLE_UNIT_STYLE_BRACES_LAYOUT_0, "a");
     }
-    
+
     #[test]
     fn example_unit_style_braces_layout_1() {
         assert_content(EXAMPLE_UNIT_STYLE_BRACES_LAYOUT_1, "a");
     }
-    
+
     #[test]
     fn example_unit_style_braces_layout_2() {
         assert_content(EXAMPLE_UNIT_STYLE_BRACES_LAYOUT_2, "a");
     }
-    
+
     #[test]
     fn example_unit_style_braces_layout_unit() {
         assert_content(EXAMPLE_UNIT_STYLE_BRACES_LAYOUT_UNITS, "a");
     }
-    
+
     #[test]
     fn example_unit_style_braces_layout_records() {
         assert_content(EXAMPLE_UNIT_STYLE_BRACES_LAYOUT_RECORDS, "a");
     }
-    
+
     #[test]
     fn example_unit_style_braces_layout_groups() {
         assert_content(EXAMPLE_UNIT_STYLE_BRACES_LAYOUT_GROUPS, "a");
     }
-    
+
     #[test]
     fn example_unit_style_braces_layout_files() {
         assert_content(EXAMPLE_UNIT_STYLE_BRACES_LAYOUT_FILES, "a");
@@ -829,1045 +829,1045 @@ mod tests {
 
     #[test]
     fn example_units_style_symbols() {
-        assert_content(EXAMPLE_UNITS_STYLE_SYMBOLS, "ab"); 
+        assert_content(EXAMPLE_UNITS_STYLE_SYMBOLS, "ab");
         assert_comprises(EXAMPLE_UNITS_STYLE_SYMBOLS, EXAMPLE_UNIT_STYLE_SYMBOLS);
     }
-    
+
     #[test]
     fn example_units_style_symbols_layout_0() {
-        assert_content(EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_0, "ab"); 
+        assert_content(EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_0, "ab");
         assert_comprises(EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_0, EXAMPLE_UNIT_STYLE_SYMBOLS_LAYOUT_0);
     }
-    
+
     #[test]
     fn example_units_style_symbols_layout_1() {
-        assert_content(EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_1, "ab"); 
+        assert_content(EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_1, "ab");
         assert_comprises(EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_1, EXAMPLE_UNIT_STYLE_SYMBOLS_LAYOUT_1);
     }
-    
+
     #[test]
     fn example_units_style_symbols_layout_2() {
-        assert_content(EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_2, "ab"); 
+        assert_content(EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_2, "ab");
         assert_comprises(EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_2, EXAMPLE_UNIT_STYLE_SYMBOLS_LAYOUT_2);
     }
-    
+
     #[test]
     fn example_units_style_symbols_layout_units() {
-        assert_content(EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_UNITS, "ab"); 
+        assert_content(EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_UNITS, "ab");
         assert_comprises(EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_UNITS, EXAMPLE_UNIT_STYLE_SYMBOLS_LAYOUT_UNITS);
     }
-    
+
     #[test]
     fn example_units_style_symbols_layout_records() {
-        assert_content(EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_RECORDS, "ab"); 
+        assert_content(EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_RECORDS, "ab");
         assert_comprises(EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_RECORDS, EXAMPLE_UNIT_STYLE_SYMBOLS_LAYOUT_RECORDS);
     }
-    
+
     #[test]
     fn example_units_style_symbols_layout_groups() {
-        assert_content(EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_GROUPS, "ab"); 
+        assert_content(EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_GROUPS, "ab");
         assert_comprises(EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_GROUPS, EXAMPLE_UNIT_STYLE_SYMBOLS_LAYOUT_GROUPS);
     }
-    
+
     #[test]
     fn example_units_style_symbols_layout_files() {
-        assert_content(EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_FILES, "ab"); 
+        assert_content(EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_FILES, "ab");
         assert_comprises(EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_FILES, EXAMPLE_UNIT_STYLE_SYMBOLS_LAYOUT_FILES);
     }
-    
+
     #[test]
     fn example_units_style_controls() {
-        assert_content(EXAMPLE_UNITS_STYLE_CONTROLS, "ab"); 
+        assert_content(EXAMPLE_UNITS_STYLE_CONTROLS, "ab");
         assert_comprises(EXAMPLE_UNITS_STYLE_CONTROLS, EXAMPLE_UNIT_STYLE_CONTROLS);
     }
-    
+
     #[test]
     fn example_units_style_controls_layout_0() {
-        assert_content(EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_0, "ab"); 
+        assert_content(EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_0, "ab");
         assert_comprises(EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_0, EXAMPLE_UNIT_STYLE_CONTROLS_LAYOUT_0);
     }
-    
+
     #[test]
     fn example_units_style_controls_layout_1() {
-        assert_content(EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_1, "ab"); 
+        assert_content(EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_1, "ab");
         assert_comprises(EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_1, EXAMPLE_UNIT_STYLE_CONTROLS_LAYOUT_1);
     }
-    
+
     #[test]
     fn example_units_style_controls_layout_2() {
-        assert_content(EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_2, "ab"); 
+        assert_content(EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_2, "ab");
         assert_comprises(EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_2, EXAMPLE_UNIT_STYLE_CONTROLS_LAYOUT_2);
     }
-    
+
     #[test]
     fn example_units_style_controls_layout_units() {
-        assert_content(EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_UNITS, "ab"); 
+        assert_content(EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_UNITS, "ab");
         assert_comprises(EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_UNITS, EXAMPLE_UNIT_STYLE_CONTROLS_LAYOUT_UNITS);
     }
-    
+
     #[test]
     fn example_units_style_controls_layout_records() {
-        assert_content(EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_RECORDS, "ab"); 
+        assert_content(EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_RECORDS, "ab");
         assert_comprises(EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_RECORDS, EXAMPLE_UNIT_STYLE_CONTROLS_LAYOUT_RECORDS);
     }
-    
+
     #[test]
     fn example_units_style_controls_layout_groups() {
-        assert_content(EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_GROUPS, "ab"); 
+        assert_content(EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_GROUPS, "ab");
         assert_comprises(EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_GROUPS, EXAMPLE_UNIT_STYLE_CONTROLS_LAYOUT_GROUPS);
     }
-    
+
     #[test]
     fn example_units_style_controls_layout_files() {
-        assert_content(EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_FILES, "ab"); 
+        assert_content(EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_FILES, "ab");
         assert_comprises(EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_FILES, EXAMPLE_UNIT_STYLE_CONTROLS_LAYOUT_FILES);
     }
-    
+
     #[test]
     fn example_units_style_braces() {
-        assert_content(EXAMPLE_UNITS_STYLE_BRACES, "ab"); 
+        assert_content(EXAMPLE_UNITS_STYLE_BRACES, "ab");
         assert_comprises(EXAMPLE_UNITS_STYLE_BRACES, EXAMPLE_UNIT_STYLE_BRACES);
     }
-    
+
     #[test]
     fn example_units_style_braces_layout_0() {
-        assert_content(EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_0, "ab"); 
+        assert_content(EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_0, "ab");
         assert_comprises(EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_0, EXAMPLE_UNIT_STYLE_BRACES_LAYOUT_0);
     }
-    
+
     #[test]
     fn example_units_style_braces_layout_1() {
-        assert_content(EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_1, "ab"); 
+        assert_content(EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_1, "ab");
         assert_comprises(EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_1, EXAMPLE_UNIT_STYLE_BRACES_LAYOUT_1);
     }
-    
+
     #[test]
     fn example_units_style_braces_layout_2() {
-        assert_content(EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_2, "ab"); 
+        assert_content(EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_2, "ab");
         assert_comprises(EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_2, EXAMPLE_UNIT_STYLE_BRACES_LAYOUT_2);
     }
-    
+
     #[test]
     fn example_units_style_braces_layout_units() {
-        assert_content(EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_UNITS, "ab"); 
+        assert_content(EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_UNITS, "ab");
         assert_comprises(EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_UNITS, EXAMPLE_UNIT_STYLE_BRACES_LAYOUT_UNITS);
     }
-    
+
     #[test]
     fn example_units_style_braces_layout_records() {
-        assert_content(EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_RECORDS, "ab"); 
+        assert_content(EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_RECORDS, "ab");
         assert_comprises(EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_RECORDS, EXAMPLE_UNIT_STYLE_BRACES_LAYOUT_RECORDS);
     }
-    
+
     #[test]
     fn example_units_style_braces_layout_groups() {
-        assert_content(EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_GROUPS, "ab"); 
+        assert_content(EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_GROUPS, "ab");
         assert_comprises(EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_GROUPS, EXAMPLE_UNIT_STYLE_BRACES_LAYOUT_GROUPS);
     }
-    
+
     #[test]
     fn example_units_style_braces_layout_files() {
-        assert_content(EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_FILES, "ab"); 
+        assert_content(EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_FILES, "ab");
         assert_comprises(EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_FILES, EXAMPLE_UNIT_STYLE_BRACES_LAYOUT_FILES);
     }
-    
+
     #[test]
     fn example_record() {
-        assert_content(EXAMPLE_RECORD, "ab"); 
+        assert_content(EXAMPLE_RECORD, "ab");
         assert_starts(EXAMPLE_RECORD, EXAMPLE_UNITS);
     }
 
     #[test]
     fn example_record_style_symbols() {
-        assert_content(EXAMPLE_RECORD_STYLE_SYMBOLS, "ab"); 
+        assert_content(EXAMPLE_RECORD_STYLE_SYMBOLS, "ab");
         assert_starts(EXAMPLE_RECORD_STYLE_SYMBOLS, EXAMPLE_UNITS_STYLE_SYMBOLS);
     }
 
     #[test]
     fn example_record_style_symbols_layout_0() {
-        assert_content(EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_0, "ab"); 
+        assert_content(EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_0, "ab");
         assert_starts(EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_0, EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_0);
     }
 
     #[test]
     fn example_record_style_symbols_layout_1() {
-        assert_content(EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_1, "ab"); 
+        assert_content(EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_1, "ab");
         assert_starts(EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_1, EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_1);
     }
 
     #[test]
     fn example_record_style_symbols_layout_2() {
-        assert_content(EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_2, "ab"); 
+        assert_content(EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_2, "ab");
         assert_starts(EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_2, EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_2);
     }
 
     #[test]
     fn example_record_style_symbols_layout_units() {
-        assert_content(EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_UNITS, "ab"); 
+        assert_content(EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_UNITS, "ab");
         assert_starts(EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_UNITS, EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_UNITS);
     }
 
     #[test]
     fn example_record_style_symbols_layout_records() {
-        assert_content(EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_RECORDS, "ab"); 
+        assert_content(EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_RECORDS, "ab");
         assert_starts(EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_RECORDS, EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_RECORDS);
     }
 
     #[test]
     fn example_record_style_symbols_layout_groups() {
-        assert_content(EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_GROUPS, "ab"); 
+        assert_content(EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_GROUPS, "ab");
         assert_starts(EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_GROUPS, EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_GROUPS);
     }
 
     #[test]
     fn example_record_style_symbols_layout_files() {
-        assert_content(EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_FILES, "ab"); 
+        assert_content(EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_FILES, "ab");
         assert_starts(EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_FILES, EXAMPLE_UNITS_STYLE_SYMBOLS_LAYOUT_FILES);
     }
 
     #[test]
     fn example_record_style_controls() {
-        assert_content(EXAMPLE_RECORD_STYLE_CONTROLS, "ab"); 
+        assert_content(EXAMPLE_RECORD_STYLE_CONTROLS, "ab");
         assert_starts(EXAMPLE_RECORD_STYLE_CONTROLS, EXAMPLE_UNITS_STYLE_CONTROLS);
     }
 
     #[test]
     fn example_record_style_controls_layout_0() {
-        assert_content(EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_0, "ab"); 
+        assert_content(EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_0, "ab");
         assert_starts(EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_0, EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_0);
     }
 
     #[test]
     fn example_record_style_controls_layout_1() {
-        assert_content(EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_1, "ab"); 
+        assert_content(EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_1, "ab");
         assert_starts(EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_1, EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_1);
     }
 
     #[test]
     fn example_record_style_controls_layout_2() {
-        assert_content(EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_2, "ab"); 
+        assert_content(EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_2, "ab");
         assert_starts(EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_2, EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_2);
     }
 
     #[test]
     fn example_record_style_controls_layout_units() {
-        assert_content(EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_UNITS, "ab"); 
+        assert_content(EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_UNITS, "ab");
         assert_starts(EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_UNITS, EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_UNITS);
     }
 
     #[test]
     fn example_record_style_controls_layout_records() {
-        assert_content(EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_RECORDS, "ab"); 
+        assert_content(EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_RECORDS, "ab");
         assert_starts(EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_RECORDS, EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_RECORDS);
     }
 
     #[test]
     fn example_record_style_controls_layout_groups() {
-        assert_content(EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_GROUPS, "ab"); 
+        assert_content(EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_GROUPS, "ab");
         assert_starts(EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_GROUPS, EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_GROUPS);
     }
 
     #[test]
     fn example_record_style_controls_layout_files() {
-        assert_content(EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_FILES, "ab"); 
+        assert_content(EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_FILES, "ab");
         assert_starts(EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_FILES, EXAMPLE_UNITS_STYLE_CONTROLS_LAYOUT_FILES);
     }
 
     #[test]
     fn example_record_style_braces() {
-        assert_content(EXAMPLE_RECORD_STYLE_BRACES, "ab"); 
+        assert_content(EXAMPLE_RECORD_STYLE_BRACES, "ab");
         assert_starts(EXAMPLE_RECORD_STYLE_BRACES, EXAMPLE_UNITS_STYLE_BRACES);
     }
 
     #[test]
     fn example_record_style_braces_layout_0() {
-        assert_content(EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_0, "ab"); 
+        assert_content(EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_0, "ab");
         assert_starts(EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_0, EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_0);
     }
 
     #[test]
     fn example_record_style_braces_layout_1() {
-        assert_content(EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_1, "ab"); 
+        assert_content(EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_1, "ab");
         assert_starts(EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_1, EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_1);
     }
 
     #[test]
     fn example_record_style_braces_layout_2() {
-        assert_content(EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_2, "ab"); 
+        assert_content(EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_2, "ab");
         assert_starts(EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_2, EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_2);
     }
 
     #[test]
     fn example_record_style_braces_layout_units() {
-        assert_content(EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_UNITS, "ab"); 
+        assert_content(EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_UNITS, "ab");
         assert_starts(EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_UNITS, EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_UNITS);
     }
 
     #[test]
     fn example_record_style_braces_layout_records() {
-        assert_content(EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_RECORDS, "ab"); 
+        assert_content(EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_RECORDS, "ab");
         assert_starts(EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_RECORDS, EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_RECORDS);
     }
 
     #[test]
     fn example_record_style_braces_layout_groups() {
-        assert_content(EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_GROUPS, "ab"); 
+        assert_content(EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_GROUPS, "ab");
         assert_starts(EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_GROUPS, EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_GROUPS);
     }
 
     #[test]
     fn example_record_style_braces_layout_files() {
-        assert_content(EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_FILES, "ab"); 
+        assert_content(EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_FILES, "ab");
         assert_starts(EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_FILES, EXAMPLE_UNITS_STYLE_BRACES_LAYOUT_FILES);
     }
 
     #[test]
     fn example_records() {
-        assert_content(EXAMPLE_RECORDS, "abcd"); 
+        assert_content(EXAMPLE_RECORDS, "abcd");
         assert_starts(EXAMPLE_RECORDS, EXAMPLE_RECORD);
     }
 
     #[test]
     fn example_records_style_symbols() {
-        assert_content(EXAMPLE_RECORDS_STYLE_SYMBOLS, "abcd"); 
+        assert_content(EXAMPLE_RECORDS_STYLE_SYMBOLS, "abcd");
         assert_comprises(EXAMPLE_RECORDS_STYLE_SYMBOLS, EXAMPLE_RECORD_STYLE_SYMBOLS);
     }
 
     #[test]
     fn example_records_style_symbols_layout_0() {
-        assert_content(EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_0, "abcd"); 
+        assert_content(EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_0, "abcd");
         assert_comprises(EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_0, EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_0);
     }
 
     #[test]
     fn example_records_style_symbols_layout_1() {
-        assert_content(EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_1, "abcd"); 
+        assert_content(EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_1, "abcd");
         assert_comprises(EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_1, EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_1);
     }
 
     #[test]
     fn example_records_style_symbols_layout_2() {
-        assert_content(EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_2, "abcd"); 
+        assert_content(EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_2, "abcd");
         assert_comprises(EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_2, EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_2);
     }
 
     #[test]
     fn example_records_style_symbols_layout_units() {
-        assert_content(EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_UNITS, "abcd"); 
+        assert_content(EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_UNITS, "abcd");
         assert_comprises(EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_UNITS, EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_UNITS);
     }
 
     #[test]
     fn example_records_style_symbols_layout_records() {
-        assert_content(EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_RECORDS, "abcd"); 
+        assert_content(EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_RECORDS, "abcd");
         assert_comprises(EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_RECORDS, EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_RECORDS);
     }
 
     #[test]
     fn example_records_style_symbols_layout_groups() {
-        assert_content(EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_GROUPS, "abcd"); 
+        assert_content(EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_GROUPS, "abcd");
         assert_comprises(EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_GROUPS, EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_GROUPS);
     }
 
     #[test]
     fn example_records_style_symbols_layout_files() {
-        assert_content(EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_FILES, "abcd"); 
+        assert_content(EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_FILES, "abcd");
         assert_comprises(EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_FILES, EXAMPLE_RECORD_STYLE_SYMBOLS_LAYOUT_FILES);
     }
 
     #[test]
     fn example_records_style_controls() {
-        assert_content(EXAMPLE_RECORDS_STYLE_CONTROLS, "abcd"); 
+        assert_content(EXAMPLE_RECORDS_STYLE_CONTROLS, "abcd");
         assert_comprises(EXAMPLE_RECORDS_STYLE_CONTROLS, EXAMPLE_RECORD_STYLE_CONTROLS);
     }
 
     #[test]
     fn example_records_style_controls_layout_0() {
-        assert_content(EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_0, "abcd"); 
+        assert_content(EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_0, "abcd");
         assert_comprises(EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_0, EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_0);
     }
 
     #[test]
     fn example_records_style_controls_layout_1() {
-        assert_content(EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_1, "abcd"); 
+        assert_content(EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_1, "abcd");
         assert_comprises(EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_1, EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_1);
     }
 
     #[test]
     fn example_records_style_controls_layout_2() {
-        assert_content(EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_2, "abcd"); 
+        assert_content(EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_2, "abcd");
         assert_comprises(EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_2, EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_2);
     }
 
     #[test]
     fn example_records_style_controls_layout_units() {
-        assert_content(EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_UNITS, "abcd"); 
+        assert_content(EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_UNITS, "abcd");
         assert_comprises(EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_UNITS, EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_UNITS);
     }
 
     #[test]
     fn example_records_style_controls_layout_records() {
-        assert_content(EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_RECORDS, "abcd"); 
+        assert_content(EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_RECORDS, "abcd");
         assert_comprises(EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_RECORDS, EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_RECORDS);
     }
 
     #[test]
     fn example_records_style_controls_layout_groups() {
-        assert_content(EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_GROUPS, "abcd"); 
+        assert_content(EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_GROUPS, "abcd");
         assert_comprises(EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_GROUPS, EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_GROUPS);
     }
 
     #[test]
     fn example_records_style_controls_layout_files() {
-        assert_content(EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_FILES, "abcd"); 
+        assert_content(EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_FILES, "abcd");
         assert_comprises(EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_FILES, EXAMPLE_RECORD_STYLE_CONTROLS_LAYOUT_FILES);
     }
 
     #[test]
     fn example_records_style_braces() {
-        assert_content(EXAMPLE_RECORDS_STYLE_BRACES, "abcd"); 
+        assert_content(EXAMPLE_RECORDS_STYLE_BRACES, "abcd");
         assert_comprises(EXAMPLE_RECORDS_STYLE_BRACES, EXAMPLE_RECORD_STYLE_BRACES);
     }
 
     #[test]
     fn example_records_style_braces_layout_0() {
-        assert_content(EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_0, "abcd"); 
+        assert_content(EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_0, "abcd");
         assert_comprises(EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_0, EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_0);
     }
 
     #[test]
     fn example_records_style_braces_layout_1() {
-        assert_content(EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_1, "abcd"); 
+        assert_content(EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_1, "abcd");
         assert_comprises(EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_1, EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_1);
     }
 
     #[test]
     fn example_records_style_braces_layout_2() {
-        assert_content(EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_2, "abcd"); 
+        assert_content(EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_2, "abcd");
         assert_comprises(EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_2, EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_2);
     }
 
     #[test]
     fn example_records_style_braces_layout_units() {
-        assert_content(EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_UNITS, "abcd"); 
+        assert_content(EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_UNITS, "abcd");
         assert_comprises(EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_UNITS, EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_UNITS);
     }
 
     #[test]
     fn example_records_style_braces_layout_records() {
-        assert_content(EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_RECORDS, "abcd"); 
+        assert_content(EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_RECORDS, "abcd");
         assert_comprises(EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_RECORDS, EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_RECORDS);
     }
 
     #[test]
     fn example_records_style_braces_layout_groups() {
-        assert_content(EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_GROUPS, "abcd"); 
+        assert_content(EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_GROUPS, "abcd");
         assert_comprises(EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_GROUPS, EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_GROUPS);
     }
 
     #[test]
     fn example_records_style_braces_layout_files() {
-        assert_content(EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_FILES, "abcd"); 
+        assert_content(EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_FILES, "abcd");
         assert_comprises(EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_FILES, EXAMPLE_RECORD_STYLE_BRACES_LAYOUT_FILES);
     }
 
     #[test]
     fn example_group() {
-        assert_content(EXAMPLE_GROUP, "abcd"); 
+        assert_content(EXAMPLE_GROUP, "abcd");
         assert_starts(EXAMPLE_GROUP, EXAMPLE_RECORDS);
     }
 
     #[test]
     fn example_group_style_symbols() {
-        assert_content(EXAMPLE_GROUP_STYLE_SYMBOLS, "abcd"); 
+        assert_content(EXAMPLE_GROUP_STYLE_SYMBOLS, "abcd");
         assert_starts(EXAMPLE_GROUP_STYLE_SYMBOLS, EXAMPLE_RECORDS_STYLE_SYMBOLS);
     }
 
     #[test]
     fn example_group_style_symbols_layout_0() {
-        assert_content(EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_0, "abcd"); 
+        assert_content(EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_0, "abcd");
         assert_starts(EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_0, EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_0);
     }
 
     #[test]
     fn example_group_style_symbols_layout_1() {
-        assert_content(EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_1, "abcd"); 
+        assert_content(EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_1, "abcd");
         assert_starts(EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_1, EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_1);
     }
 
     #[test]
     fn example_group_style_symbols_layout_2() {
-        assert_content(EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_2, "abcd"); 
+        assert_content(EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_2, "abcd");
         assert_starts(EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_2, EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_2);
     }
 
     #[test]
     fn example_group_style_symbols_layout_units() {
-        assert_content(EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_UNITS, "abcd"); 
+        assert_content(EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_UNITS, "abcd");
         assert_starts(EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_UNITS, EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_UNITS);
     }
 
     #[test]
     fn example_group_style_symbols_layout_records() {
-        assert_content(EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_RECORDS, "abcd"); 
+        assert_content(EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_RECORDS, "abcd");
         assert_starts(EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_RECORDS, EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_RECORDS);
     }
 
     #[test]
     fn example_group_style_symbols_layout_groups() {
-        assert_content(EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_GROUPS, "abcd"); 
+        assert_content(EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_GROUPS, "abcd");
         assert_starts(EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_GROUPS, EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_GROUPS);
     }
 
     #[test]
     fn example_group_style_symbols_layout_files() {
-        assert_content(EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_FILES, "abcd"); 
+        assert_content(EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_FILES, "abcd");
         assert_starts(EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_FILES, EXAMPLE_RECORDS_STYLE_SYMBOLS_LAYOUT_FILES);
     }
 
     #[test]
     fn example_group_style_controls() {
-        assert_content(EXAMPLE_GROUP_STYLE_CONTROLS, "abcd"); 
+        assert_content(EXAMPLE_GROUP_STYLE_CONTROLS, "abcd");
         assert_starts(EXAMPLE_GROUP_STYLE_CONTROLS, EXAMPLE_RECORDS_STYLE_CONTROLS);
     }
 
     #[test]
     fn example_group_style_controls_layout_0() {
-        assert_content(EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_0, "abcd"); 
+        assert_content(EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_0, "abcd");
         assert_starts(EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_0, EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_0);
     }
 
     #[test]
     fn example_group_style_controls_layout_1() {
-        assert_content(EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_1, "abcd"); 
+        assert_content(EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_1, "abcd");
         assert_starts(EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_1, EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_1);
     }
 
     #[test]
     fn example_group_style_controls_layout_2() {
-        assert_content(EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_2, "abcd"); 
+        assert_content(EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_2, "abcd");
         assert_starts(EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_2, EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_2);
     }
 
     #[test]
     fn example_group_style_controls_layout_units() {
-        assert_content(EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_UNITS, "abcd"); 
+        assert_content(EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_UNITS, "abcd");
         assert_starts(EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_UNITS, EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_UNITS);
     }
 
     #[test]
     fn example_group_style_controls_layout_records() {
-        assert_content(EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_RECORDS, "abcd"); 
+        assert_content(EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_RECORDS, "abcd");
         assert_starts(EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_RECORDS, EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_RECORDS);
     }
 
     #[test]
     fn example_group_style_controls_layout_groups() {
-        assert_content(EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_GROUPS, "abcd"); 
+        assert_content(EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_GROUPS, "abcd");
         assert_starts(EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_GROUPS, EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_GROUPS);
     }
 
     #[test]
     fn example_group_style_controls_layout_files() {
-        assert_content(EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_FILES, "abcd"); 
+        assert_content(EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_FILES, "abcd");
         assert_starts(EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_FILES, EXAMPLE_RECORDS_STYLE_CONTROLS_LAYOUT_FILES);
     }
 
     #[test]
     fn example_group_style_braces() {
-        assert_content(EXAMPLE_GROUP_STYLE_BRACES, "abcd"); 
+        assert_content(EXAMPLE_GROUP_STYLE_BRACES, "abcd");
         assert_starts(EXAMPLE_GROUP_STYLE_BRACES, EXAMPLE_RECORDS_STYLE_BRACES);
     }
 
     #[test]
     fn example_group_style_braces_layout_0() {
-        assert_content(EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_0, "abcd"); 
+        assert_content(EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_0, "abcd");
         assert_starts(EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_0, EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_0);
     }
 
     #[test]
     fn example_group_style_braces_layout_1() {
-        assert_content(EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_1, "abcd"); 
+        assert_content(EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_1, "abcd");
         assert_starts(EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_1, EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_1);
     }
 
     #[test]
     fn example_group_style_braces_layout_2() {
-        assert_content(EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_2, "abcd"); 
+        assert_content(EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_2, "abcd");
         assert_starts(EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_2, EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_2);
     }
 
     #[test]
     fn example_group_style_braces_layout_units() {
-        assert_content(EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_UNITS, "abcd"); 
+        assert_content(EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_UNITS, "abcd");
         assert_starts(EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_UNITS, EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_UNITS);
     }
 
     #[test]
     fn example_group_style_braces_layout_records() {
-        assert_content(EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_RECORDS, "abcd"); 
+        assert_content(EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_RECORDS, "abcd");
         assert_starts(EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_RECORDS, EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_RECORDS);
     }
 
     #[test]
     fn example_group_style_braces_layout_groups() {
-        assert_content(EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_GROUPS, "abcd"); 
+        assert_content(EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_GROUPS, "abcd");
         assert_starts(EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_GROUPS, EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_GROUPS);
     }
 
     #[test]
     fn example_group_style_braces_layout_files() {
-        assert_content(EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_FILES, "abcd"); 
+        assert_content(EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_FILES, "abcd");
         assert_starts(EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_FILES, EXAMPLE_RECORDS_STYLE_BRACES_LAYOUT_FILES);
     }
 
     #[test]
     fn example_groups() {
-        assert_content(EXAMPLE_GROUPS, "abcdefgh"); 
+        assert_content(EXAMPLE_GROUPS, "abcdefgh");
         assert_starts(EXAMPLE_GROUPS, EXAMPLE_GROUP);
     }
 
     #[test]
     fn example_groups_style_symbols() {
-        assert_content(EXAMPLE_GROUPS_STYLE_SYMBOLS, "abcdefgh"); 
+        assert_content(EXAMPLE_GROUPS_STYLE_SYMBOLS, "abcdefgh");
         assert_comprises(EXAMPLE_GROUPS_STYLE_SYMBOLS, EXAMPLE_GROUP_STYLE_SYMBOLS);
     }
 
     #[test]
     fn example_groups_style_symbols_layout_0() {
-        assert_content(EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_0, "abcdefgh"); 
+        assert_content(EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_0, "abcdefgh");
         assert_comprises(EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_0, EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_0);
     }
 
     #[test]
     fn example_groups_style_symbols_layout_1() {
-        assert_content(EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_1, "abcdefgh"); 
+        assert_content(EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_1, "abcdefgh");
         assert_comprises(EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_1, EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_1);
     }
 
     #[test]
     fn example_groups_style_symbols_layout_2() {
-        assert_content(EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_2, "abcdefgh"); 
+        assert_content(EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_2, "abcdefgh");
         assert_comprises(EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_2, EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_2);
     }
 
     #[test]
     fn example_groups_style_symbols_layout_units() {
-        assert_content(EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_UNITS, "abcdefgh"); 
+        assert_content(EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_UNITS, "abcdefgh");
         assert_comprises(EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_UNITS, EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_UNITS);
     }
 
     #[test]
     fn example_groups_style_symbols_layout_records() {
-        assert_content(EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_RECORDS, "abcdefgh"); 
+        assert_content(EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_RECORDS, "abcdefgh");
         assert_comprises(EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_RECORDS, EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_RECORDS);
     }
 
     #[test]
     fn example_groups_style_symbols_layout_groups() {
-        assert_content(EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_GROUPS, "abcdefgh"); 
+        assert_content(EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_GROUPS, "abcdefgh");
         assert_comprises(EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_GROUPS, EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_GROUPS);
     }
 
     #[test]
     fn example_groups_style_symbols_layout_files() {
-        assert_content(EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_FILES, "abcdefgh"); 
+        assert_content(EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_FILES, "abcdefgh");
         assert_comprises(EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_FILES, EXAMPLE_GROUP_STYLE_SYMBOLS_LAYOUT_FILES);
     }
 
     #[test]
     fn example_groups_style_controls() {
-        assert_content(EXAMPLE_GROUPS_STYLE_CONTROLS, "abcdefgh"); 
+        assert_content(EXAMPLE_GROUPS_STYLE_CONTROLS, "abcdefgh");
         assert_comprises(EXAMPLE_GROUPS_STYLE_CONTROLS, EXAMPLE_GROUP_STYLE_CONTROLS);
     }
 
     #[test]
     fn example_groups_style_controls_layout_0() {
-        assert_content(EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_0, "abcdefgh"); 
+        assert_content(EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_0, "abcdefgh");
         assert_comprises(EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_0, EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_0);
     }
 
     #[test]
     fn example_groups_style_controls_layout_1() {
-        assert_content(EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_1, "abcdefgh"); 
+        assert_content(EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_1, "abcdefgh");
         assert_comprises(EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_1, EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_1);
     }
 
     #[test]
     fn example_groups_style_controls_layout_2() {
-        assert_content(EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_2, "abcdefgh"); 
+        assert_content(EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_2, "abcdefgh");
         assert_comprises(EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_2, EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_2);
     }
 
     #[test]
     fn example_groups_style_controls_layout_units() {
-        assert_content(EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_UNITS, "abcdefgh"); 
+        assert_content(EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_UNITS, "abcdefgh");
         assert_comprises(EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_UNITS, EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_UNITS);
     }
 
     #[test]
     fn example_groups_style_controls_layout_records() {
-        assert_content(EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_RECORDS, "abcdefgh"); 
+        assert_content(EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_RECORDS, "abcdefgh");
         assert_comprises(EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_RECORDS, EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_RECORDS);
     }
 
     #[test]
     fn example_groups_style_controls_layout_groups() {
-        assert_content(EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_GROUPS, "abcdefgh"); 
+        assert_content(EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_GROUPS, "abcdefgh");
         assert_comprises(EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_GROUPS, EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_GROUPS);
     }
 
     #[test]
     fn example_groups_style_controls_layout_files() {
-        assert_content(EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_FILES, "abcdefgh"); 
+        assert_content(EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_FILES, "abcdefgh");
         assert_comprises(EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_FILES, EXAMPLE_GROUP_STYLE_CONTROLS_LAYOUT_FILES);
     }
 
     #[test]
     fn example_groups_style_braces() {
-        assert_content(EXAMPLE_GROUPS_STYLE_BRACES, "abcdefgh"); 
+        assert_content(EXAMPLE_GROUPS_STYLE_BRACES, "abcdefgh");
         assert_comprises(EXAMPLE_GROUPS_STYLE_BRACES, EXAMPLE_GROUP_STYLE_BRACES);
     }
 
     #[test]
     fn example_groups_style_braces_layout_0() {
-        assert_content(EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_0, "abcdefgh"); 
+        assert_content(EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_0, "abcdefgh");
         assert_comprises(EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_0, EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_0);
     }
 
     #[test]
     fn example_groups_style_braces_layout_1() {
-        assert_content(EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_1, "abcdefgh"); 
+        assert_content(EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_1, "abcdefgh");
         assert_comprises(EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_1, EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_1);
     }
 
     #[test]
     fn example_groups_style_braces_layout_2() {
-        assert_content(EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_2, "abcdefgh"); 
+        assert_content(EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_2, "abcdefgh");
         assert_comprises(EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_2, EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_2);
     }
 
     #[test]
     fn example_groups_style_braces_layout_units() {
-        assert_content(EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_UNITS, "abcdefgh"); 
+        assert_content(EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_UNITS, "abcdefgh");
         assert_comprises(EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_UNITS, EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_UNITS);
     }
 
     #[test]
     fn example_groups_style_braces_layout_records() {
-        assert_content(EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_RECORDS, "abcdefgh"); 
+        assert_content(EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_RECORDS, "abcdefgh");
         assert_comprises(EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_RECORDS, EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_RECORDS);
     }
 
     #[test]
     fn example_groups_style_braces_layout_groups() {
-        assert_content(EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_GROUPS, "abcdefgh"); 
+        assert_content(EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_GROUPS, "abcdefgh");
         assert_comprises(EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_GROUPS, EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_GROUPS);
     }
 
     #[test]
     fn example_groups_style_braces_layout_files() {
-        assert_content(EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_FILES, "abcdefgh"); 
+        assert_content(EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_FILES, "abcdefgh");
         assert_comprises(EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_FILES, EXAMPLE_GROUP_STYLE_BRACES_LAYOUT_FILES);
     }
 
     #[test]
     fn example_file() {
-        assert_content(EXAMPLE_FILE, "abcdefgh"); 
+        assert_content(EXAMPLE_FILE, "abcdefgh");
         assert_starts(EXAMPLE_FILE, EXAMPLE_GROUPS);
     }
 
     #[test]
     fn example_file_style_symbols() {
-        assert_content(EXAMPLE_FILE_STYLE_SYMBOLS, "abcdefgh"); 
+        assert_content(EXAMPLE_FILE_STYLE_SYMBOLS, "abcdefgh");
         assert_starts(EXAMPLE_FILE_STYLE_SYMBOLS, EXAMPLE_GROUPS_STYLE_SYMBOLS);
     }
 
     #[test]
     fn example_file_style_symbols_layout_0() {
-        assert_content(EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_0, "abcdefgh"); 
+        assert_content(EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_0, "abcdefgh");
         assert_starts(EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_0, EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_0);
     }
 
     #[test]
     fn example_file_style_symbols_layout_1() {
-        assert_content(EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_1, "abcdefgh"); 
+        assert_content(EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_1, "abcdefgh");
         assert_starts(EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_1, EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_1);
     }
 
     #[test]
     fn example_file_style_symbols_layout_2() {
-        assert_content(EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_2, "abcdefgh"); 
+        assert_content(EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_2, "abcdefgh");
         assert_starts(EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_2, EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_2);
     }
 
     #[test]
     fn example_file_style_symbols_layout_units() {
-        assert_content(EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_UNITS, "abcdefgh"); 
+        assert_content(EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_UNITS, "abcdefgh");
         assert_starts(EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_UNITS, EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_UNITS);
     }
 
     #[test]
     fn example_file_style_symbols_layout_records() {
-        assert_content(EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_RECORDS, "abcdefgh"); 
+        assert_content(EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_RECORDS, "abcdefgh");
         assert_starts(EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_RECORDS, EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_RECORDS);
     }
 
     #[test]
     fn example_file_style_symbols_layout_groups() {
-        assert_content(EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_GROUPS, "abcdefgh"); 
+        assert_content(EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_GROUPS, "abcdefgh");
         assert_starts(EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_GROUPS, EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_GROUPS);
     }
 
     #[test]
     fn example_file_style_symbols_layout_files() {
-        assert_content(EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_FILES, "abcdefgh"); 
+        assert_content(EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_FILES, "abcdefgh");
         assert_starts(EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_FILES, EXAMPLE_GROUPS_STYLE_SYMBOLS_LAYOUT_FILES);
     }
 
     #[test]
     fn example_file_style_controls() {
-        assert_content(EXAMPLE_FILE_STYLE_CONTROLS, "abcdefgh"); 
+        assert_content(EXAMPLE_FILE_STYLE_CONTROLS, "abcdefgh");
         assert_starts(EXAMPLE_FILE_STYLE_CONTROLS, EXAMPLE_GROUPS_STYLE_CONTROLS);
     }
 
     #[test]
     fn example_file_style_controls_layout_0() {
-        assert_content(EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_0, "abcdefgh"); 
+        assert_content(EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_0, "abcdefgh");
         assert_starts(EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_0, EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_0);
     }
 
     #[test]
     fn example_file_style_controls_layout_1() {
-        assert_content(EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_1, "abcdefgh"); 
+        assert_content(EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_1, "abcdefgh");
         assert_starts(EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_1, EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_1);
     }
 
     #[test]
     fn example_file_style_controls_layout_2() {
-        assert_content(EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_2, "abcdefgh"); 
+        assert_content(EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_2, "abcdefgh");
         assert_starts(EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_2, EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_2);
     }
 
     #[test]
     fn example_file_style_controls_layout_units() {
-        assert_content(EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_UNITS, "abcdefgh"); 
+        assert_content(EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_UNITS, "abcdefgh");
         assert_starts(EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_UNITS, EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_UNITS);
     }
 
     #[test]
     fn example_file_style_controls_layout_records() {
-        assert_content(EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_RECORDS, "abcdefgh"); 
+        assert_content(EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_RECORDS, "abcdefgh");
         assert_starts(EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_RECORDS, EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_RECORDS);
     }
 
     #[test]
     fn example_file_style_controls_layout_groups() {
-        assert_content(EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_GROUPS, "abcdefgh"); 
+        assert_content(EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_GROUPS, "abcdefgh");
         assert_starts(EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_GROUPS, EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_GROUPS);
     }
 
     #[test]
     fn example_file_style_controls_layout_files() {
-        assert_content(EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_FILES, "abcdefgh"); 
+        assert_content(EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_FILES, "abcdefgh");
         assert_starts(EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_FILES, EXAMPLE_GROUPS_STYLE_CONTROLS_LAYOUT_FILES);
     }
 
     #[test]
     fn example_file_style_braces() {
-        assert_content(EXAMPLE_FILE_STYLE_BRACES, "abcdefgh"); 
+        assert_content(EXAMPLE_FILE_STYLE_BRACES, "abcdefgh");
         assert_starts(EXAMPLE_FILE_STYLE_BRACES, EXAMPLE_GROUPS_STYLE_BRACES);
     }
 
     #[test]
     fn example_file_style_braces_layout_0() {
-        assert_content(EXAMPLE_FILE_STYLE_BRACES_LAYOUT_0, "abcdefgh"); 
+        assert_content(EXAMPLE_FILE_STYLE_BRACES_LAYOUT_0, "abcdefgh");
         assert_starts(EXAMPLE_FILE_STYLE_BRACES_LAYOUT_0, EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_0);
     }
 
     #[test]
     fn example_file_style_braces_layout_1() {
-        assert_content(EXAMPLE_FILE_STYLE_BRACES_LAYOUT_1, "abcdefgh"); 
+        assert_content(EXAMPLE_FILE_STYLE_BRACES_LAYOUT_1, "abcdefgh");
         assert_starts(EXAMPLE_FILE_STYLE_BRACES_LAYOUT_1, EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_1);
     }
 
     #[test]
     fn example_file_style_braces_layout_2() {
-        assert_content(EXAMPLE_FILE_STYLE_BRACES_LAYOUT_2, "abcdefgh"); 
+        assert_content(EXAMPLE_FILE_STYLE_BRACES_LAYOUT_2, "abcdefgh");
         assert_starts(EXAMPLE_FILE_STYLE_BRACES_LAYOUT_2, EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_2);
     }
 
     #[test]
     fn example_file_style_braces_layout_units() {
-        assert_content(EXAMPLE_FILE_STYLE_BRACES_LAYOUT_UNITS, "abcdefgh"); 
+        assert_content(EXAMPLE_FILE_STYLE_BRACES_LAYOUT_UNITS, "abcdefgh");
         assert_starts(EXAMPLE_FILE_STYLE_BRACES_LAYOUT_UNITS, EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_UNITS);
     }
 
     #[test]
     fn example_file_style_braces_layout_records() {
-        assert_content(EXAMPLE_FILE_STYLE_BRACES_LAYOUT_RECORDS, "abcdefgh"); 
+        assert_content(EXAMPLE_FILE_STYLE_BRACES_LAYOUT_RECORDS, "abcdefgh");
         assert_starts(EXAMPLE_FILE_STYLE_BRACES_LAYOUT_RECORDS, EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_RECORDS);
     }
 
     #[test]
     fn example_file_style_braces_layout_groups() {
-        assert_content(EXAMPLE_FILE_STYLE_BRACES_LAYOUT_GROUPS, "abcdefgh"); 
+        assert_content(EXAMPLE_FILE_STYLE_BRACES_LAYOUT_GROUPS, "abcdefgh");
         assert_starts(EXAMPLE_FILE_STYLE_BRACES_LAYOUT_GROUPS, EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_GROUPS);
     }
 
     #[test]
     fn example_file_style_braces_layout_files() {
-        assert_content(EXAMPLE_FILE_STYLE_BRACES_LAYOUT_FILES, "abcdefgh"); 
+        assert_content(EXAMPLE_FILE_STYLE_BRACES_LAYOUT_FILES, "abcdefgh");
         assert_starts(EXAMPLE_FILE_STYLE_BRACES_LAYOUT_FILES, EXAMPLE_GROUPS_STYLE_BRACES_LAYOUT_FILES);
     }
 
     #[test]
     fn example_files() {
-        assert_content(EXAMPLE_FILES, "abcdefghijklmnop"); 
+        assert_content(EXAMPLE_FILES, "abcdefghijklmnop");
         assert_starts(EXAMPLE_FILES, EXAMPLE_FILE);
     }
 
     #[test]
     fn example_files_style_symbols() {
-        assert_content(EXAMPLE_FILES_STYLE_SYMBOLS, "abcdefghijklmnop"); 
+        assert_content(EXAMPLE_FILES_STYLE_SYMBOLS, "abcdefghijklmnop");
         assert_comprises(EXAMPLE_FILES_STYLE_SYMBOLS, EXAMPLE_FILE_STYLE_SYMBOLS);
     }
 
     #[test]
     fn example_files_style_symbols_layout_0() {
-        assert_content(EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_0, "abcdefghijklmnop"); 
+        assert_content(EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_0, "abcdefghijklmnop");
         assert_comprises(EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_0, EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_0);
     }
 
     #[test]
     fn example_files_style_symbols_layout_1() {
-        assert_content(EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_1, "abcdefghijklmnop"); 
+        assert_content(EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_1, "abcdefghijklmnop");
         assert_comprises(EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_1, EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_1);
     }
 
     #[test]
     fn example_files_style_symbols_layout_2() {
-        assert_content(EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_2, "abcdefghijklmnop"); 
+        assert_content(EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_2, "abcdefghijklmnop");
         assert_comprises(EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_2, EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_2);
     }
 
     #[test]
     fn example_files_style_symbols_layout_units() {
-        assert_content(EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_UNITS, "abcdefghijklmnop"); 
+        assert_content(EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_UNITS, "abcdefghijklmnop");
         assert_comprises(EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_UNITS, EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_UNITS);
     }
 
     #[test]
     fn example_files_style_symbols_layout_records() {
-        assert_content(EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_RECORDS, "abcdefghijklmnop"); 
+        assert_content(EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_RECORDS, "abcdefghijklmnop");
         assert_comprises(EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_RECORDS, EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_RECORDS);
     }
 
     #[test]
     fn example_files_style_symbols_layout_groups() {
-        assert_content(EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_GROUPS, "abcdefghijklmnop"); 
+        assert_content(EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_GROUPS, "abcdefghijklmnop");
         assert_comprises(EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_GROUPS, EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_GROUPS);
     }
 
     #[test]
     fn example_files_style_symbols_layout_files() {
-        assert_content(EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_FILES, "abcdefghijklmnop"); 
+        assert_content(EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_FILES, "abcdefghijklmnop");
         assert_comprises(EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_FILES, EXAMPLE_FILE_STYLE_SYMBOLS_LAYOUT_FILES);
     }
 
     #[test]
     fn example_files_style_controls() {
-        assert_content(EXAMPLE_FILES_STYLE_CONTROLS, "abcdefghijklmnop"); 
+        assert_content(EXAMPLE_FILES_STYLE_CONTROLS, "abcdefghijklmnop");
         assert_comprises(EXAMPLE_FILES_STYLE_CONTROLS, EXAMPLE_FILE_STYLE_CONTROLS);
     }
 
     #[test]
     fn example_files_style_controls_layout_0() {
-        assert_content(EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_0, "abcdefghijklmnop"); 
+        assert_content(EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_0, "abcdefghijklmnop");
         assert_comprises(EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_0, EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_0);
     }
 
     #[test]
     fn example_files_style_controls_layout_1() {
-        assert_content(EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_1, "abcdefghijklmnop"); 
+        assert_content(EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_1, "abcdefghijklmnop");
         assert_comprises(EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_1, EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_1);
     }
 
     #[test]
     fn example_files_style_controls_layout_2() {
-        assert_content(EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_2, "abcdefghijklmnop"); 
+        assert_content(EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_2, "abcdefghijklmnop");
         assert_comprises(EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_2, EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_2);
     }
 
     #[test]
     fn example_files_style_controls_layout_units() {
-        assert_content(EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_UNITS, "abcdefghijklmnop"); 
+        assert_content(EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_UNITS, "abcdefghijklmnop");
         assert_comprises(EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_UNITS, EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_UNITS);
     }
 
     #[test]
     fn example_files_style_controls_layout_records() {
-        assert_content(EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_RECORDS, "abcdefghijklmnop"); 
+        assert_content(EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_RECORDS, "abcdefghijklmnop");
         assert_comprises(EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_RECORDS, EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_RECORDS);
     }
 
     #[test]
     fn example_files_style_controls_layout_groups() {
-        assert_content(EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_GROUPS, "abcdefghijklmnop"); 
+        assert_content(EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_GROUPS, "abcdefghijklmnop");
         assert_comprises(EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_GROUPS, EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_GROUPS);
     }
 
     #[test]
     fn example_files_style_controls_layout_files() {
-        assert_content(EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_FILES, "abcdefghijklmnop"); 
+        assert_content(EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_FILES, "abcdefghijklmnop");
         assert_comprises(EXAMPLE_FILES_STYLE_CONTROLS_LAYOUT_FILES, EXAMPLE_FILE_STYLE_CONTROLS_LAYOUT_FILES);
     }
 
     #[test]
     fn example_files_style_braces() {
-        assert_content(EXAMPLE_FILES_STYLE_BRACES, "abcdefghijklmnop"); 
+        assert_content(EXAMPLE_FILES_STYLE_BRACES, "abcdefghijklmnop");
         assert_comprises(EXAMPLE_FILES_STYLE_BRACES, EXAMPLE_FILE_STYLE_BRACES);
     }
 
     #[test]
     fn example_files_style_braces_layout_0() {
-        assert_content(EXAMPLE_FILES_STYLE_BRACES_LAYOUT_0, "abcdefghijklmnop"); 
+        assert_content(EXAMPLE_FILES_STYLE_BRACES_LAYOUT_0, "abcdefghijklmnop");
         assert_comprises(EXAMPLE_FILES_STYLE_BRACES_LAYOUT_0, EXAMPLE_FILE_STYLE_BRACES_LAYOUT_0);
     }
 
     #[test]
     fn example_files_style_braces_layout_1() {
-        assert_content(EXAMPLE_FILES_STYLE_BRACES_LAYOUT_1, "abcdefghijklmnop"); 
+        assert_content(EXAMPLE_FILES_STYLE_BRACES_LAYOUT_1, "abcdefghijklmnop");
         assert_comprises(EXAMPLE_FILES_STYLE_BRACES_LAYOUT_1, EXAMPLE_FILE_STYLE_BRACES_LAYOUT_1);
     }
 
     #[test]
     fn example_files_style_braces_layout_2() {
-        assert_content(EXAMPLE_FILES_STYLE_BRACES_LAYOUT_2, "abcdefghijklmnop"); 
+        assert_content(EXAMPLE_FILES_STYLE_BRACES_LAYOUT_2, "abcdefghijklmnop");
         assert_comprises(EXAMPLE_FILES_STYLE_BRACES_LAYOUT_2, EXAMPLE_FILE_STYLE_BRACES_LAYOUT_2);
     }
 
     #[test]
     fn example_files_style_braces_layout_units() {
-        assert_content(EXAMPLE_FILES_STYLE_BRACES_LAYOUT_UNITS, "abcdefghijklmnop"); 
+        assert_content(EXAMPLE_FILES_STYLE_BRACES_LAYOUT_UNITS, "abcdefghijklmnop");
         assert_comprises(EXAMPLE_FILES_STYLE_BRACES_LAYOUT_UNITS, EXAMPLE_FILE_STYLE_BRACES_LAYOUT_UNITS);
     }
 
     #[test]
     fn example_files_style_braces_layout_records() {
-        assert_content(EXAMPLE_FILES_STYLE_BRACES_LAYOUT_RECORDS, "abcdefghijklmnop"); 
+        assert_content(EXAMPLE_FILES_STYLE_BRACES_LAYOUT_RECORDS, "abcdefghijklmnop");
         assert_comprises(EXAMPLE_FILES_STYLE_BRACES_LAYOUT_RECORDS, EXAMPLE_FILE_STYLE_BRACES_LAYOUT_RECORDS);
     }
 
     #[test]
     fn example_files_style_braces_layout_groups() {
-        assert_content(EXAMPLE_FILES_STYLE_BRACES_LAYOUT_GROUPS, "abcdefghijklmnop"); 
+        assert_content(EXAMPLE_FILES_STYLE_BRACES_LAYOUT_GROUPS, "abcdefghijklmnop");
         assert_comprises(EXAMPLE_FILES_STYLE_BRACES_LAYOUT_GROUPS, EXAMPLE_FILE_STYLE_BRACES_LAYOUT_GROUPS);
     }
 
     #[test]
     fn example_files_style_braces_layout_files() {
-        assert_content(EXAMPLE_FILES_STYLE_BRACES_LAYOUT_FILES, "abcdefghijklmnop"); 
+        assert_content(EXAMPLE_FILES_STYLE_BRACES_LAYOUT_FILES, "abcdefghijklmnop");
         assert_comprises(EXAMPLE_FILES_STYLE_BRACES_LAYOUT_FILES, EXAMPLE_FILE_STYLE_BRACES_LAYOUT_FILES);
     }
 

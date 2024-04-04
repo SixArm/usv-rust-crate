@@ -1,8 +1,11 @@
-# Unicode Separated Values (USV)
+# Unicode Separated Values (USV) ™
 
-Unicode separated values (USV) is a data format that uses Unicode symbol characters between data parts.
+Unicode Separated Values (USV) ™ is a data format that uses Unicode characters for markup.
 
-The USV repo is <https://github.com/sixarm/usv>.
+This USV crate implements the USV specification: <https://github.com/sixarm/usv>.
+
+This USV crate and aims to help developers build new USV applications, tools, and workflows.
+
 
 ## USV characters
 
@@ -21,12 +24,6 @@ Modifiers:
 * Escape (ESC) is U+001B or U+241B ␛
 
 * End of Transmission (EOT) is U+0004 or U+2404 ␄
-
-Liners:
-
-* Carriage Return (CR) is U+000D
-
-* Line Feed (LF) is U+000A
 
 ## Units
 
@@ -64,6 +61,33 @@ let files: Files = input.files().collect();
 assert_eq!(files, [[[["a", "b"],["c", "d"]],[["e", "f"],["g", "h"]]],[[["i", "j"],["k", "l"]],[["m", "n"],["o", "p"]]]]);
 ```
 
+## Architecture
+
+The architecture of this crate looks like this, in order of importance:
+
+* `lib.rs`: the library entry point.
+
+* `constants.rs`: constants for USV characters.
+
+* `token.rs`: the USV Token enumerator for returning parser results.
+
+* `iter/`: iterators for units, records, groups, files, tokens.
+
+* `style/`: style sets of characters for symbols, controls, braces.
+
+* `layout/`: layout formats for lines, visual displays, and editors.
+
+* `examples.rs`: data strings suitable for demos and tests.
+
+* `str_ext.rs`: string extension traits for parsing USV.
+
+* `svec.rs`: a simple macro for creating string vectors.
+
+* `bench/`: benchmark tests; this is work in progress.
+
+* `tests/`: integration tests placeholder; not needed yet.
+
+
 ## Token
 
 A token is the underlying USV enumeration for parsing a string to output:
@@ -81,10 +105,6 @@ pub enum Token {
 
 ## Type aliases
 
-* Token = described above
-
-* Tokens = Vec<Token>
-
 * Unit = String
 
 * Units = Vec<Unit>
@@ -100,3 +120,19 @@ pub enum Token {
 * File = Groups
 
 * Files = Vec<File>
+
+
+## Legal protection for standardization
+
+The USV project aims to become a free open source IETF standard and IANA standard, much like the standards for CSV and TDF.
+
+Until the standardization happens, the terms "Unicode Separated Values" and "USV" are both trademarks of this project. This repository is copyright 2022-2024. The trademarks and copyrights are by Joel Parker Henderson, me, an individual, not a company.
+
+When IETF and IANA approve the submissions as a standard, then the trademarks and copyright will go to a free libre open source software advocacy foundation. We welcome advice about how to do this well.
+
+
+## Conclusion
+
+USV is helping us with data projects. We hope USV may help you too.
+
+We welcome constructive feedback about USV, as well as git issues, pull requests, and standardization help.
