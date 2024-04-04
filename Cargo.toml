@@ -1,6 +1,6 @@
 [package]
 name = "usv"
-version = "0.17.1"
+version = "0.18.0"
 edition = "2021"
 authors = ["Joel Parker Henderson <joel@joelparkerhenderson.com>"]
 description = "USV: Unicode Separated Values (USV) for data markup. This is for spreadsheets, databases, content management, and more. This builds on ASCII Separated Values (ASV) and contrasts with Comma Separated Values (CSV)."
@@ -16,6 +16,7 @@ categories = ["encoding", "data-structures", "database", "parsing", "text-proces
 
 [dev-dependencies]
 criterion = ">= 0.5"
+once_cell = "1.19"
 rand = ">= 0.8"
 csv = "1"
 

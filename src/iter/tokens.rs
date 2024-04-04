@@ -31,7 +31,7 @@ impl<'a> std::iter::Iterator for Tokens<'a> {
             match self.chars.next() {
                 Some(c) => {
                     match c {
-                        '\u{001F}' | '␟' => { return Some(usv::Token::Unit(content)) },
+                        '\u{001F}' | '␟' => { return Some(usv::Token::Unit(String::from(content.trim()))) },
                         '\u{001E}' | '␞' => { return Some(usv::Token::RecordSeparator) },
                         '\u{001D}' | '␝' => { return Some(usv::Token::GroupSeparator) },
                         '\u{001C}' | '␜' => { return Some(usv::Token::FileSeparator) },
@@ -74,6 +74,125 @@ mod tests {
     use super::*;
     use crate as usv;
     use crate::examples::*;
+    use once_cell::sync::Lazy;
+
+    static EXAMPLE_UNIT_TOKENS: Lazy<Vec<usv::Token>> = Lazy::new(|| {
+        vec![
+            usv::Token::Unit(usv::Unit::from("a")),
+        ]
+    });
+
+    static EXAMPLE_UNITS_TOKENS: Lazy<Vec<usv::Token>> = Lazy::new(|| {
+        vec![
+            usv::Token::Unit(usv::Unit::from("a")),
+            usv::Token::Unit(usv::Unit::from("b")),
+        ]
+    });
+
+    static EXAMPLE_RECORD_TOKENS: Lazy<Vec<usv::Token>> = Lazy::new(|| {
+        vec![
+            usv::Token::Unit(usv::Unit::from("a")),
+            usv::Token::Unit(usv::Unit::from("b")),
+            usv::Token::RecordSeparator,
+        ]
+    });
+
+    static EXAMPLE_RECORDS_TOKENS: Lazy<Vec<usv::Token>> = Lazy::new(|| {
+        vec![
+            usv::Token::Unit(usv::Unit::from("a")),
+            usv::Token::Unit(usv::Unit::from("b")),
+            usv::Token::RecordSeparator,
+            usv::Token::Unit(usv::Unit::from("c")),
+            usv::Token::Unit(usv::Unit::from("d")),
+            usv::Token::RecordSeparator,
+        ]
+    });
+
+    static EXAMPLE_GROUP_TOKENS: Lazy<Vec<usv::Token>> = Lazy::new(|| {
+        vec![
+            usv::Token::Unit(usv::Unit::from("a")),
+            usv::Token::Unit(usv::Unit::from("b")),
+            usv::Token::RecordSeparator,
+            usv::Token::Unit(usv::Unit::from("c")),
+            usv::Token::Unit(usv::Unit::from("d")),
+            usv::Token::RecordSeparator,
+            usv::Token::GroupSeparator,
+        ]
+    });
+
+    static EXAMPLE_GROUPS_TOKENS: Lazy<Vec<usv::Token>> = Lazy::new(|| {
+        vec![
+            usv::Token::Unit(usv::Unit::from("a")),
+            usv::Token::Unit(usv::Unit::from("b")),
+            usv::Token::RecordSeparator,
+            usv::Token::Unit(usv::Unit::from("c")),
+            usv::Token::Unit(usv::Unit::from("d")),
+            usv::Token::RecordSeparator,
+            usv::Token::GroupSeparator,
+            usv::Token::Unit(usv::Unit::from("e")),
+            usv::Token::Unit(usv::Unit::from("f")),
+            usv::Token::RecordSeparator,
+            usv::Token::Unit(usv::Unit::from("g")),
+            usv::Token::Unit(usv::Unit::from("h")),
+            usv::Token::RecordSeparator,
+            usv::Token::GroupSeparator,
+        ]
+    });
+
+    static EXAMPLE_FILE_TOKENS: Lazy<Vec<usv::Token>> = Lazy::new(|| {
+        vec![
+            usv::Token::Unit(usv::Unit::from("a")),
+            usv::Token::Unit(usv::Unit::from("b")),
+            usv::Token::RecordSeparator,
+            usv::Token::Unit(usv::Unit::from("c")),
+            usv::Token::Unit(usv::Unit::from("d")),
+            usv::Token::RecordSeparator,
+            usv::Token::GroupSeparator,
+            usv::Token::Unit(usv::Unit::from("e")),
+            usv::Token::Unit(usv::Unit::from("f")),
+            usv::Token::RecordSeparator,
+            usv::Token::Unit(usv::Unit::from("g")),
+            usv::Token::Unit(usv::Unit::from("h")),
+            usv::Token::RecordSeparator,
+            usv::Token::GroupSeparator,
+            usv::Token::FileSeparator,
+        ]
+    });
+
+    static EXAMPLE_FILES_TOKENS: Lazy<Vec<usv::Token>> = Lazy::new(|| {
+        vec![
+            usv::Token::Unit(usv::Unit::from("a")),
+            usv::Token::Unit(usv::Unit::from("b")),
+            usv::Token::RecordSeparator,
+            usv::Token::Unit(usv::Unit::from("c")),
+            usv::Token::Unit(usv::Unit::from("d")),
+            usv::Token::RecordSeparator,
+            usv::Token::GroupSeparator,
+            usv::Token::Unit(usv::Unit::from("e")),
+            usv::Token::Unit(usv::Unit::from("f")),
+            usv::Token::RecordSeparator,
+            usv::Token::Unit(usv::Unit::from("g")),
+            usv::Token::Unit(usv::Unit::from("h")),
+            usv::Token::RecordSeparator,
+            usv::Token::GroupSeparator,
+            usv::Token::FileSeparator,
+            usv::Token::Unit(usv::Unit::from("i")),
+            usv::Token::Unit(usv::Unit::from("j")),
+            usv::Token::RecordSeparator,
+            usv::Token::Unit(usv::Unit::from("k")),
+            usv::Token::Unit(usv::Unit::from("l")),
+            usv::Token::RecordSeparator,
+            usv::Token::GroupSeparator,
+            usv::Token::Unit(usv::Unit::from("m")),
+            usv::Token::Unit(usv::Unit::from("n")),
+            usv::Token::RecordSeparator,
+            usv::Token::Unit(usv::Unit::from("o")),
+            usv::Token::Unit(usv::Unit::from("p")),
+            usv::Token::RecordSeparator,
+            usv::Token::GroupSeparator,
+            usv::Token::FileSeparator,
+        ]
+    });
 
     /// An empty string returns an empty list,
     /// because there are no separators.
@@ -88,10 +207,7 @@ mod tests {
     fn empty() {
         let input = "";
         let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
-        assert_eq!(
-            actual,
-            []
-        );
+        assert_eq!(actual, []);
     }
 
     /// A string of all typical characters returns an empty list,
@@ -107,10 +223,7 @@ mod tests {
     fn chaff() {
         let input = "a";
         let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
-        assert_eq!(
-            actual,
-            []
-        );
+        assert_eq!(actual, []);
     }
 
     /// A string of one unit separator returns an empty unit.
@@ -229,14 +342,9 @@ mod tests {
     ///
     #[test]
     fn unit() {
-        let input = "a␟";
+        let input = EXAMPLE_UNIT;
         let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
-        assert_eq!(
-            actual,
-            [
-                usv::Token::Unit(usv::Unit::from("a")),
-            ]
-        );
+        assert_eq!(actual, *EXAMPLE_UNIT_TOKENS);
     }
 
     /// A string of typical units will return typical units.
@@ -249,15 +357,9 @@ mod tests {
     ///
     #[test]
     fn units() {
-        let input = EXAMPLE_UNITS_STYLE_SYMBOLS;
+        let input = EXAMPLE_UNITS;
         let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
-        assert_eq!(
-            actual,
-            [
-                usv::Token::Unit(usv::Unit::from("a")),
-                usv::Token::Unit(usv::Unit::from("b")),
-            ]
-        );
+        assert_eq!(actual, *EXAMPLE_UNITS_TOKENS);
     }
 
     /// A string of typical records will return typical records.
@@ -270,19 +372,9 @@ mod tests {
     ///
     #[test]
     fn records() {
-        let input = EXAMPLE_RECORDS_STYLE_SYMBOLS;
+        let input = EXAMPLE_RECORDS;
         let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
-        assert_eq!(
-            actual,
-            [
-                usv::Token::Unit(usv::Unit::from("a")),
-                usv::Token::Unit(usv::Unit::from("b")),
-                usv::Token::RecordSeparator,
-                usv::Token::Unit(usv::Unit::from("c")),
-                usv::Token::Unit(usv::Unit::from("d")),
-                usv::Token::RecordSeparator,
-            ]
-        );
+        assert_eq!(actual, *EXAMPLE_RECORDS_TOKENS);
     }
 
     /// A string of typical groups will return typical groups.
@@ -295,27 +387,9 @@ mod tests {
     ///
     #[test]
     fn groups() {
-        let input = EXAMPLE_GROUPS_STYLE_SYMBOLS;
+        let input = EXAMPLE_GROUPS;
         let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
-        assert_eq!(
-            actual,
-            [
-                usv::Token::Unit(usv::Unit::from("a")),
-                usv::Token::Unit(usv::Unit::from("b")),
-                usv::Token::RecordSeparator,
-                usv::Token::Unit(usv::Unit::from("c")),
-                usv::Token::Unit(usv::Unit::from("d")),
-                usv::Token::RecordSeparator,
-                usv::Token::GroupSeparator,
-                usv::Token::Unit(usv::Unit::from("e")),
-                usv::Token::Unit(usv::Unit::from("f")),
-                usv::Token::RecordSeparator,
-                usv::Token::Unit(usv::Unit::from("g")),
-                usv::Token::Unit(usv::Unit::from("h")),
-                usv::Token::RecordSeparator,
-                usv::Token::GroupSeparator,
-            ]
-        );
+        assert_eq!(actual, *EXAMPLE_GROUPS_TOKENS);
     }
 
     /// A string of typical files will return typical files.
@@ -328,43 +402,9 @@ mod tests {
     ///
     #[test]
     fn token_iterator_with_files() {
-        let input = EXAMPLE_FILES_STYLE_SYMBOLS;
+        let input = EXAMPLE_FILES;
         let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
-        assert_eq!(
-            actual,
-            [
-                usv::Token::Unit(usv::Unit::from("a")),
-                usv::Token::Unit(usv::Unit::from("b")),
-                usv::Token::RecordSeparator,
-                usv::Token::Unit(usv::Unit::from("c")),
-                usv::Token::Unit(usv::Unit::from("d")),
-                usv::Token::RecordSeparator,
-                usv::Token::GroupSeparator,
-                usv::Token::Unit(usv::Unit::from("e")),
-                usv::Token::Unit(usv::Unit::from("f")),
-                usv::Token::RecordSeparator,
-                usv::Token::Unit(usv::Unit::from("g")),
-                usv::Token::Unit(usv::Unit::from("h")),
-                usv::Token::RecordSeparator,
-                usv::Token::GroupSeparator,
-                usv::Token::FileSeparator,
-                usv::Token::Unit(usv::Unit::from("i")),
-                usv::Token::Unit(usv::Unit::from("j")),
-                usv::Token::RecordSeparator,
-                usv::Token::Unit(usv::Unit::from("k")),
-                usv::Token::Unit(usv::Unit::from("l")),
-                usv::Token::RecordSeparator,
-                usv::Token::GroupSeparator,
-                usv::Token::Unit(usv::Unit::from("m")),
-                usv::Token::Unit(usv::Unit::from("n")),
-                usv::Token::RecordSeparator,
-                usv::Token::Unit(usv::Unit::from("o")),
-                usv::Token::Unit(usv::Unit::from("p")),
-                usv::Token::RecordSeparator,
-                usv::Token::GroupSeparator,
-                usv::Token::FileSeparator,
-            ]
-        );
+        assert_eq!(actual, *EXAMPLE_FILES_TOKENS);
     }
 
     #[test]
@@ -407,34 +447,63 @@ mod tests {
     fn escape_eol_per_unit() {
         let input = "a␟␛\nb␟␞␛\nc␟␛\nd␟␞␛\n";
         let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
-        assert_eq!(
-            actual,
-            [
-                usv::Token::Unit(usv::Unit::from("a")),
-                usv::Token::Unit(usv::Unit::from("b")),
-                usv::Token::RecordSeparator,
-                usv::Token::Unit(usv::Unit::from("c")),
-                usv::Token::Unit(usv::Unit::from("d")),
-                usv::Token::RecordSeparator,
-            ]
-        );
+        assert_eq!(actual, *EXAMPLE_RECORDS_TOKENS);
     }
 
     #[test]
     fn escape_eol_per_record() {
         let input = "a␟b␟␞␛\nc␟d␟␞␛\n";
         let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
-        assert_eq!(
-            actual,
-            [
-                usv::Token::Unit(usv::Unit::from("a")),
-                usv::Token::Unit(usv::Unit::from("b")),
-                usv::Token::RecordSeparator,
-                usv::Token::Unit(usv::Unit::from("c")),
-                usv::Token::Unit(usv::Unit::from("d")),
-                usv::Token::RecordSeparator,
-            ]
-        );
+        assert_eq!(actual, *EXAMPLE_RECORDS_TOKENS);
+    }
+
+    #[test]
+    fn layout_0() {
+        let input = usv::examples::EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_0;
+        let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
+        assert_eq!(actual, *EXAMPLE_FILES_TOKENS);
+    }
+
+    #[test]
+    fn layout_1() {
+        let input = usv::examples::EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_1;
+        let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
+        assert_eq!(actual, *EXAMPLE_FILES_TOKENS);
+    }
+
+    #[test]
+    fn layout_2() {
+        let input = usv::examples::EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_1;
+        let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
+        assert_eq!(actual, *EXAMPLE_FILES_TOKENS);
+    }
+
+    #[test]
+    fn layout_units() {
+        let input = usv::examples::EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_UNITS;
+        let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
+        assert_eq!(actual, *EXAMPLE_FILES_TOKENS);
+    }
+
+    #[test]
+    fn layout_records() {
+        let input = usv::examples::EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_RECORDS;
+        let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
+        assert_eq!(actual, *EXAMPLE_FILES_TOKENS);
+    }
+
+    #[test]
+    fn layout_groups() {
+        let input = usv::examples::EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_GROUPS;
+        let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
+        assert_eq!(actual, *EXAMPLE_FILES_TOKENS);
+    }
+
+    #[test]
+    fn layout_files() {
+        let input = usv::examples::EXAMPLE_FILES_STYLE_SYMBOLS_LAYOUT_FILES;
+        let actual: usv::Tokens = usv::iter::Tokens::from(input).collect();
+        assert_eq!(actual, *EXAMPLE_FILES_TOKENS);
     }
 
 }
