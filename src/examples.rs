@@ -673,7 +673,7 @@ mod tests {
         let file = std::path::PathBuf::from(
             env!("CARGO_MANIFEST_DIR"))
             .join("examples")
-            .join(const_name.replace("_", "-").to_lowercase() + ".usv");
+            .join(const_name.replace("EXAMPLE_","").replace("_", "-").to_lowercase() + ".usv");
         let s = std::fs::read_to_string(&file).expect(file.to_str().expect("path"));
         assert_eq!(s, const_data);
     }
