@@ -1,9 +1,8 @@
-use crate::style::Style;
-use crate::layout::LayoutTrait;
+use crate::style::*;
 
 pub struct LayoutUnits;
-impl LayoutTrait for LayoutUnits {
-    fn layout(&self, style: &Style) -> Style {
+impl MapStyle for LayoutUnits {
+    fn map_style(&self, style: &Style) -> Style {
         Style {
             unit_separator:       format!("{}\n", style.unit_separator),
             record_separator:     format!("{}\n", style.record_separator),
@@ -18,10 +17,11 @@ impl LayoutTrait for LayoutUnits {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate as usv;
 
     #[test]
     fn test() {
-        let style = LayoutUnits.layout(&Style::default());
+        let style = LayoutUnits.map_style(&usv::style::Style::default());
         assert_eq!(style.unit_separator, "␟\n");
         assert_eq!(style.record_separator, "␞\n");
         assert_eq!(style.group_separator, "␝\n");

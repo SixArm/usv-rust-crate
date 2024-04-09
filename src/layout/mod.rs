@@ -35,10 +35,6 @@
 
 use crate::style::Style;
 
-pub trait LayoutTrait {
-    fn layout(&self, style: &Style) -> Style;
-}
-
 pub mod layout_0;
 pub mod layout_1;
 pub mod layout_2;

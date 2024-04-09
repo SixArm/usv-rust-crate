@@ -28,36 +28,41 @@
 //!
 //! ```rust
 //! use usv::*;
-//! let input = "a␟b␟";
-//! let units: Units = input.units().collect();
+//! let str = "a␟b␟";
+//! let units: Units = str.units().collect();
 //! assert_eq!(units, ["a", "b"]);
+//! assert_eq!(units.into_usv_string(), str);
+//! 
 //! ```
-//!
+//! 
 //! ## Records
 //!
 //! ```rust
 //! use usv::*;
-//! let input = "a␟b␟␞c␟d␟␞";
-//! let records: Records = input.records().collect();
+//! let str = "a␟b␟␞c␟d␟␞";
+//! let records: Records = str.records().collect();
 //! assert_eq!(records, [["a", "b"],["c", "d"]]);
+//! assert_eq!(records.into_usv_string(), str);
 //! ```
 //!
 //! ## Groups
 //!
 //! ```rust
 //! use usv::*;
-//! let input = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝";
-//! let groups: Groups = input.groups().collect();
+//! let str = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝";
+//! let groups: Groups = str.groups().collect();
 //! assert_eq!(groups, [[["a", "b"],["c", "d"]],[["e", "f"],["g", "h"]]]);
+//! assert_eq!(groups.into_usv_string(), str);
 //! ```
 //!
 //! ## Files
 //!
 //! ```rust
 //! use usv::*;
-//! let input = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜";
-//! let files: Files = input.files().collect();
+//! let str = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜";
+//! let files: Files = str.files().collect();
 //! assert_eq!(files, [[[["a", "b"],["c", "d"]],[["e", "f"],["g", "h"]]],[[["i", "j"],["k", "l"]],[["m", "n"],["o", "p"]]]]);
+//! assert_eq!(files.into_usv_string(), str);
 //! ```
 //!
 //! ## Architecture
@@ -147,21 +152,27 @@ pub mod token; pub use token::Token;
 pub mod examples; pub use examples::*;
 
 // Type aliases for USV naming
-#[allow(dead_code)] pub type Tokens = Vec<Token>;
+#[allow(dead_code)] pub type Tokens = std::vec::Vec<Token>;
 #[allow(dead_code)] pub type Unit = String;
-#[allow(dead_code)] pub type Units = Vec<Unit>;
+#[allow(dead_code)] pub type Units = std::vec::Vec<Unit>;
 #[allow(dead_code)] pub type Record = Units;
-#[allow(dead_code)] pub type Records = Vec<Record>;
+#[allow(dead_code)] pub type Records = std::vec::Vec<Record>;
 #[allow(dead_code)] pub type Group = Records;
-#[allow(dead_code)] pub type Groups = Vec<Records>;
+#[allow(dead_code)] pub type Groups = std::vec::Vec<Records>;
 #[allow(dead_code)] pub type File = Groups;
-#[allow(dead_code)] pub type Files = Vec<File>;
+#[allow(dead_code)] pub type Files = std::vec::Vec<File>;
 
 // Iterator for token, unit, record, group, file.
 pub mod iter;
 
-// Iterator extensions for units, records, groups, files.
+// &str extensions such as iterators for units, records, groups, files.
 pub mod str_ext; pub use str_ext::StrExt;
+
+// Convert such as from vectors of strings to a USV string.
+pub mod from; pub use from::*;
+
+// String extensions such as from functions for conversions.
+pub mod into_usv_string; pub use into_usv_string::*;
 
 // Style provides rendering configuration for separators etc.
 pub mod style; pub use style::Style;

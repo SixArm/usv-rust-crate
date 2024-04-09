@@ -1,18 +1,14 @@
-//! Create a style with all braces, such as "{US}" for Unit Separator.
-
 use crate::style::*;
 
-pub struct StyleBraces;
-impl StyleTrait for StyleBraces {
-    fn style(&self) -> Style {
-        Style {
-            unit_separator: String::from(UNIT_SEPARATOR_BRACE),
-            record_separator: String::from(RECORD_SEPARATOR_BRACE),
-            group_separator: String::from(GROUP_SEPARATOR_BRACE),
-            file_separator: String::from(FILE_SEPARATOR_BRACE),
-            escape: String::from(ESCAPE_BRACE),
-            end_of_transmission: String::from(END_OF_TRANSMISSION_BRACE),
-        }
+/// Create a style with all braces, such as "{US}" for Unit Separator.
+pub fn style_braces() -> Style {
+    Style {
+        unit_separator: String::from("{US}"),
+        record_separator: String::from("{RS}"),
+        group_separator: String::from("{GS}"),
+        file_separator: String::from("{FS}"),
+        escape: String::from("{ESC}"),
+        end_of_transmission: String::from("{EOT}"),
     }
 }
 
@@ -22,7 +18,7 @@ mod tests {
 
     #[test]
     fn test() {
-        let style = StyleBraces.style();
+        let style = style_braces();
         assert_eq!(style.unit_separator, "{US}");
         assert_eq!(style.record_separator, "{RS}");
         assert_eq!(style.group_separator, "{GS}");

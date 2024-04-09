@@ -29,36 +29,40 @@ Modifiers:
 
 ```rust
 use usv::*;
-let input = "a␟b␟";
-let units: Units = input.units().collect();
+let str = "a␟b␟";
+let units: Units = str.units().collect();
 assert_eq!(units, ["a", "b"]);
+assert_eq!(units.into_usv_string(), str);
 ```
 
 ## Records
 
 ```rust
 use usv::*;
-let input = "a␟b␟␞c␟d␟␞";
-let records: Records = input.records().collect();
+let str = "a␟b␟␞c␟d␟␞";
+let records: Records = str.records().collect();
 assert_eq!(records, [["a", "b"],["c", "d"]]);
+assert_eq!(records.into_usv_string(), str);
 ```
 
 ## Groups
 
 ```rust
 use usv::*;
-let input = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝";
-let groups: Groups = input.groups().collect();
+let str = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝";
+let groups: Groups = str.groups().collect();
 assert_eq!(groups, [[["a", "b"],["c", "d"]],[["e", "f"],["g", "h"]]]);
+assert_eq!(groups.into_usv_string(), str);
 ```
 
 ## Files
 
 ```rust
 use usv::*;
-let input = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜";
-let files: Files = input.files().collect();
+let str = "a␟b␟␞c␟d␟␞␝e␟f␟␞g␟h␟␞␝␜i␟j␟␞k␟l␟␞␝m␟n␟␞o␟p␟␞␝␜";
+let files: Files = str.files().collect();
 assert_eq!(files, [[[["a", "b"],["c", "d"]],[["e", "f"],["g", "h"]]],[[["i", "j"],["k", "l"]],[["m", "n"],["o", "p"]]]]);
+assert_eq!(files.into_usv_string(), str);
 ```
 
 ## Architecture

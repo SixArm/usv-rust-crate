@@ -1,18 +1,14 @@
-//! Create a style with all controls, such as "\u{001F}" for Unit Separator.
-
 use crate::style::*;
 
-pub struct StyleControls;
-impl StyleTrait for StyleControls {
-    fn style(&self) -> Style {
-        Style {
-            unit_separator: String::from(UNIT_SEPARATOR_CONTROL),
-            record_separator: String::from(RECORD_SEPARATOR_CONTROL),
-            group_separator: String::from(GROUP_SEPARATOR_CONTROL),
-            file_separator: String::from(FILE_SEPARATOR_CONTROL),
-            escape: String::from(ESCAPE_CONTROL),
-            end_of_transmission: String::from(END_OF_TRANSMISSION_CONTROL),
-        }
+/// Create a style with all controls, such as "\u{001F}" for Unit Separator.
+pub fn style_controls() -> Style {
+    Style {
+        unit_separator: String::from("\u{001F}"),
+        record_separator: String::from("\u{001E}"),
+        group_separator: String::from("\u{001D}"),
+        file_separator: String::from("\u{001C}"),
+        escape: String::from("\u{001B}"),
+        end_of_transmission: String::from("\u{0004}"),
     }
 }
 
@@ -22,7 +18,7 @@ mod tests {
 
     #[test]
     fn test() {
-        let style = StyleControls.style();
+        let style = style_controls();
         assert_eq!(style.unit_separator, "\u{001F}");
         assert_eq!(style.record_separator, "\u{001E}");
         assert_eq!(style.group_separator, "\u{001D}");

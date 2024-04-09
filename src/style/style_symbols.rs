@@ -1,18 +1,14 @@
-//! Create a style with all symbols, such as "␟" for Unit Separator.
-
 use crate::style::*;
 
-pub struct StyleSymbols;
-impl StyleTrait for StyleSymbols {
-    fn style(&self) -> Style {
-        Style {
-            unit_separator: String::from(UNIT_SEPARATOR_SYMBOL),
-            record_separator: String::from(RECORD_SEPARATOR_SYMBOL),
-            group_separator: String::from(GROUP_SEPARATOR_SYMBOL),
-            file_separator: String::from(FILE_SEPARATOR_SYMBOL),
-            escape: String::from(ESCAPE_SYMBOL),
-            end_of_transmission: String::from(END_OF_TRANSMISSION_SYMBOL),
-        }
+/// Create a style with all symbols, such as "␟" for Unit Separator.
+pub fn style_symbols() -> Style {
+    Style {
+        unit_separator: String::from("␟"),
+        record_separator: String::from("␞"),
+        group_separator: String::from("␝"),
+        file_separator: String::from("␜"),
+        escape: String::from("␛"),
+        end_of_transmission: String::from("␄"),
     }
 }
 
@@ -22,7 +18,7 @@ mod tests {
 
     #[test]
     fn test() {
-        let style = StyleSymbols.style();
+        let style = style_symbols();
         assert_eq!(style.unit_separator, "␟");
         assert_eq!(style.record_separator, "␞");
         assert_eq!(style.group_separator, "␝");
