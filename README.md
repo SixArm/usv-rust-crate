@@ -81,6 +81,10 @@ The architecture of this crate looks like this, in order of importance:
 
 * `layout/`: layout formats for lines, visual displays, and editors.
 
+* `from/`: convert from one thing into another thing.
+
+* `into_usv_string`: trait and impl to convert from data into a usv string.
+
 * `examples.rs`: data strings suitable for demos and tests.
 
 * `str_ext.rs`: string extension traits for parsing USV.

@@ -18,7 +18,7 @@ impl MapStyle for Layout0 {
 mod tests {
     use super::*;
     use crate as usv;
-    
+
     #[test]
     fn test() {
         let style = usv::style::style_symbols();

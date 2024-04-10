@@ -32,9 +32,9 @@
 //! let units: Units = str.units().collect();
 //! assert_eq!(units, ["a", "b"]);
 //! assert_eq!(units.into_usv_string(), str);
-//! 
+//!
 //! ```
-//! 
+//!
 //! ## Records
 //!
 //! ```rust
@@ -80,6 +80,10 @@
 //! * `style/`: style sets of characters for symbols, controls, braces.
 //!
 //! * `layout/`: layout formats for lines, visual displays, and editors.
+//!
+//! * `from/`: convert from one thing into another thing.
+//!
+//! * `into_usv_string`: trait and impl to convert from data into a usv string.
 //!
 //! * `examples.rs`: data strings suitable for demos and tests.
 //!

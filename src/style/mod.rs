@@ -26,6 +26,8 @@
 //!
 //! You can create your own styles that are equivalent to the above.
 
+#[derive(Debug, Clone, PartialEq)]
+
 pub struct Style {
     pub unit_separator: String,
     pub record_separator: String,
